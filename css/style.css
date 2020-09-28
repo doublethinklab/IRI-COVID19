@@ -1,0 +1,567 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  *::focus {
+    outline: 0; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  display: block;
+  border: 0; }
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1;
+  /*For IE 6&7 only*/ }
+
+a {
+  text-decoration: none; }
+
+.clear {
+  margin: 0;
+  padding: 0;
+  clear: both; }
+
+*:focus {
+  outline: none; }
+
+button {
+  border: none;
+  color: inherit;
+  font: inherit;
+  background-color: inherit;
+  margin: 0;
+  padding: 0; }
+
+b {
+  font-weight: bold; }
+
+i {
+  font-style: normal; }
+
+i.who {
+  color: #008ac3; }
+
+i.prc {
+  color: #b50808; }
+
+body {
+  font-family: "Montserrat", "Noto Sans TC", STHeiti, "Microsoft JhengHei", "微軟正黑體", sans-serif; }
+
+html, body, #wapper {
+  min-height: 100vh;
+  min-width: 1250px;
+  color: #5cc1d8; }
+
+.kvBox {
+  width: 100%;
+  background: #5cc1d8;
+  position: relative; }
+  .kvBox .kvImg {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+    .kvBox .kvImg img {
+      left: 50%;
+      margin-left: -960px;
+      top: 0;
+      position: absolute; }
+  .kvBox .btns {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    .kvBox .btns .btn {
+      padding: 10px 20px;
+      background: #fff;
+      color: #000;
+      font-size: 18px;
+      color: #000;
+      font-weight: bold;
+      margin-right: 10px;
+      cursor: pointer; }
+      .kvBox .btns .btn:last-child {
+        margin-right: 0; }
+
+.timeLineTitleBox h2 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px 0;
+  color: #000; }
+
+.timeLineBox {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden; }
+  .timeLineBox .background {
+    position: fixed;
+    width: 100vw;
+    min-width: 1250px;
+    height: 100vh;
+    top: 0;
+    left: 0; }
+    .timeLineBox .background .pic {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #5cc1d8; }
+  .timeLineBox .backgroundMask {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: space;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); }
+  .timeLineBox .lineBox {
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    height: 100%;
+    min-height: 100vh; }
+    .timeLineBox .lineBox .line {
+      border-color: #fff;
+      border-right-width: 6px;
+      display: block; }
+      .timeLineBox .lineBox .line.dashed {
+        margin-top: 100px;
+        border-style: dashed;
+        height: 300px;
+        border-color: #008ac3; }
+      .timeLineBox .lineBox .line.solid {
+        height: calc(100% - 400px);
+        border-style: dashed; }
+  .timeLineBox .allDatasBox {
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    top: 10px;
+    z-index: 2; }
+    .timeLineBox .allDatasBox .dataBox {
+      position: relative;
+      width: 100%;
+      margin-bottom: 100px;
+      min-height: 138px; }
+      .timeLineBox .allDatasBox .dataBox .date {
+        left: calc(50% - 69px);
+        position: absolute;
+        width: 138px;
+        height: 138px;
+        border-radius: 50%;
+        background-color: #b50808;
+        border: 6px #fff solid;
+        color: #fff;
+        align-items: center;
+        display: flex;
+        justify-content: center; }
+        .timeLineBox .allDatasBox .dataBox .date p {
+          text-align: center;
+          font-weight: bold;
+          font-size: 36px; }
+          .timeLineBox .allDatasBox .dataBox .date p span {
+            display: block;
+            font-size: 16px;
+            margin-top: 5px; }
+        .timeLineBox .allDatasBox .dataBox .date .line {
+          display: block;
+          height: 2px;
+          background-color: #fff;
+          border-radius: 2px;
+          left: 132px;
+          position: absolute;
+          width: 55px; }
+      .timeLineBox .allDatasBox .dataBox .events {
+        padding-top: 68px;
+        position: relative;
+        overflow: hidden; }
+        .timeLineBox .allDatasBox .dataBox .events .event {
+          position: relative;
+          left: 50%;
+          width: calc(100% / 2 - 123px);
+          margin-left: 123px;
+          padding: 35px 24px;
+          background-color: white;
+          color: #000; }
+          .timeLineBox .allDatasBox .dataBox .events .event .content {
+            position: relative; }
+          .timeLineBox .allDatasBox .dataBox .events .event img {
+            max-width: 90%;
+            border: 1px #ccc solid;
+            margin: 29px auto; }
+          .timeLineBox .allDatasBox .dataBox .events .event p {
+            font-size: 18px;
+            line-height: 150%;
+            padding: 0 10px; }
+          .timeLineBox .allDatasBox .dataBox .events .event ul {
+            font-size: 18px;
+            line-height: 150%;
+            list-style: disc;
+            padding-left: 32px; }
+            .timeLineBox .allDatasBox .dataBox .events .event ul li iframe {
+              width: 90%; }
+          .timeLineBox .allDatasBox .dataBox .events .event a {
+            color: #000;
+            border-bottom: 1px #000 solid; }
+          .timeLineBox .allDatasBox .dataBox .events .event iframe {
+            width: 90%;
+            height: 300px;
+            position: relative;
+            margin: 29px auto;
+            display: block; }
+          .timeLineBox .allDatasBox .dataBox .events .event.taiwan:before {
+            content: "Taiwan";
+            position: relative;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #217f32;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center; }
+      .timeLineBox .allDatasBox .dataBox:first-child .date {
+        background-color: #008ac3; }
+      .timeLineBox .allDatasBox .dataBox.hideEvent .date .line {
+        display: none; }
+      .timeLineBox .allDatasBox .dataBox.hideEvent .event {
+        display: none; }
+    .timeLineBox .allDatasBox .dataBox:nth-child(2n) .event {
+      left: 0;
+      margin-left: 0; }
+    .timeLineBox .allDatasBox .dataBox:nth-child(2n) .date .line {
+      left: -5px;
+      transform: rotate(180deg);
+      display: block;
+      transform-origin: left center; }
+    .timeLineBox .allDatasBox .dataBox:last-child {
+      margin-bottom: 0; }
+  .timeLineBox .fixedBox {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 197px; }
+    .timeLineBox .fixedBox .yearBox {
+      text-align: right;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #fff;
+      padding-right: 10px; }
+      .timeLineBox .fixedBox .yearBox h2 {
+        font-size: 72px; }
+      .timeLineBox .fixedBox .yearBox p {
+        font-size: 24px;
+        line-height: 120%; }
+    .timeLineBox .fixedBox .digitalBox {
+      border: 6px #000 solid;
+      background-color: rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      text-align: center;
+      color: #fff; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .name {
+        font-size: 22px;
+        text-align: center;
+        padding: 6px 0;
+        background-color: black;
+        font-weight: bold; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .data > .txt {
+        font-size: 18px;
+        display: block;
+        line-height: 120%;
+        font-weight: normal; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .data .days {
+        font-size: 59px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        margin: 0 auto 10px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .data .cases {
+        font-size: 27px;
+        display: block; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .days {
+        position: relative; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .days > span {
+          line-height: 70px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt {
+          font-size: 17px;
+          position: absolute;
+          bottom: -7px;
+          color: #fff;
+          font-weight: bold;
+          width: 103%;
+          text-align: center;
+          left: -1px; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt span {
+            margin: 0 5px; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:before, .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:after {
+            content: "";
+            display: inline-block;
+            height: 3px;
+            background-color: #fff;
+            position: relative;
+            top: -4px;
+            width: 35%; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china > .txt {
+        margin-bottom: 6px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+        margin-bottom: 17px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china .days, .timeLineBox .fixedBox .digitalBox .organizationBox.china .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+        color: #b50808; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china .days {
+        margin-top: 10px;
+        width: 146px;
+        height: 82px;
+        border-top: 3px #fff solid;
+        border-left: 3px #fff solid;
+        border-right: 3px #fff solid; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
+        margin-top: 18px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.who .days, .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
+        color: #008ac3; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases {
+        margin: 0 auto 12px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
+        width: 146px;
+        height: 82px;
+        border-bottom: 3px #fff solid;
+        border-left: 3px #fff solid;
+        border-right: 3px #fff solid; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days > span {
+          line-height: 90px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
+          font-size: 17px;
+          position: absolute;
+          top: -7px;
+          color: #fff;
+          font-weight: bold;
+          width: 103%;
+          text-align: center;
+          left: -1px; }
+      .timeLineBox .fixedBox .digitalBox .dividerBox {
+        color: #fff;
+        margin: 10px auto;
+        font-weight: bold; }
+        .timeLineBox .fixedBox .digitalBox .dividerBox span {
+          font-size: 11px;
+          margin: 0 4px; }
+        .timeLineBox .fixedBox .digitalBox .dividerBox:before, .timeLineBox .fixedBox .digitalBox .dividerBox:after {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          background-color: #fff;
+          position: relative;
+          top: -4px;
+          width: 9%; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox .days > span {
+      color: #fff;
+      font-size: 25px;
+      top: -5px;
+      position: relative; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt {
+      font-size: 12px;
+      bottom: 4px; }
+      .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt:before, .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt:after {
+        content: "";
+        display: inline-block;
+        height: 3px;
+        background-color: #b50808;
+        position: relative;
+        top: -3px;
+        width: 13%; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox.china .days {
+      border-top: 3px #b50808 solid;
+      border-left: 3px #b50808 solid;
+      border-right: 3px #b50808 solid;
+      background-color: #b50808; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days {
+      border-bottom: 3px #008ac3 solid;
+      border-left: 3px #008ac3 solid;
+      border-right: 3px #008ac3 solid;
+      background-color: #008ac3; }
+      .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days .txt {
+        top: inherit; }
+        .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days .txt:before, .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days .txt:after {
+          background-color: #008ac3; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .cases {
+      margin: 0 auto 10px; }
+    .timeLineBox .fixedBox.change .digitalBox .dividerBox span {
+      font-size: 17px; }
+    .timeLineBox .fixedBox.change .digitalBox .dividerBox:before, .timeLineBox .fixedBox.change .digitalBox .dividerBox:after {
+      width: 23%; }
+  .timeLineBox .lineYearBox {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+    .timeLineBox .lineYearBox .line.year {
+      position: absolute;
+      border-top-width: 4px;
+      border-style: dashed;
+      border-color: #000;
+      top: 28%; }
+      .timeLineBox .lineYearBox .line.year .ball {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        background-color: #000; }
+  .timeLineBox .banners {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 14%; }
+    .timeLineBox .banners .banner {
+      width: 100%;
+      color: #000;
+      background-color: #fff;
+      font-weight: bold;
+      padding: 20px 20px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 16px;
+      cursor: pointer; }
+      .timeLineBox .banners .banner span {
+        line-height: 140%; }
+  .timeLineBox .nowBox {
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    margin-left: -110px;
+    padding: 20px 50px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #b50808;
+    border: 6px #fff solid;
+    color: #fff;
+    border-radius: 10px; }
+    .timeLineBox .nowBox span {
+      width: 100%;
+      margin-bottom: 5px;
+      position: relative;
+      display: block; }
+    .timeLineBox .nowBox .time {
+      width: 100%; }
+  .timeLineBox.nonefixed .lineYearBox, .timeLineBox.nonefixed .fixedBox, .timeLineBox.nonefixed .background, .timeLineBox.nonefixed .banners, .timeLineBox.nonefixed .backgroundMask {
+    position: absolute; }
+
+@media screen and (max-width: 768px) {
+  html, body, #wapper {
+    min-width: inherit;
+    position: relative; }
+
+  .kvBox .btns {
+    padding: 0 10px; }
+    .kvBox .btns .btn {
+      padding: 4px 10px;
+      font-size: 16px; }
+
+  .timeLineBox .line.year {
+    display: none; }
+  .timeLineBox .background {
+    min-width: inherit; }
+  .timeLineBox .lineBox {
+    left: 10%;
+    margin-left: 0; }
+    .timeLineBox .lineBox .line {
+      border-right-width: 4px; }
+      .timeLineBox .lineBox .line.dashed {
+        margin-top: 20px;
+        height: 0.8%; }
+      .timeLineBox .lineBox .line.solid {
+        height: calc(99.2% - 20px); }
+  .timeLineBox .allDatasBox {
+    width: 100%; }
+    .timeLineBox .allDatasBox .dataBox {
+      margin-bottom: 30px; }
+      .timeLineBox .allDatasBox .dataBox .date {
+        width: 70px;
+        height: 70px;
+        left: 2%;
+        border: 3px #fff solid; }
+        .timeLineBox .allDatasBox .dataBox .date p {
+          font-size: 20px; }
+        .timeLineBox .allDatasBox .dataBox .date .line {
+          left: 102%;
+          width: 4.5vw; }
+      .timeLineBox .allDatasBox .dataBox .events {
+        padding-top: 34px;
+        width: 100%; }
+        .timeLineBox .allDatasBox .dataBox .events .event {
+          width: 67%;
+          left: 0;
+          padding: 15px;
+          margin-left: 24%; }
+          .timeLineBox .allDatasBox .dataBox .events .event p, .timeLineBox .allDatasBox .dataBox .events .event ul {
+            font-size: 16px; }
+      .timeLineBox .allDatasBox .dataBox:nth-child(2n) .event {
+        margin-left: 24%; }
+      .timeLineBox .allDatasBox .dataBox:nth-child(2n) .date .line {
+        transform: none;
+        left: 102%; }
+  .timeLineBox .nowBox {
+    border: 3px #fff solid;
+    padding: 8px;
+    left: 2%;
+    margin-left: 0;
+    font-size: 16px; }
+    .timeLineBox .nowBox span {
+      margin-bottom: 3px; }
+  .timeLineBox .fixedBox, .timeLineBox .banners {
+    display: none; } }
+
+/*# sourceMappingURL=style.css.map */

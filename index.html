@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>timeline</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/detectmobilebrowser.js"></script>
+	<script>
+		var isMobile=jQuery.browser.mobile;
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+	<div id="wapper">
+		<div class="kvBox">
+			<div class="kvImg">
+				<img src="images/1920.png">
+			</div>
+			<div class="btns">
+				<a class="btn">Taiwan civil society</a>
+				<a class="btn">Doublethink LabResearch</a>
+				<a class="btn">Taiwan government</a>
+			</div>
+		</div>
+		<div class="timeLineTitleBox">
+			<h2>Timeline <i class="who">WHO</i> / <i class="prc">PRC</i></h2>
+		</div>
+		<div class="timeLineBox nonefixed">
+			<div class="background">
+				<!-- style="background-image: url(images/bg.jpg)" -->
+				<div class="pic"></div>
+
+			</div>
+			<div class="backgroundMask"></div>
+			<div class="lineYearBox">
+				<div class="line year"><div class="ball"></div></div>
+			</div>
+			
+			<div class="lineBox">
+				<div class="line dashed"></div>
+				<div class="line solid"></div>
+			</div>
+			<div class="allDatasBox"></div>
+			<div class="fixedBox">
+				<div class="yearBox">
+					<h2>2019</h2>
+					<p>未知階段</p>
+				</div>
+				<div class="digitalBox">
+					<div class="organizationBox china">
+						<div class="name">CHINA</div>
+						<div class="data">
+							<span class="txt">human transmission<br>admitted</span>
+							<div class="days">
+								<span>0</span>
+								<div class="txt"><span>days</span></div>
+							</div>
+							<span class="cases">0</span>
+						</div>
+					</div>
+					<div class="dividerBox">
+						<span>confirmed cases</span>
+					</div>
+					<div class="organizationBox who">
+						<div class="data">
+							<span class="cases">0</span>
+							<div class="days">
+								<span>0</span>
+								<div class="txt"><span>days</span></div>
+							</div>
+							<span class="txt">declared<br>Pandemic</span>
+						</div>
+						<div class="name">WHO</div>
+					</div>
+				</div>
+			</div>
+			<div class="nowBox">
+				<span>Until today</span>
+				<div class="time">
+					<i class="hour">00</i>：<i class="minute">59</i>：<i class="second">59</i>
+				</div>
+			</div>
+			<div class="banners">
+				<a class="banner"><span>Taiwan civil society</span></a>
+				<a class="banner"><span>Doublethink LabResearch</span></a>
+				<a class="banner"><span>Taiwan government</span></a>
+			</div>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,677 @@
+@import 'reset';
+@import 'variable';
+i.who{
+	color:$who-color;
+}
+i.prc{
+	color:$prc-color;
+}
+body{
+    font-family: $font-family;
+
+}
+html,body,#wapper{
+	min-height: 100vh;
+	min-width: 1250px;
+	color: #5cc1d8;
+}
+.kvBox{
+	width: 100%;
+	background: #5cc1d8;
+	position: relative;
+	.kvImg{
+		font-size: 40px;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		// text-align: center;
+		// align-items: center;
+		// display: flex;
+		// justify-content: center;
+		img{
+			left: 50%;
+			margin-left:-960px;
+			top:0;
+			// margin-top:-540px;
+			position: absolute;
+		}
+	}
+	.btns{
+		width: 100%;
+		position: absolute;
+		bottom:50px;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		.btn{
+			padding: 10px 20px;
+			background: #fff;
+			color:#000;
+			font-size: 18px;
+			color: #000;
+			font-weight: bold;
+			margin-right: 10px;
+			cursor: pointer;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+}
+.timeLineTitleBox{
+	h2{
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		padding: 30px 0;
+		color:#000;
+	}
+}
+.timeLineBox{
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	.background{
+		position: fixed;
+		width: 100vw;
+		min-width: 1250px;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		.pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #5cc1d8;
+		}
+	}
+	.backgroundMask{
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-repeat:space;
+		background-color: rgba(255,255,255,0.4);
+		background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+	}
+	.lineBox{
+		position: absolute;
+		left: 50%;
+		margin-left: -3px;
+		height: 100%;
+		min-height: 100vh;
+		.line{
+			border-color:$timeline-border-color;
+			border-right-width:6px;
+			display: block;
+			&.dashed{
+				margin-top: 100px;
+				border-style:dashed;
+				height: 300px;
+				border-color: #008ac3;
+			}
+			&.solid{
+				height: calc(100% - 400px);
+				border-style:dashed;
+			}
+		}
+	}
+	.allDatasBox{
+		position: relative;
+		width: 65%;
+		margin: 0 auto;
+		top:10px;
+		z-index: 2;
+		.dataBox{
+			position: relative;
+			width: 100%;
+			margin-bottom: 100px;
+			// padding-top:67px;
+			min-height: 138px;
+			.date{
+				left: calc(50% - 69px);
+				position: absolute;
+				width: 138px;
+				height: 138px;
+				border-radius: 50%;
+				// margin-top:-67px;
+				background-color: $prc-color;
+				border:6px $timeline-border-color solid;
+				color:$timeline-txt-color;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				p{
+					text-align: center;
+					font-weight: bold;
+					font-size: 36px;
+					span{
+						display: block;
+						font-size: 16px;
+						margin-top: 5px;
+					}
+				}
+				.line{
+		    		display: block;	
+					height: 2px;
+					background-color: #fff;
+					border-radius: 2px;	
+					left: 132px;
+					position: absolute; 
+					width: 55px;   						
+				}
+			}
+			.events{
+				padding-top: 68px;
+				position: relative;
+				overflow: hidden;
+				.event{
+					position: relative;
+					left: 50%;
+					width: calc(100% / 2 - 123px);
+					margin-left: 123px;
+					padding: 35px 24px;
+					background-color: rgba(255,255,255,1);
+					color: #000;
+					.content{
+						position: relative;						
+					}
+					img{
+						max-width: 90%;
+						border:1px #ccc solid;
+						margin: 29px auto;
+					}
+					p{
+						font-size: 18px;
+						line-height: 150%;
+						padding: 0 10px;
+					}
+					ul{
+						font-size: 18px;
+						line-height: 150%;
+					    list-style: disc;
+	    				padding-left: 32px;
+	    				li{
+	    					iframe{
+	    						width: 90%;
+	    					}
+	    				}
+					}
+					a{
+						color: #000;
+						border-bottom: 1px #000 solid;
+					}
+					iframe{
+						width: 90%;
+						height: 300px;
+						position: relative;
+						margin:29px auto;
+						display: block;
+					}
+					&.taiwan:before{
+					    content: "Taiwan";
+					    position: relative;
+					    padding: 10px 15px;
+					    margin-bottom: 10px;
+					    background-color: #217f32;
+					    color: #fff;
+					    font-weight: bold;
+					    display: inline-block;
+					    text-align: center;
+					}
+				}				
+			}
+
+			&:first-child{
+				.date{
+					background-color: $who-color;
+				}
+			}
+
+			&.hideEvent{
+				.date{
+					.line{
+						display: none;
+					}
+				}
+				.event{
+					display: none;
+				}
+			}
+		}
+		.dataBox:nth-child(2n){
+			.event{
+				// text-align: right;
+				left: 0;
+				margin-left: 0;
+			}
+			.date{
+				.line{
+					left: -5px;
+					transform: rotate(180deg);
+					display: block;
+					transform-origin: left center;
+				}
+			}
+		}
+		.dataBox:last-child{
+			// padding-bottom: 23%;
+			margin-bottom: 0;
+		}
+
+	}
+	.fixedBox{
+		position: fixed;
+	    left: 20px;
+	    top: 20px;
+	    // transform: scale(0.7);
+	    // transform-origin:0 0;
+	    width: 197px;
+		.yearBox{
+			text-align: right;
+			font-weight: bold;
+			// border-right: 4px #fff solid;
+			margin-bottom: 15px;
+			color:#fff;
+			padding-right: 10px;
+			h2{
+				font-size: 72px;
+			}
+			p{
+				// font-size: 30px;
+				font-size: 24px;
+				line-height: 120%;
+			}
+		}
+		.digitalBox{
+			border: 6px #000 solid;
+			background-color:rgba(0,0,0,0.3);
+			font-weight: bold;
+			text-align: center;
+			color: #fff;
+			.organizationBox{
+				.name{
+					font-size: 22px;
+					text-align: center;
+					padding: 6px 0;
+					background-color: rgba(0,0,0,1);
+					font-weight: bold;
+				}
+				.data{
+					>.txt{
+						font-size: 18px;
+						display: block;
+						line-height: 120%;
+						font-weight: normal;
+					}
+					.days{
+						font-size: 59px;
+						background-repeat: no-repeat;
+						background-size: 100% auto;
+						background-position: center;
+						margin:0 auto 10px;
+					}
+					.cases{
+						font-size: 27px;
+						display: block;
+					}
+				}
+				.days{
+					position: relative;
+					>span{
+						line-height: 70px;
+					}
+					.txt{
+					    font-size: 17px;
+					    position: absolute;
+					    bottom: -7px;
+					    color: #fff;
+					    font-weight: bold;
+					    width: 103%;
+					    text-align: center;
+					    left: -1px;
+						span{
+						    margin: 0 5px;
+						}
+						&:before,&:after{
+						    content: "";
+						    display: inline-block;
+						    height: 3px;
+						    background-color: #fff;
+						    position: relative;
+						    top: -4px;
+						    width: 35%;
+						}
+					}
+				}
+				&.china{
+					>.txt{
+						margin-bottom: 6px;
+					}
+					.name{
+						margin-bottom: 17px;
+					}
+					.days,.cases,.name{
+						color:$prc-color;
+					}
+					.days{
+						margin-top: 10px;
+						width: 146px;
+						height: 82px;
+						// background-image: url("../images/daysbox_up.png");
+						
+						// background-repeat: no-repeat;
+						// background-size: 100% auto;
+						// background-position: center;
+						border-top: 3px #fff solid;
+						border-left: 3px #fff solid;
+						border-right: 3px #fff solid;
+					}
+				}
+				&.who{
+					.name{
+						margin-top: 18px;
+					}
+					.days,.cases,.name{
+						color:$who-color;
+					}
+					.cases{
+						margin:0 auto 12px;
+					}
+					.days{
+						width: 146px;
+						height: 82px;
+						border-bottom: 3px #fff solid;
+						border-left: 3px #fff solid;
+						border-right: 3px #fff solid;
+						>span{
+							line-height: 90px;
+						}
+						// background-image: url("../images/daysbox_down.png");
+						// line-height: 92px;
+						// background-repeat: no-repeat;
+						// background-size: 100% auto;
+						// background-position: center;
+						.txt{
+						    font-size: 17px;
+						    position: absolute;
+						    top: -7px;
+						    color: #fff;
+						    font-weight: bold;
+						    width: 103%;
+						    text-align: center;
+						    left: -1px;
+						}
+					}
+				}
+			}
+			.dividerBox{
+				color:#fff;
+				margin:10px auto;
+				font-weight: bold;
+				span{
+					font-size: 11px;
+					margin:0 4px;
+				}
+				&:before,&:after{
+				    content: "";
+				    display: inline-block;
+				    height: 2px;
+				    background-color: #fff;
+				    position: relative;
+				    top: -4px;
+				    width: 9%;
+				}
+			}
+		}
+		&.change{
+			.digitalBox{
+				.organizationBox{
+					.days{
+						>span{
+							color:#fff;
+							font-size: 25px;
+							top:-5px;
+							position: relative;
+						}
+						.txt{
+							font-size: 12px;
+						    bottom: 4px;
+							&:before,&:after{
+							    content: "";
+							    display: inline-block;
+							    height: 3px;
+							    background-color: $prc-color;
+							    position: relative;
+								top: -3px;
+								width: 13%;
+							}
+						}
+					}
+					&.china{
+						.days{
+							border-top: 3px $prc-color solid;
+							border-left: 3px $prc-color solid;
+							border-right: 3px $prc-color solid;
+							background-color: $prc-color;						
+						}
+					}
+					&.who{
+						.days{
+							border-bottom: 3px $who-color solid;
+							border-left: 3px $who-color solid;
+							border-right: 3px $who-color solid;
+							background-color: $who-color;
+							.txt{
+							    top: inherit;
+							    &:before,&:after{
+							    	background-color: $who-color;
+							    }
+							}
+						}
+						.cases{
+							margin: 0 auto 10px;
+						}
+					}
+				}
+
+				.dividerBox{
+					span{
+						font-size: 17px;
+					}
+					&:before,&:after{
+					    width: 23%;
+					}
+				}
+			}
+		}
+	}
+	.lineYearBox{
+		position: fixed;
+		width: 100vw;
+		height:100vh;
+		top:0;
+		left: 0;
+		z-index: 1;
+		.line.year{
+		    position: absolute;
+		    border-top-width: 4px;
+		    border-style: dashed;
+		    border-color: #000;
+	        top: 28%;
+		    .ball{
+		    	width: 20px;
+		    	height: 20px;
+		    	border-radius: 50%;
+		    	position: absolute;
+		    	right: -10px;
+		    	top:-10px;
+		    	background-color: #000;
+		    }
+		}		
+	}
+
+	.banners{
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		width: 14%;
+		.banner{
+			width: 100%;
+			color:#000;
+			background-color: #fff;
+			font-weight: bold;
+			padding:20px 20px;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			margin-bottom: 16px;
+			cursor: pointer;
+			span{
+				line-height: 140%;
+				// font-weight: normal;
+			}
+		}
+	}
+	.nowBox{
+		position: absolute;
+		bottom:27px;
+		// width: 200px;
+		left:50%;
+		margin-left: -110px;
+		padding: 20px 50px;
+		font-size: 20px;
+		text-align: center;
+		background-color: $prc-color;
+		border:6px $timeline-border-color solid;
+		color:$timeline-txt-color;
+		border-radius: 10px;
+		span{
+			width: 100%;
+			margin-bottom: 5px;
+			position: relative;
+			display: block;
+		}
+		.time{
+			width: 100%;			
+		}
+	}
+	&.nonefixed{
+		.lineYearBox,.fixedBox,.background,.banners,.backgroundMask{
+			position: absolute;
+		}
+	}
+}
+
+
+@media screen and (max-width:768px){
+	html{
+		// position: fixed;
+		// overflow: hidden;
+	}
+	html,body,#wapper{
+		min-width: inherit;
+		position: relative;
+	}
+	.kvBox{
+		.btns{
+			padding:0 10px;
+			.btn{
+				padding: 4px 10px;
+				font-size: 16px;
+			}
+		}
+		
+	}
+	.timeLineBox{
+	 	.line.year{
+	 		display: none;
+	 	}
+		.background{
+	    	min-width: inherit;
+		}
+		.lineBox{
+			left: 10%;
+			margin-left:0;
+			.line{
+				border-right-width: 4px;
+				&.dashed{
+					margin-top: 20px;
+			        height: 0.8%;
+				}
+				&.solid{
+				    height: calc(99.2% - 20px);
+				}
+			}
+		}
+		.allDatasBox{
+			width: 100%;
+			.dataBox{
+			    // padding-top: 11%;
+			    margin-bottom: 30px;
+				.date{
+					width: 70px;
+					height: 70px;
+					left: 2%;
+					border: 3px #fff solid;
+					// margin-top: -9.2%;
+					p{
+						font-size: 20px;
+					}
+					.line{
+						left: 102%;
+					    width: 4.5vw;
+					}
+				}
+
+			    .events{
+			    	padding-top:34px;
+			    	width: 100%;
+					.event{
+						width: 67%;
+						left: 0;
+						padding:15px;
+						margin-left: 24%;
+						p,ul{
+							font-size: 16px;
+						}
+					}			    	
+			    }
+
+
+				&:nth-child(2n){
+					.event{
+						margin-left: 24%;
+					}
+					.date{
+						.line{
+							transform: none;
+							left: 102%;
+						}
+					}
+				}
+			}
+		}
+		.nowBox{
+		    border: 3px #fff solid;
+		    padding: 8px;
+		    left: 2%;
+		    margin-left: 0;
+		    font-size: 16px;
+		    span{
+		    	margin-bottom: 3px;
+		    }
+		}
+		.fixedBox,.banners{
+			display: none;
+		}
+	} 
+}
