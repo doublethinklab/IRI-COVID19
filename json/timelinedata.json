@@ -3,18 +3,38 @@
 		{
 			"date":"11/17",
 			"year":"2019",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>目前學術論文中出現的最早案例(<a href=\"https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back\" target=\"_blank\">Based on the information we have now.</a>)</p>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>The First Reported Case.(<a href=\"https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back\" target=\"_blank\">Based on the information we have now.</a>)</p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":-63,
+					"case":0
+				},
+				"who":{
+					"days":-114,
+					"case":0
+				}
+			}
 		},
 		{
 			"date":"12/01",
 			"year":"2019",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p><a href=\"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30183-5/fulltext\" target=\"_blank\">Lancet</a> 期刊發表一篇論文指出，<b>最早發現感染症狀的病人是在 12 月 1 日被發現。</b></p><p>而這個病人有武漢華南海鮮市場接觸史，這個市場也被推測為是病毒最早發源地。</p><iframe src=\"//embed.gettyimages.com/embed/1193097821?et=uUMkKLCVR4ZO9nzeMXfydA&tld=hk&sig=IOFucnIVINzMkLcI93cgHY903rAVe59VJuGG_q_dN90=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p><a href=\"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30183-5/fulltext\" target=\"_blank\">A study in The Lancet</a>,<b>The symptom onset date of the first patient identified was Dec 1st, 2019. </b>This patient had a history of exposure to Huanan(or South China) Seafood Market, which was identified as a point of origin of the pandemic.</p><iframe src=\"//embed.gettyimages.com/embed/1193097821?et=uUMkKLCVR4ZO9nzeMXfydA&tld=hk&sig=IOFucnIVINzMkLcI93cgHY903rAVe59VJuGG_q_dN90=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 			],
 			"countdown":{
@@ -31,12 +51,20 @@
 		{
 			"date":"12/30",
 			"year":"2019",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p><b>疑似 SARS 的冠狀病毒出現</b> 李文亮醫師和在其他醫師在微信群組中，試圖警告其他醫生已經有 7 例疑似感染 SARS 的病患，且他們全部都有海鮮市場的接觸史。</p><img src=\"images/01.png\"><img src=\"images/02.png\">"
 				},
 				{
 					"content":"<p>同一天，武漢市衛生健康委員會警及發佈一項通知，要求所有的醫院必須要回報相關的資訊，但對外完全封鎖訊息。</p><img src=\"images/03.png\">"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p><b>SARS-like Coronavirus</b> Drawing Attention.<br>Dr. Li Wenliang and other doctors, tried to warn their fellows that there were 7 confirmed <b>SARS-like Coronavirus</b> cases found, and they all have contact history of Wuhan seafood market. </p><img src=\"images/01.png\"><img src=\"images/02.png\">"
+				},
+				{
+					"content":"<p>On the same day, an urgent notification issued by Wuhan Health Commission, ordered all hospitals to report any related information, but forbidden releasing any information to the outside. </p><img src=\"images/03.png\">"
 				}
 			],
 			"countdown":{
@@ -53,12 +81,22 @@
 		{
 			"date":"12/31",
 			"year":"2019",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>隔天，武漢官方發布新聞稿，宣稱有 27 例病毒感染得肺炎案例，但不會人傳人。</p><img src=\"images/04.png\">"
 				},
 				{
-					"content":"<p>同一天，台灣中央啟動標準的流行病防疫程序，並寫信問 WHO 對於中國隔離的肺炎病患，是否有更進一步的消息</p><a href=\"https://www.youtube.com/watch?v=CRctQZJAin8&t=5s&ab_channel=%E8%A1%9B%E7%94%9F%E7%A6%8F%E5%88%A9%E9%83%A8%E7%96%BE%E7%97%85%E7%AE%A1%E5%88%B6%E7%BD%B2\" target=\"_blank\"><img src=\"images/05.png\"></a>"
+					"content":"<p>同一天，台灣中央啟動標準的流行病防疫程序，並寫信問 WHO 對於中國隔離的肺炎病患，是否有更進一步的消息</p><a href=\"https://www.youtube.com/watch?v=CRctQZJAin8&t=5s&ab_channel=%E8%A1%9B%E7%94%9F%E7%A6%8F%E5%88%A9%E9%83%A8%E7%96%BE%E7%97%85%E7%AE%A1%E5%88%B6%E7%BD%B2\" target=\"_blank\"><img src=\"images/05.png\"></a>",
+					"taiwan":true
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Wuhan notified the public for the first time about 27 cases of <b>viral pneumonia</b>, but denial of <b>Human to Human Transmission</b></p><img src=\"images/04.png\">"
+				},
+				{
+					"content":"<p>Taiwan initiated a standard disease control measure at its border, and send the email to WHO to request the infos of suspicious quarantine in China.</p><a href=\"https://www.youtube.com/watch?v=CRctQZJAin8&t=5s&ab_channel=%E8%A1%9B%E7%94%9F%E7%A6%8F%E5%88%A9%E9%83%A8%E7%96%BE%E7%97%85%E7%AE%A1%E5%88%B6%E7%BD%B2\" target=\"_blank\"><img src=\"images/05.png\"></a>",
+					"taiwan":true
 				}
 			],
 			"countdown":{
@@ -75,12 +113,20 @@
 		{
 			"date":"01/01",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>元旦一月一日，也就是一個月後，武漢關閉了海鮮市場，並在尚未調查之前清洗了整個市場區域。公安也在同一天傳喚李文亮醫師，並指控他散布不實謠言。（後來李文亮醫師在十天後感染了病毒）</p><iframe src=\"https://embed.gettyimages.com/embed/1193097831?et=vaIljrVDSDJ1E-mrdfIuhQ&tld=hk&sig=NzA5nNIfyp2ekyoGf-SkriHMX8gzK8TsLa7KcfIzUJo=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe><iframe src=\"https://embed.gettyimages.com/embed/1195534195?et=PIyQLuEDQYtqYr4IXbPIpg&tld=hk&sig=Sug1xx3lNOTEn8xGv1I1xkbrc923MzepWwoaRlri5iY=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 				,{
 					"content":"<p>這週之間：</p><ul><li>更多的醫生和吹哨者被懲罰、更多的病人湧入醫院<iframe src=\"https://embed.gettyimages.com/embed?assets=1196116340,1196130138,1196122871,1196122869&et=ZlpZwG-OTq5LDb_gqlJTsA&tld=hk&sig=z2no3s9MPEZHyl3sXUuhDMIj5p2FgqUvS2hAv-at30c=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe></li><li>新聞報導習近平親自坐鎮指揮</li><li><b>WHO 公開稱讚中國，並說所有針對中國的旅遊限制都是不必要的</b></li></ul>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Jan 1st, Seafood Market closed and cleaned up without any investigation. Wuhan issued summons to Dr. Li, accusing him of <b>spreading rumors.</b>  And he contracted the virus himself around Jan 10th.</p><iframe src=\"https://embed.gettyimages.com/embed/1193097831?et=vaIljrVDSDJ1E-mrdfIuhQ&tld=hk&sig=NzA5nNIfyp2ekyoGf-SkriHMX8gzK8TsLa7KcfIzUJo=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe><iframe src=\"https://embed.gettyimages.com/embed/1195534195?et=PIyQLuEDQYtqYr4IXbPIpg&tld=hk&sig=Sug1xx3lNOTEn8xGv1I1xkbrc923MzepWwoaRlri5iY=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+				,{
+					"content":"<ul><li>More punishment of whistleblowers, patients flocking to hospitals.<iframe src=\"https://embed.gettyimages.com/embed?assets=1196116340,1196130138,1196122871,1196122869&et=ZlpZwG-OTq5LDb_gqlJTsA&tld=hk&sig=z2no3s9MPEZHyl3sXUuhDMIj5p2FgqUvS2hAv-at30c=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe></li><li>News reported that Xi Jinping Stepping In.</li><li><b>WHO Endorses China, advises against the application of any travel or trade restrictions on China.</b></li></ul>"
 				}
 			],
 			"countdown":{
@@ -97,81 +143,159 @@
 		{
 			"date":"01/06",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>而從一月六號到一月十七號，剛好是武漢要舉辦三場重要的年度政治大會期間，地點是在武漢與湖北地區。</p><img src=\"images/06.png\"><a href=\"http://cjrb.cjn.cn/images/2020-01/08/1/08r01c.pdf\" target=\"_blank\"><img src=\"images/07.png\"></a><p>整整 11 天，武漢沒有新增任何案例。</p>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>From Jan 6th to Jan 17th, three important annual political conferences of Wuhan city and Hubei province commenced in Wuhan.</p><img src=\"images/06.png\"><a href=\"http://cjrb.cjn.cn/images/2020-01/08/1/08r01c.pdf\" target=\"_blank\"><img src=\"images/07.png\"></a><p><b>During this period, 11 days, zero new cases were reported.</b></p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":-14,
+					"case":4
+				},
+				"who":{
+					"days":-65,
+					"case":0
+				}
+			}	
 		},
 		{
 			"date":"01/10",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>中國春運來臨</p><p>40 天: 01.10 ~ 02.18</p><ul><li>2019 30 億人次</li><li>2020 14.7 億人次</li></ul><p><a href=\"http://www.xinhuanet.com/fortune/2020-02/19/c_1125598149.htm\" target=\"_blank\">Source</a></p><iframe src=\"https://embed.gettyimages.com/embed/136998697?et=nh-XpVWnQ75CrmCGM5M1Kg&tld=hk&sig=QuwHD7H-DT-0GfpYih3wJeVRGWzkIARnRnoXHuFPvBM=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>Spring Festival Travel Rush</p><p>40 Days: 01.10 ~ 02.18</p><ul><li>2019 3 Billion person-time by 2019</li><li>2020 1.47 Billion person-time by 2020</li></ul><p><a href=\"http://www.xinhuanet.com/fortune/2020-02/19/c_1125598149.htm\" target=\"_blank\">Source</a></p><iframe src=\"https://embed.gettyimages.com/embed/136998697?et=nh-XpVWnQ75CrmCGM5M1Kg&tld=hk&sig=QuwHD7H-DT-0GfpYih3wJeVRGWzkIARnRnoXHuFPvBM=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":-10,
+					"case":4
+				},
+				"who":{
+					"days":-61,
+					"case":0
+				}
+			}	
 		},
 		{
 			"date":"01/14",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>WHO: <b>中國政府沒有找到任何證據顯示，這個新型冠狀病毒會人傳人</b></p><img src=\"images/10.png\">"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>WHO: <b>Chinese authorities have found no clear evidence of human-to-human transmission of the novel coronavirus</b></p><img src=\"images/10.png\">"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":-6,
+					"case":45
+				},
+				"who":{
+					"days":-57,
+					"case":6
+				}
+			}	
 		},
 		{
 			"date":"01/15",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>武漢市政府說：「有限的人傳人還是不能排除，但持續人傳人的風險很低」</p>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Next day, Wuhan: <b>limited human transmission cannot be ruled out, but the risk of continued human transmission is low.</b></p>"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":-5,
-					"case":0
+					"case":45
 				},
 				"who":{
 					"days":-56,
-					"case":0
+					"case":6
 				}
 			}
 		},
 		{
 			"date":"01/17",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>當所有的政治會議結束的之後，武漢立刻恢復了每日新增病例的計算。</p><p>但社群媒體持續刪除所有關於醫院病床不夠、大量病患的相關訊息。</p>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>Right after the conferences end, Wuhan resumed its daily updates. </p><p>Social media took down messages related to the over capacity of hospitals.</p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":-3,
+					"case":49
+				},
+				"who":{
+					"days":-54,
+					"case":7
+				}
+			}
 		},
 		{
 			"date":"01/18",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
-					"content":"<p>萬家宴，武漢有超過四萬個「家庭」參與一年一度的盛事。</p><iframe src=\"https://embed.gettyimages.com/embed?assets=916201968,916201944,916201918&et=mqu3m4rlTj1WMSJnT9S2iQ&tld=hk&sig=sYRK5uI_tGz7vENcOt8Q8-LwxbdLXRENnhQKfjrRCII=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe><p>同一天台灣成立中央流行疫情指揮中心</p><img src=\"images/11.png\">"
+					"content":"<p>萬家宴，武漢有超過四萬個「家庭」參與一年一度的盛事。</p><iframe src=\"https://embed.gettyimages.com/embed?assets=916201968,916201944,916201918&et=mqu3m4rlTj1WMSJnT9S2iQ&tld=hk&sig=sYRK5uI_tGz7vENcOt8Q8-LwxbdLXRENnhQKfjrRCII=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				},
+				{
+					"content":"<p>同一天台灣成立中央流行疫情指揮中心</p><img src=\"images/11.png\">",
+					"taiwan":true
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Grand Banquet, attended by more than 40,000 families in Baibuting Community, hosted as the plan. </p><iframe src=\"https://embed.gettyimages.com/embed?assets=916201968,916201944,916201918&et=mqu3m4rlTj1WMSJnT9S2iQ&tld=hk&sig=sYRK5uI_tGz7vENcOt8Q8-LwxbdLXRENnhQKfjrRCII=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				},
+				{
+					"content":"<p>Taiwan CDC set up Disease Control Center.</p><img src=\"images/11.png\">",
+					"taiwan":true
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":-2,
-					"case":0
+					"case":66
 				},
 				"who":{
 					"days":-53,
-					"case":0
+					"case":7
 				}
 			}
 		},
 		{
 			"date":"01/20",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>直到一月二十日，鐘南山博士在接受央視新聞訪問說，這個病毒肯定會人傳人，且有十四位醫護人員被同一個病人感染。</p><img src=\"images/12.png\">"
 				},
@@ -179,21 +303,29 @@
 					"content":"<p>習近平作出指示，要求要做好宣傳教育和輿論引導工作，更好維護社會大局穩定，讓人民能過好年。</p><img src=\"images/13.png\"><iframe src=\"https://embed.gettyimages.com/embed/1202227872?et=mqgZfzryTFRXFESQJQetAw&tld=hk&sig=l4t49DHR1LL6TaskD8MeBwIeeiSJkufGVvtuk2p3wV8=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 			],
+			"en_events":[
+				{
+					"content":"<p>Dr. Zhong Nanshan admitted for the first time in a China Central Television interview that the virus could <b>indeed be spread from human to human</b> and that 14 medical workers infected by one single patient.</p><img src=\"images/12.png\">"
+				},
+				{
+					"content":"<p>Xi: <b>strengthen the guidance of public opinion, strengthen the propaganda and interpretation, maintain the overall stability of society and ensure that the people spend a stable and happy Chinese New Year.</b></p><img src=\"images/13.png\"><iframe src=\"https://embed.gettyimages.com/embed/1202227872?et=mqgZfzryTFRXFESQJQetAw&tld=hk&sig=l4t49DHR1LL6TaskD8MeBwIeeiSJkufGVvtuk2p3wV8=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
 			"countdown":{
 				"china":{
-					"days":1,
-					"case":278
+					"days":0,
+					"case":202
 				},
 				"who":{
 					"days":-51,
-					"case":4
+					"case":17
 				}
 			}
 		},
 		{
 			"date":"01/23",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>武漢與湖北數個城市封城。</p><p>但根據南華早報，封城之前約有五百萬人離開武漢，預期將新增超過一千個案例。</p><iframe src=\"https://embed.gettyimages.com/embed?assets=1196074943,1196080723,1196080725,1196115880,1196080582&et=tFkk_U64ThVNylTJiAZ93g&tld=hk&sig=f4wlUrHexi8ACIc8QiNy8Ly7pFJe6IdFqqUKT07dH1k=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				},
@@ -204,41 +336,87 @@
 					"content":"<p>武漢初期控制疫情的失敗，許多市民要求市長辭職下台，但後來（一月二十七日）他在 CCTV 的訪問中，公開說初期的封鎖消息和不透明，北京也要負部分的責任。</p><img src=\"images/14.png\">"
 				}
 			],
+			"en_events":[
+				{
+					"content":"<p>Wuhan and few other cities in Hubei locked down. </p><p>According to South China Morning Post, 5 million left Wuhan before lockdown, 1,000 new coronavirus cases expected in city.</p><iframe src=\"https://embed.gettyimages.com/embed?assets=1196074943,1196080723,1196080725,1196115880,1196080582&et=tFkk_U64ThVNylTJiAZ93g&tld=hk&sig=f4wlUrHexi8ACIc8QiNy8Ly7pFJe6IdFqqUKT07dH1k=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				},
+				{
+					"content":"<p>WHO decided not to declare the Wuhan coronavirus outbreak a global emergency…</p><p><b>At this time, there is no evidence of human-to-human transmission outside China,</b> Dr. Tedros Adhanom Ghebreyesus, the W.H.O.’s director general, <b>That doesn’t mean it won’t happen.</b></p>"
+				},
+				{
+					"content":"<p>Wuhan mayor under pressure to resign over response to coronavirus outbreak. Later (Jan 27), he go live on CCTV and says Beijing rules partially responsible for lack of transparency.</p><img src=\"images/14.png\">"
+				}
+			],
 			"countdown":{
 				"china":{
 					"days":3,
-					"case":571
+					"case":578
 				},
 				"who":{
 					"days":-48,
-					"case":10
+					"case":29
 				}
 			}
 		},
 		{
 			"date":"01/24",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>2020農曆新年除夕夜</p><iframe src=\"https://embed.gettyimages.com/embed/1199972121?et=sSIaRoEMT6dV37iIc09bew&tld=hk&sig=1bU21Ayp8qO8HRQcwDwoZUDsfIpma4nYJe59OHNYYOM=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>Chinese/Lunar New Year Eve 2020</p><iframe src=\"https://embed.gettyimages.com/embed/1199972121?et=sSIaRoEMT6dV37iIc09bew&tld=hk&sig=1bU21Ayp8qO8HRQcwDwoZUDsfIpma4nYJe59OHNYYOM=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":4,
+					"case":839
+				},
+				"who":{
+					"days":-47,
+					"case":47
+				}
+			}
 		},
 		{
 			"date":"01/27",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>WHO 針對 COVID-19 將全球風險調高，此時距離，並承認之前的報告跟評估有錯誤。</p><p>不過同時，WHO 依然沒有宣布全球緊急事件，「這是在中國內的緊急事件，但還沒有形成一個全球的緊急危機」</p>"
 				}
-			]			
+			],
+			"en_events":[
+				{
+					"content":"<p>WHO: the global risk from the deadly virus in China was <b>high</b>, admitting an error in its previous reports that said it was <b>moderate</b>.</p><p><b>This is an emergency in China, but it has not yet become a global health emergency.</b></p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":7,
+					"case":2765
+				},
+				"who":{
+					"days":-44,
+					"case":93
+				}
+			}		
 		},
 		{
 			"date":"01/28",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>隔天，習近平跟譚德賽見面。</p><iframe src=\"http://embed.gettyimages.com/embed?assets=1196987003,1196987094,1196986940&et=Nb8DIIUkTl5qeErkZUh-7A&tld=hk&sig=dGcMcw6l8dj5zKuER4bvgbRklhwGdtbQIXSxtBxc2kY=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Xi Jinping meets with visiting World Health Organization (WHO) Director-General Tedros Adhanom Ghebreyesus</p><iframe src=\"http://embed.gettyimages.com/embed?assets=1196987003,1196987094,1196986940&et=Nb8DIIUkTl5qeErkZUh-7A&tld=hk&sig=dGcMcw6l8dj5zKuER4bvgbRklhwGdtbQIXSxtBxc2kY=&caption=true&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 			],
 			"countdown":{
@@ -248,214 +426,295 @@
 				},
 				"who":{
 					"days":-43,
-					"case":56
+					"case":108
 				}
 			}		
 		},
 		{
 			"date":"01/31",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>又過了三天，WHO 才宣布 COVID-19 是國際健康緊急事件。</p><p>但依然強調「目前在其他國家的感染傳播風險還是比較小」</p><iframe src=\"https://embed.gettyimages.com/embed?assets=1197725333,1197616395&et=U65l72X1QrRN4uHYG5QVBg&tld=hk&sig=5D3EBIA5h8mYbo4slzGjtLVciIqVaiQr6-2J1wYrL6Y=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>WHO declared COVID-19 as Public Health Emergency of International Concern (PHEIC).</p><p><b>At that time, the risk to other nations was deemed low.</b></p><iframe src=\"https://embed.gettyimages.com/embed?assets=1197725333,1197616395&et=U65l72X1QrRN4uHYG5QVBg&tld=hk&sig=5D3EBIA5h8mYbo4slzGjtLVciIqVaiQr6-2J1wYrL6Y=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":11,
-					"case":9720
+					"case":9724
 				},
 				"who":{
 					"days":-40,
-					"case":106
+					"case":198
 				}
 			}		
 		},
 		{
 			"date":"02/03",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>習近平：「要主動回應國際關切，講好中國抗擊疫情故事，展現中國人民團結一心、同舟共濟的精神風貌」。</p><p>並要求全面做好與世界衛生組織、有關國家和地區的溝通協調，「爭取國際社會理解和支持」</p>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p>Xi: <b>telling the moving stories of how [people] on the front line are preventing and fighting the virus, telling the story of how China is combating the virus, and showcasing the unity of the Chinese people in the face of the virus</b></p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":14,
+					"case":17242
+				},
+				"who":{
+					"days":-37,
+					"case":228
+				}
+			}
 		},
 		{
 			"date":"02/04",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>二月四日，中國中央宣傳部調派 300 多名記者深入湖北和武漢進行採訪。</p><img src=\"images/15.png\"><iframe src=\"https://embed.gettyimages.com/embed/1198372862?et=5Kopg0fdQBpNDyiWV0fQwQ&tld=hk&sig=nhQAYVfziFf_hnYRnDX1GWQ1lovvPzWJNIK05shCRFA=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>China’s central propaganda department said on Tuesday (Feb. 4) that it would dispatch more than <b>300 journalists</b> to [Hubei and Wuhan] report on the disease.</p><img src=\"images/15.png\"><iframe src=\"https://embed.gettyimages.com/embed/1198372862?et=5Kopg0fdQBpNDyiWV0fQwQ&tld=hk&sig=nhQAYVfziFf_hnYRnDX1GWQ1lovvPzWJNIK05shCRFA=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":15,
-					"case":20471
+					"case":20475
 				},
 				"who":{
 					"days":-36,
-					"case":159
+					"case":253
 				}
 			}
 		},
 		{
 			"date":"02/07",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>最早之一的吹哨者李文亮醫師因感染武漢肺炎逝世。成千上萬的留言湧進他的微博帳號。</p><p>五月時，這些留言已經高達將近一百萬。</p><img src=\"images/16.png\"><img src=\"images/17.png\"><img src=\"images/18.png\">"
 				}
 			],
+			"en_events":[
+				{
+					"content":"<p>Whistle-blower Dr Li Wenliang confirmed dead, thousands of comments has been shown in his Weibo account.</p><p>Nearly 1 million comments on May 2020.</p><img src=\"images/16.png\"><img src=\"images/17.png\"><img src=\"images/18.png\">"
+				}
+			],
 			"countdown":{
 				"china":{
-					"days":23,
-					"case":44730
+					"days":18,
+					"case":31215
 				},
 				"who":{
-					"days":-28,
-					"case":441
+					"days":-33,
+					"case":354
 				}
 			}
 		},
 		{
 			"date":"02/12",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>二月十二日，WHO 正式將這個病毒定名為 COVID-19。</p><p>同一天，WHO 也稱讚中國「不用說，我們肯定會讚美中國的作為，因為我們看到這麼多中國政府的實際抗疫作為，值得感激」</p><iframe src=\"https://embed.gettyimages.com/embed/1200330147?et=j0bp_5RAT75TJcM_zfKjQA&tld=hk&sig=GRG3G3xiFs3BGGuBVusXhq40EoLLLLdt55eNVf14oDU=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\" ></iframe>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p><b>We now have a name for the disease and it's 'COVID-19'</b>, says WHO chief Tedros Adhanom Ghebreyesus. </p><p>Also, <b>China doesn't need to ask to be praised… because we have seen these concrete things that should be appreciated.</b></p><iframe src=\"https://embed.gettyimages.com/embed/1200330147?et=j0bp_5RAT75TJcM_zfKjQA&tld=hk&sig=GRG3G3xiFs3BGGuBVusXhq40EoLLLLdt55eNVf14oDU=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\" ></iframe>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":23,
+					"case":44734
+				},
+				"who":{
+					"days":-28,
+					"case":524
+				}
+			}
 		},
 		{
 			"date":"02/23",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>中國環球時報發表社論，開始指責其他國家反應太慢，並點名四個疫情突然爆發的國家：日本、南韓、伊朗跟義大利。</p>"
 				}
-			]
+			],
+			"en_events":[
+				{
+					"content":"<p><b>Some countries slow to respond to the virus</b>, the Global Times, China's state-run mouthpiece wrote that that four countries where cases of COVID-19 have suddenly exploded, Japan, South Korea, Iran, and Italy, are reacting too slowly to contain the outbreak. </p>"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":34,
+					"case":77045
+				},
+				"who":{
+					"days":-17,
+					"case":1994
+				}
+			}
 		},
 		{
 			"date":"02/24",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>隔天，WHO 派到中國的聯合調查團召開記者會，並指說「中國採取的抗疫行動和經驗值得全世界效仿」，以及「如果我得到 COVID-19，我會希望我在中國被治療」、「全世界都欠武漢人民一份情」</p><img src=\"images/19.png\">"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Feb 24, The WHO-China Joint Mission on COVID-19 held a press conference, Bruce Aylward, senior adviser to the director-general of the WHO said “the measures China has taken offered experience of improving the global response to the disease,” and <b>If I had COVID-19, I'd want to be treated in China</b>, <b>To the people of Wuhan, it is recognized that the world is in your debt.</b></p><img src=\"images/19.png\">"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":35,
-					"case":77262
+					"case":77266
 				},
 				"who":{
-					"days":-15,
-					"case":2069
+					"days":-16,
+					"case":2417
 				}
 			}
 		},
 		{
 			"date":"03/11",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>中國承認人傳人後 51 天，WHO 終於宣布<b>全球大流行</b></p><img src=\"images/20.png\">"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>51d after “human transmission” admitted <b>WHO declared Pandemic</b></p><img src=\"images/20.png\">"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":51,
-					"case":80955
+					"case":80959
 				},
 				"who":{
-					"days":1,
-					"case":37364
+					"days":0,
+					"case":43188
 				}
 			}
 		},
 		{
 			"date":"03/12",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<img src=\"images/21.png\">"
 				}
-			]			
+			],
+			"en_events":[
+				{
+					"content":"<img src=\"images/21.png\">"
+				}
+			],
+			"countdown":{
+				"china":{
+					"days":52,
+					"case":80985
+				},
+				"who":{
+					"days":1,
+					"case":50017
+				}
+			}		
 		},
 		{
 			"date":"03/15",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>中國官媒新華社發表社論：「理直氣壯，世界應該感謝中國」因為中國的犧牲阻止了疾病傳到其他國家，這種無私的舉動是「驚天地、泣鬼神」</p><p>且「美國欠中國一個道歉」</p><img src=\"images/27.png\"><img src=\"images/22.png\">"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>Chinese state media Xinhua News Agency: <b>The world should thank China for its gargantuan efforts and sacrifices to prevent the spread of the disease to other countries, an act that is really startling the universe and moving the gods (驚天地、泣鬼神)</b>, and <b>United States owes China an apology</b>.</p><p>且「美國欠中國一個道歉」</p><img src=\"images/27.png\"><img src=\"images/22.png\">"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":55,
-					"case":81048
+					"case":81052
 				},
 				"who":{
 					"days":4,
-					"case":72469
+					"case":82437
 				}
 			}
 		},
 		{
 			"date":"03/17",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<img src=\"images/23.png\"><img src=\"images/24.png\"><p>中國社群媒體開始瘋傳義大利人民感謝中國的影片，其中包括義大利人在陽台唱中國國歌。</p><p>後經媒體 Axios 調查，推特 hashtags <span>#GrazieCina (#感謝中國) 與 #forzaCinaeItalia (#中國與義大利加油)</span> 分別有 37% 與 46% 為機器人傳播。</p><img src=\"images/25.png\"><img src=\"images/26.png\">"
+				}
+			],
+			"en_events":[
+				{
+					"content":"<img src=\"images/23.png\"><img src=\"images/24.png\"><p>Videos of grateful Italians singing China’s national anthem from their balconies went viral.</p><p>Tweets using the hashtags <span>#GrazieCina (#ThanksChina)</span> and <span>#forzaCinaeItalia (#GoChina&Italy)</span> were artificially promoted—37 percent and 46 percent of them, respectively, were proven to have been generated by bots. </p><img src=\"images/25.png\"><img src=\"images/26.png\">"
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":57,
-					"case":81116
+					"case":81120
 				},
 				"who":{
 					"days":6,
-					"case":97995
+					"case":108715
 				}
 			}
 		},
 		{
 			"date":"04/01",
 			"year":"2020",
-			"events":[
+			"zh_events":[
 				{
 					"content":"<p>回應疫情，「感謝您，習大哥」的看板出現在塞爾維亞的首都街頭。</p><p>April 2020</p><p>Djordje Kojadinovic / Reuters</p><iframe src=\"https://embed.gettyimages.com/embed/1208907416?et=fCO6JIbwQHpL6v3ufYZ_GQ&tld=hk&sig=q0OZXL8fKA5vhov4Jc32xrCeC2crBiMA_SrWrLYWZGY=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"				
+				}
+			],
+			"en_events":[
+				{
+					"content":"<p>A billboard thanking Xi Jinping for China’s coronavirus assistance in Belgrade, Serbia.</p><p><b>Thank you, Big brother Xi</b></p><p>April 2020</p><p>Djordje Kojadinovic / Reuters</p><iframe src=\"https://embed.gettyimages.com/embed/1208907416?et=fCO6JIbwQHpL6v3ufYZ_GQ&tld=hk&sig=q0OZXL8fKA5vhov4Jc32xrCeC2crBiMA_SrWrLYWZGY=&caption=false&ver=1\" scrolling=\"no\" frameborder=\"0\"></iframe>"				
 				}
 			],
 			"countdown":{
 				"china":{
 					"days":72,
-					"case":82631
+					"case":82638
 				},
 				"who":{
 					"days":21,
-					"case":740995
-				}
-			}
-		},
-		{
-			"date":"07/30",
-			"year":"2020",
-			"events":[
-				{
-					"content":""					
-				}
-			],
-			"countdown":{
-				"china":{
-					"days":192,
-					"case":84060
-				},
-				"who":{
-					"days":141,
-					"case":16700000
+					"case":761802
 				}
 			}
 		}

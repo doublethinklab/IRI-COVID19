@@ -91,17 +91,32 @@ body {
 html, body, #wapper {
   min-height: 100vh;
   min-width: 1250px;
-  color: #5cc1d8; }
+  width: 100%; }
 
 .kvBox {
   width: 100%;
+  margin: 0 auto;
   background: #5cc1d8;
   position: relative; }
+  .kvBox .logo {
+    position: absolute;
+    top: 30px;
+    right: 40px; }
+  .kvBox .kv_txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex; }
+    .kvBox .kv_txt img {
+      margin-left: 8%;
+      width: 31%;
+      max-width: 601px; }
   .kvBox .kvImg {
     font-size: 40px;
     text-align: center;
-    width: 100%;
-    height: 100%;
     position: relative;
     overflow: hidden; }
     .kvBox .kvImg img {
@@ -127,9 +142,12 @@ html, body, #wapper {
       cursor: pointer; }
       .kvBox .btns .btn:last-child {
         margin-right: 0; }
+      .kvBox .btns .btn.active, .kvBox .btns .btn:hover {
+        background-color: #000;
+        color: #fff; }
 
-.timeLineTitleBox h2 {
-  font-size: 40px;
+.titleBox h2 {
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   padding: 30px 0;
@@ -275,6 +293,23 @@ html, body, #wapper {
         display: none; }
       .timeLineBox .allDatasBox .dataBox.hideEvent .event {
         display: none; }
+    .timeLineBox .allDatasBox .nowBox {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px 50px;
+      font-size: 20px;
+      text-align: center;
+      background-color: #000;
+      border: 6px #fff solid;
+      color: #fff;
+      border-radius: 10px; }
+      .timeLineBox .allDatasBox .nowBox span {
+        width: 100%;
+        margin-bottom: 5px;
+        position: relative;
+        display: block; }
+      .timeLineBox .allDatasBox .nowBox .time {
+        width: 100%; }
     .timeLineBox .allDatasBox .dataBox:nth-child(2n) .event {
       left: 0;
       margin-left: 0; }
@@ -289,7 +324,8 @@ html, body, #wapper {
     position: fixed;
     left: 20px;
     top: 20px;
-    width: 197px; }
+    width: 197px;
+    z-index: 3; }
     .timeLineBox .fixedBox .yearBox {
       text-align: right;
       font-weight: bold;
@@ -328,7 +364,9 @@ html, body, #wapper {
         font-size: 27px;
         display: block; }
       .timeLineBox .fixedBox .digitalBox .organizationBox .days {
-        position: relative; }
+        position: relative;
+        width: 146px;
+        height: 82px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox .days > span {
           line-height: 70px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt {
@@ -349,58 +387,65 @@ html, body, #wapper {
             background-color: #fff;
             position: relative;
             top: -4px;
-            width: 35%; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.china > .txt {
-        margin-bottom: 6px; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
-        margin-bottom: 17px; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.china .days, .timeLineBox .fixedBox .digitalBox .organizationBox.china .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
-        color: #b50808; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.china .days {
-        margin-top: 10px;
-        width: 146px;
-        height: 82px;
-        border-top: 3px #fff solid;
-        border-left: 3px #fff solid;
-        border-right: 3px #fff solid; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
-        margin-top: 18px; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.who .days, .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
-        color: #008ac3; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases {
-        margin: 0 auto 12px; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
-        width: 146px;
-        height: 82px;
-        border-bottom: 3px #fff solid;
-        border-left: 3px #fff solid;
-        border-right: 3px #fff solid; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days > span {
-          line-height: 90px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
-          font-size: 17px;
-          position: absolute;
-          top: -7px;
-          color: #fff;
-          font-weight: bold;
-          width: 103%;
-          text-align: center;
-          left: -1px; }
-      .timeLineBox .fixedBox .digitalBox .dividerBox {
+            width: calc(35% - 5px); }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china {
+        margin-bottom: 13px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.china > .txt {
+          margin-bottom: 6px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+          margin-bottom: 17px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.china .days, .timeLineBox .fixedBox .digitalBox .organizationBox.china .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+          color: #b50808; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.china .days {
+          margin-top: 10px;
+          border-top: 3px #fff solid;
+          border-left: 3px #fff solid;
+          border-right: 3px #fff solid; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.who {
+        margin-top: 10px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
+          margin-top: 18px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days, .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
+          color: #008ac3; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases {
+          margin: 0 auto 12px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
+          border-bottom: 3px #fff solid;
+          border-left: 3px #fff solid;
+          border-right: 3px #fff solid; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days > span {
+            line-height: 90px; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
+            font-size: 17px;
+            position: absolute;
+            top: -7px;
+            color: #fff;
+            font-weight: bold;
+            width: 103%;
+            text-align: center;
+            left: -1px; }
+      .timeLineBox .fixedBox .digitalBox .caseBox .cases {
+        font-size: 38px;
+        display: block; }
+        .timeLineBox .fixedBox .digitalBox .caseBox .cases.china {
+          color: #b50808; }
+        .timeLineBox .fixedBox .digitalBox .caseBox .cases.who {
+          color: #008ac3; }
+      .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox {
         color: #fff;
-        margin: 10px auto;
+        margin: 8px auto;
         font-weight: bold; }
-        .timeLineBox .fixedBox .digitalBox .dividerBox span {
+        .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox span {
           font-size: 11px;
           margin: 0 4px; }
-        .timeLineBox .fixedBox .digitalBox .dividerBox:before, .timeLineBox .fixedBox .digitalBox .dividerBox:after {
+        .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:before, .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:after {
           content: "";
           display: inline-block;
           height: 2px;
           background-color: #fff;
           position: relative;
           top: -4px;
-          width: 9%; }
+          width: calc(14% - 5px); }
     .timeLineBox .fixedBox.change .digitalBox .organizationBox .days > span {
       color: #fff;
       font-size: 25px;
@@ -416,7 +461,7 @@ html, body, #wapper {
         background-color: #b50808;
         position: relative;
         top: -3px;
-        width: 13%; }
+        width: calc(13% - 5px); }
     .timeLineBox .fixedBox.change .digitalBox .organizationBox.china .days {
       border-top: 3px #b50808 solid;
       border-left: 3px #b50808 solid;
@@ -431,12 +476,10 @@ html, body, #wapper {
         top: inherit; }
         .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days .txt:before, .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .days .txt:after {
           background-color: #008ac3; }
-    .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .cases {
-      margin: 0 auto 10px; }
-    .timeLineBox .fixedBox.change .digitalBox .dividerBox span {
+    .timeLineBox .fixedBox.change .digitalBox .caseBox .dividerBox span {
       font-size: 17px; }
-    .timeLineBox .fixedBox.change .digitalBox .dividerBox:before, .timeLineBox .fixedBox.change .digitalBox .dividerBox:after {
-      width: 23%; }
+    .timeLineBox .fixedBox.change .digitalBox .caseBox .dividerBox:before, .timeLineBox .fixedBox.change .digitalBox .caseBox .dividerBox:after {
+      width: calc(30% - 5px); }
   .timeLineBox .lineYearBox {
     position: fixed;
     width: 100vw;
@@ -462,13 +505,13 @@ html, body, #wapper {
     position: fixed;
     right: 20px;
     top: 20px;
-    width: 14%; }
+    z-index: 9; }
     .timeLineBox .banners .banner {
       width: 100%;
       color: #000;
       background-color: #fff;
       font-weight: bold;
-      padding: 20px 20px;
+      padding: 10px 20px;
       align-items: center;
       display: flex;
       justify-content: center;
@@ -477,27 +520,251 @@ html, body, #wapper {
       cursor: pointer; }
       .timeLineBox .banners .banner span {
         line-height: 140%; }
-  .timeLineBox .nowBox {
-    position: absolute;
-    bottom: 27px;
-    left: 50%;
-    margin-left: -110px;
-    padding: 20px 50px;
-    font-size: 20px;
-    text-align: center;
-    background-color: #b50808;
-    border: 6px #fff solid;
-    color: #fff;
-    border-radius: 10px; }
-    .timeLineBox .nowBox span {
-      width: 100%;
-      margin-bottom: 5px;
-      position: relative;
-      display: block; }
-    .timeLineBox .nowBox .time {
-      width: 100%; }
   .timeLineBox.nonefixed .lineYearBox, .timeLineBox.nonefixed .fixedBox, .timeLineBox.nonefixed .background, .timeLineBox.nonefixed .banners, .timeLineBox.nonefixed .backgroundMask {
     position: absolute; }
+
+.page {
+  position: relative; }
+  .page .btns {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px; }
+    .page .btns .btn {
+      color: #5cc1d8;
+      background-color: #fff;
+      border: 1px #5cc1d8 solid;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 18px; }
+      .page .btns .btn:last-child {
+        margin-right: 0; }
+      .page .btns .btn.active, .page .btns .btn:hover {
+        color: #fff;
+        background-color: #5cc1d8;
+        border: 1px transparent solid; }
+  .page .booksBox {
+    position: fixed;
+    right: 20px;
+    bottom: 30%; }
+    .page .booksBox .btn {
+      display: block;
+      margin-bottom: 20px;
+      background-color: #000; }
+      .page .booksBox .btn img {
+        border: 4px transparent none;
+        width: 120px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 4px 0px #7f818e;
+        -webkit-box-shadow: 5px 5px 4px 0px #7f818e;
+        -moz-box-shadow: 5px 5px 4px 0px #7f818e;
+        -o-box-shadow: 5px 5px 4px 0px #7f818e;
+        transition: .3s ease;
+        opacity: 0.6; }
+      .page .booksBox .btn.active img {
+        opacity: 1;
+        position: relative; }
+  .page > .content {
+    width: 1250px;
+    margin: 0 auto; }
+    .page > .content h3 {
+      font-size: 25px;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px #5cc1d8 solid;
+      border-top: 1px #5cc1d8 solid; }
+    .page > .content ul.decimal {
+      list-style-type: decimal;
+      margin-left: 30px; }
+      .page > .content ul.decimal li {
+        padding-left: 10px; }
+    .page > .content p, .page > .content li {
+      line-height: 180%;
+      margin-bottom: 10px;
+      font-size: 18px; }
+    .page > .content .researchBox {
+      width: 80%;
+      margin: 0 auto 30px; }
+      .page > .content .researchBox img {
+        margin: 0 auto 30px; }
+    .page > .content .participantsBox {
+      width: 80%;
+      margin: 0 auto;
+      padding-bottom: 25px; }
+      .page > .content .participantsBox .block {
+        align-items: center;
+        display: flex; }
+        .page > .content .participantsBox .block:nth-child(3n) {
+          margin-bottom: 0; }
+    .page > .content .block {
+      margin-bottom: 20px;
+      position: relative;
+      padding: 0 10px;
+      min-height: 50px; }
+      .page > .content .block .pic {
+        width: 50px;
+        height: 50px;
+        border: 3px #5cc1d8 solid;
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        margin-right: 10px;
+        position: absolute;
+        top: 0;
+        left: 10px; }
+      .page > .content .block p.txt {
+        margin-left: 60px; }
+        .page > .content .block p.txt:nth-child(2n) {
+          padding-top: 10px; }
+      .page > .content .block ul {
+        margin-left: 80px; }
+    .page > .content .transcriptBox {
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: 1px #5cc1d8 solid;
+      padding-bottom: 25px;
+      margin-bottom: 16px; }
+      .page > .content .transcriptBox .block:nth-child(2n) {
+        margin-bottom: 40px; }
+      .page > .content .transcriptBox .block:last-child {
+        margin-bottom: 0; }
+    .page > .content .quotesBox {
+      margin: 30px 0; }
+      .page > .content .quotesBox .quoteBox {
+        position: relative;
+        width: calc(44% - 20px);
+        float: left;
+        margin-bottom: 80px; }
+        .page > .content .quotesBox .quoteBox .quote {
+          background-color: transparent;
+          border-radius: 3px;
+          color: #fff;
+          position: relative;
+          width: 100%;
+          height: 375px;
+          transform-style: preserve-3d;
+          perspective: 2000px;
+          transition: .4s;
+          text-align: center;
+          margin: 0 0 30px 30px; }
+          .page > .content .quotesBox .quoteBox .quote i {
+            font-size: 35px;
+            height: 65px;
+            width: 65px;
+            line-height: 65px !important;
+            background-color: #5cc1d8;
+            color: #fff;
+            position: absolute; }
+          .page > .content .quotesBox .quoteBox .quote > i {
+            bottom: 0;
+            right: 0;
+            z-index: 1; }
+          .page > .content .quotesBox .quoteBox .quote .txt {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            width: calc(100% + 60px);
+            height: calc(100% - 60px);
+            background-color: #000;
+            border-radius: 3px;
+            transition: .4s; }
+            .page > .content .quotesBox .quoteBox .quote .txt i {
+              top: 0;
+              left: 0; }
+            .page > .content .quotesBox .quoteBox .quote .txt .content {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              text-align: center;
+              width: 100%;
+              padding: 30px 60px;
+              line-height: 1.5;
+              box-sizing: border-box; }
+              .page > .content .quotesBox .quoteBox .quote .txt .content h3 {
+                font-size: 30px;
+                margin-bottom: 5px;
+                border: none;
+                padding: 0; }
+              .page > .content .quotesBox .quoteBox .quote .txt .content p {
+                font-size: 15px; }
+          .page > .content .quotesBox .quoteBox .quote:before, .page > .content .quotesBox .quoteBox .quote:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            box-sizing: border-box;
+            pointer-events: none; }
+          .page > .content .quotesBox .quoteBox .quote:before {
+            border-top: 20px solid #5cc1d8;
+            border-left: 20px solid #5cc1d8; }
+          .page > .content .quotesBox .quoteBox .quote:after {
+            border-bottom: 20px solid #5cc1d8;
+            border-right: 20px solid #5cc1d8; }
+        .page > .content .quotesBox .quoteBox .moreBtn {
+          padding: 10px 40px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #5cc1d8;
+          border: #5cc1d8 1px solid;
+          margin: 0 auto;
+          transition: 0.25s;
+          cursor: pointer;
+          box-shadow: 0.3em 0.3em 0 0 #5cc1d8, inset 0.3em 0.3em 0 0 #5cc1d8;
+          left: 43%;
+          position: relative; }
+          .page > .content .quotesBox .quoteBox .moreBtn:hover, .page > .content .quotesBox .quoteBox .moreBtn:focus {
+            color: #fff;
+            border-color: #5cc1d8;
+            box-shadow: 0 0 0 0 #5cc1d8, inset 6em 3.5em 0 0 #5cc1d8; }
+        .page > .content .quotesBox .quoteBox:nth-child(2n) {
+          margin-left: 130px; }
+
+.fancyBoxDiv {
+  display: none; }
+  .fancyBoxDiv.fancybox-content {
+    width: 50%;
+    background-color: #000;
+    color: #fff;
+    padding: 55px 44px;
+    min-width: 600px; }
+    .fancyBoxDiv.fancybox-content ul {
+      margin-left: 30px; }
+      .fancyBoxDiv.fancybox-content ul.alpha {
+        list-style-type: lower-alpha; }
+    .fancyBoxDiv.fancybox-content li {
+      line-height: 180%;
+      font-size: 16px;
+      margin-bottom: 16px;
+      padding-left: 10px; }
+    .fancyBoxDiv.fancybox-content p {
+      line-height: 180%;
+      font-size: 16px; }
+    .fancyBoxDiv.fancybox-content h3 {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 20px;
+      line-height: 160%; }
+
+.backtop {
+  width: 54px;
+  height: 54px;
+  background-image: url(../images/backtop.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: fixed;
+  right: 10px;
+  bottom: 75px;
+  display: none;
+  cursor: pointer;
+  z-index: 999; }
 
 @media screen and (max-width: 768px) {
   html, body, #wapper {
@@ -509,6 +776,9 @@ html, body, #wapper {
     .kvBox .btns .btn {
       padding: 4px 10px;
       font-size: 16px; }
+
+  .titleBox h2 {
+    font-size: 25px; }
 
   .timeLineBox .line.year {
     display: none; }
@@ -553,15 +823,149 @@ html, body, #wapper {
       .timeLineBox .allDatasBox .dataBox:nth-child(2n) .date .line {
         transform: none;
         left: 102%; }
-  .timeLineBox .nowBox {
-    border: 3px #fff solid;
-    padding: 8px;
-    left: 2%;
-    margin-left: 0;
-    font-size: 16px; }
-    .timeLineBox .nowBox span {
-      margin-bottom: 3px; }
-  .timeLineBox .fixedBox, .timeLineBox .banners {
-    display: none; } }
+    .timeLineBox .allDatasBox .nowBox {
+      border: 3px #fff solid;
+      padding: 8px;
+      left: 2%;
+      margin-left: 14px;
+      font-size: 16px; }
+      .timeLineBox .allDatasBox .nowBox span {
+        margin-bottom: 3px; }
+  .timeLineBox .banners {
+    display: none; }
+  .timeLineBox .fixedBox {
+    border: 5px #fff solid;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 20px);
+    padding: 0 13px;
+    left: 0;
+    top: inherit;
+    bottom: 13px;
+    margin: 0 10px; }
+    .timeLineBox .fixedBox .yearBox {
+      text-align: left;
+      margin-bottom: 5px; }
+      .timeLineBox .fixedBox .yearBox h2 {
+        display: inline-block;
+        font-size: 42px;
+        top: 3px;
+        position: relative; }
+      .timeLineBox .fixedBox .yearBox p {
+        display: inline-block;
+        font-size: 16px; }
+    .timeLineBox .fixedBox .digitalBox {
+      border: none;
+      background-color: transparent;
+      width: 100%; }
+      .timeLineBox .fixedBox .digitalBox > div {
+        float: left; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox {
+        width: 33%;
+        position: relative; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .data > .txt {
+          font-size: 13px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .data .days {
+          width: 100%;
+          height: 52px;
+          font-size: 42px; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox .data .days > span {
+            line-height: 45px; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt span {
+            font-size: 12px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .name {
+          font-size: 15px; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.china {
+          margin-bottom: 0; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.china .data > .txt {
+            position: absolute;
+            bottom: 2%; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.china .data .days {
+            margin-top: 0;
+            margin-bottom: 53%; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+            margin-bottom: 0;
+            background-color: #b50808;
+            color: #fff; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox.who {
+          margin-top: 0; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            margin-top: 0;
+            color: #fff;
+            background-color: #008ac3; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
+            margin-top: 27px;
+            border-top: 3px #fff solid;
+            border-left: 3px #fff solid;
+            border-right: 3px #fff solid;
+            border-bottom: none;
+            margin-bottom: 7%; }
+            .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
+              top: inherit; }
+      .timeLineBox .fixedBox .digitalBox .caseBox {
+        margin-top: 5%;
+        width: 34%; }
+        .timeLineBox .fixedBox .digitalBox .caseBox .cases {
+          font-size: 19px;
+          float: left;
+          width: 100%; }
+        .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox {
+          margin: 5px auto;
+          position: relative;
+          float: left;
+          width: 100%; }
+          .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox span {
+            font-size: 12px !important;
+            margin: 5px auto;
+            display: block;
+            width: 80%; }
+          .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:before, .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:after {
+            width: 85% !important;
+            position: relative;
+            margin: 0 auto;
+            display: block !important; }
+          .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:before {
+            top: 0; }
+          .timeLineBox .fixedBox .digitalBox .caseBox .dividerBox:after {
+            bottom: 0;
+            top: inherit; }
+      .timeLineBox .fixedBox .digitalBox:before, .timeLineBox .fixedBox .digitalBox:after {
+        content: "";
+        display: table; }
+      .timeLineBox .fixedBox .digitalBox:after {
+        clear: both; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox .days {
+      border: 3px #000 solid !important;
+      background-color: #000 !important; }
+      .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt {
+        bottom: 2%; }
+        .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt span {
+          font-size: 10px;
+          margin: 0; }
+        .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt:before, .timeLineBox .fixedBox.change .digitalBox .organizationBox .days .txt:after {
+          display: none; }
+      .timeLineBox .fixedBox.change .digitalBox .organizationBox .days > span {
+        top: -10px;
+        font-size: 18px; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox.china .data .days {
+      margin-bottom: 46%; }
+    .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .data .days {
+      margin-bottom: 2px; }
+
+  .backtop.index {
+    bottom: 35%; } }
+@media screen and (max-width: 320px) {
+  .kvBox .btns .btn {
+    margin-right: 2%;
+    padding: 4px 2%; }
+
+  .fixedBox .organizationBox .days .txt:before, .fixedBox .organizationBox .days .txt:after {
+    width: calc(32% - 5px) !important; }
+  .fixedBox .organizationBox.china .days {
+    margin-bottom: 62% !important; }
+  .fixedBox.change .organizationBox.china .data .days {
+    margin-bottom: 56% !important; } }
 
 /*# sourceMappingURL=style.css.map */

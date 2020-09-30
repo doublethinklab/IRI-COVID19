@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>timeline</title>
+	<title>Survival Playbook for An Island Nation</title>
+	<meta name="description" content="Taiwan’s response to COVID-19">      
+	<meta property="og:title" content="Survival Playbook for An Island Nation" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="Taiwan’s response to COVID-19" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Survival Playbook for An Island Nation" />
+	<meta name="twitter:description" content="Taiwan’s response to COVID-19" />
+	<meta name="twitter:image" content="" />
+	<link rel="shortcut icon" href="images/favicon.ico" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+TC&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/cdb0ab35a4.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/detectmobilebrowser.js"></script>
 	<script>
@@ -17,16 +28,16 @@
 <body>
 	<div id="wapper">
 		<div class="kvBox">
-			<div class="kvImg">
-				<img src="images/1920.png">
-			</div>
+			<div class="kvImg"></div>
+			<div class="logo"><img src="images/dtl_logo.png"></div>
+			<div class="kv_txt"><img src="images/kv_txt.png"></div>
 			<div class="btns">
-				<a class="btn">Taiwan civil society</a>
-				<a class="btn">Doublethink LabResearch</a>
-				<a class="btn">Taiwan government</a>
+				<a class="btn" href="transcript1.html">Taiwan civil society</a>
+				<a class="btn" href="#">Doublethink Lab Research</a>
+				<a class="btn" href="quote.html">Taiwan government</a>
 			</div>
 		</div>
-		<div class="timeLineTitleBox">
+		<div class="titleBox">
 			<h2>Timeline <i class="who">WHO</i> / <i class="prc">PRC</i></h2>
 		</div>
 		<div class="timeLineBox nonefixed">
@@ -48,7 +59,7 @@
 			<div class="fixedBox">
 				<div class="yearBox">
 					<h2>2019</h2>
-					<p>未知階段</p>
+					<p>Very Early Phase</p>
 				</div>
 				<div class="digitalBox">
 					<div class="organizationBox china">
@@ -59,15 +70,17 @@
 								<span>0</span>
 								<div class="txt"><span>days</span></div>
 							</div>
-							<span class="cases">0</span>
 						</div>
 					</div>
-					<div class="dividerBox">
-						<span>confirmed cases</span>
+					<div class="caseBox">
+						<span class="cases china">0</span>
+						<div class="dividerBox">
+							<span>Confirmed cases</span>
+						</div>
+						<span class="cases who">0</span>					
 					</div>
 					<div class="organizationBox who">
 						<div class="data">
-							<span class="cases">0</span>
 							<div class="days">
 								<span>0</span>
 								<div class="txt"><span>days</span></div>
@@ -86,11 +99,15 @@
 			</div>
 			<div class="banners">
 				<a class="banner"><span>Taiwan civil society</span></a>
-				<a class="banner"><span>Doublethink LabResearch</span></a>
+				<a class="banner"><span>Doublethink Lab Research</span></a>
 				<a class="banner"><span>Taiwan government</span></a>
 			</div>
 		</div>
 	</div>
+	<div class="backtop index"></div>
+	<script>
+		var p_type="index";
+	</script>
 	<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,52 +1,127 @@
-var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false;
+var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 var stageInChange=[1573920000000,1577808000000,1579708800000,1580659200000],
 	stageEndChange=[1577721600000,1579449600000,1580400000000,1596038400000],
-	// stageTxt=["未知階段","調查階段","開始擴散","輿論戰啟動"],
-	stageTxt=["Very Early Phase","Investigation Phase","Early Intensification","Altered Narratives"],
+	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,
+	html_lang=document.documentElement.lang,
+	stageTxt={
+		"en":["Very Early Phase","Investigation Phase","Early Intensification","Altered Narratives"],
+		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
+	},
 	allvalue=[0,0,0,0];//china_days china_case who_days who_case
 gsap.registerPlugin(ScrollTrigger);
 
 $(document).ready(function(e){
-	getDataFun();
+	if(html_lang=="zh-TW"){
+		html_lang="zh";
+	}
+	if(p_type=="research"){
+		bookTL=gsap.timeline();
+		bookTL.from($(".booksBox"),0.5,{right:-500}).pause();
+	}
+	if(p_type=="index"){
+		getDataFun();
+		setTimeFun();
+	}else{
+		resizeFun();
+		scrollFun();
+	}
 	$(window).on("resize",resizeFun);
 	$(window).on("scroll",scrollFun);
-	setTimeFun();
+	$(".backtop").on("click",backtopFun);
 })
-
+function backtopFun(e){
+	clickback=true;
+	$body.animate({scrollTop: 0}, 600,function(){clickback=false;});
+	$(this).hide();
+}
 function scrollFun(e){
 	var st=$(window).scrollTop();
-	if(st>=$(".timeLineBox").offset().top){
-		$(".timeLineBox").removeClass('nonefixed');
-	}else{
-		$(".timeLineBox").addClass('nonefixed');
+	if(p_type=="index"){
+		if(st>=$(".timeLineBox").offset().top){
+			$(".timeLineBox").removeClass('nonefixed');
+		}else{
+			$(".timeLineBox").addClass('nonefixed');
+		}		
+	}else if(p_type=="research"){
+		if(st>=$(".titleBox").offset().top){
+			bookTL.play();
+		}else{
+			bookTL.reverse();
+		}		
+	}
+	if(!clickback){
+		if(st>=$(".titleBox").offset().top){
+			$(".backtop").show();
+		}else{
+			$(".backtop").hide();
+		}		
 	}
 }
-
 function resizeFun(e){
 	var sw=$(window).width(),sh=$(window).height(),maxW=1250,picW=500,picH=347;
 	if(sw<1250 && sw>750){
 		sw=maxW;
 	}
-	$(".kvBox").css({width:sw,height:sh});
-	
-	var fixedW=$(".fixedBox").width()+$(".fixedBox").offset().left-5;
-	$(".line.year").css({width:(sw/2)-fixedW,left:fixedW});
-	$(".event .content > iframe").css({width:$(".event").width()*0.9,height:($(".event").width()*0.9/picW)*picH});
-	$(".event li iframe").css({width:$(".event li").width()*0.9,height:($(".event li").width()*0.9/picW)*picH});
-	if(sw<750){
-		gap=50;
-		// $(".date .line").css({width:sw*0.06});
-		$(".allDatasBox").css({"padding-bottom":sh*0.5 -69});
-	}else{
-		$(".allDatasBox").css({"padding-bottom":sh*0.72 -69});
+	$(".kvBox").css({height:sh});
+	if(p_type=="index"){
+		var fixedW=$(".fixedBox").width()+$(".fixedBox").offset().left-5;
+		$(".line.year").css({width:(sw/2)-fixedW,left:fixedW});
+		$(".event .content > iframe").css({width:$(".event").width()*0.9,height:($(".event").width()*0.9/picW)*picH});
+		$(".event li iframe").css({width:$(".event li").width()*0.9,height:($(".event li").width()*0.9/picW)*picH});
+		if(sw<750){
+			gap=50;
+			// $(".date .line").css({width:sw*0.06});
+			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 69});
+			$(".nowBox").css({bottom:sh/2});
+		}else{
+			$(".allDatasBox").css({"padding-bottom":sh*0.72 -69});
+			$(".nowBox").attr("style","");
+		}
 	}
+
 	// $(".background .pic").css({height:sh});
 	// $(".background,.backgroundMask").css({width:sw,height:sh})
 }
+function getNowCaseFun(){
+	$.ajax({
+		url:"https://api.covid19api.com/summary",
+		type: 'GET',
+		dataType:"json"
+	}).done(function(msg){
+		// console.log(msg);
+		var thisDate=new Date().getTime();
+		$(".nowBox").attr({
+			"d-china-cases":findChinaCaseFun(msg["Countries"]),
+			"d-china-days":setChinaDdayFun(thisDate),
+			"d-who-cases":msg["Global"]["TotalConfirmed"],
+			"d-who-days":setWhoDdayFun(thisDate)
+		}).appendTo('.allDatasBox');
+		setDateGapFun();
+	}).fail(function(msg){
+		console.log(msg);
+	})		
+}
+
+
+
+function findChinaCaseFun(array){
+	var casesNum=0;
+	$.each(array,function(i,val){
+		if(val["CountryCode"]=="CN"){
+			casesNum=val["TotalConfirmed"];
+			return false;
+		}
+	})
+	console.log(casesNum);
+	return casesNum;
+}
+
+
+
 
 function getDataFun(){
 	$.ajax({
-		url:"json/timelinedata_en.json",
+		url:"json/timelinedata.json",
 		type: 'GET',
 		dataType:"json"
 	}).done(function(msg){
@@ -56,13 +131,14 @@ function getDataFun(){
 		console.log(msg);
 	})	
 }
-
-
 function setDateDataFun(data){
 	$.each(data,function(i,val){
-		var _mc=$(dataBox),thisDate=new Date(val.year+"/"+val.date).getTime();
+		var _mc=$(dataBox),
+			thisDate=new Date(val.year+"/"+val.date).getTime(),
+			thisEvents=val[html_lang+"_events"];
+
 		$(".date p",_mc).text(val.date.replace("/","."));
-		$.each(val.events,function(_i,_v){
+		$.each(thisEvents,function(_i,_v){
 			if(_v.content!=undefined){
 				if(_v.taiwan==true){
 					$(".events",_mc).append('<div class="event taiwan"><div class="content">'+_v.content+'</div></div>');
@@ -71,22 +147,32 @@ function setDateDataFun(data){
 				}
 			}
 		})
-		if(val.events.length==1 && val.events[0].content==""){
+		if(thisEvents.length==1 && thisEvents[0].content==""){
 			$(_mc).addClass("hideEvent");
 		}
 		$(_mc).attr("d-date",thisDate);
 		if(val.countdown!=undefined){
 			$(_mc).attr({
 				"d-china-cases":val.countdown.china.case,
-				"d-china-days":val.countdown.china.days,
+				"d-china-days":setChinaDdayFun(thisDate),
 				"d-who-cases":val.countdown.who.case,
-				"d-who-days":val.countdown.who.days
+				"d-who-days":setWhoDdayFun(thisDate)
 			});
 		}
 		$(".allDatasBox").append(_mc);
 	})
-	setDateGapFun();
+	getNowCaseFun();
 }
+function setChinaDdayFun(thisDate){
+	return Math.round((thisDate - new Date(Date.parse("2020/1/20"))) / (24 * 60 * 60 * 1000));
+}
+function setWhoDdayFun(thisDate){
+	return Math.round((thisDate - new Date(Date.parse("2020/3/11"))) / (24 * 60 * 60 * 1000));
+}
+
+
+
+
 
 
 function setDateGapFun(){
@@ -131,7 +217,7 @@ function setAnFun(){
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageEndChange.length-1;i>=0;i--){
 						if(stageEndChange[i]<=triggerD){
-							$(".yearBox p").text(stageTxt[i]);
+							$(".yearBox p").text(stageTxt[html_lang][i]);
 							// console.log(i);
 							break;
 						}
@@ -144,14 +230,15 @@ function setAnFun(){
 					if(triggerD>=1579449600000){
 						daysBoxChange=true;
 						$(".fixedBox").addClass('change');
-						$(".organizationBox .days > .txt").text("confirmed cases");
-						$(".dividerBox").text("days");
+						$(".organizationBox .days > .txt span").text("cases");
+						$(".dividerBox span").text("days");
 					}else{
 						daysBoxChange=false;
 						$(".fixedBox").removeClass('change');
-						$(".organizationBox .days > .txt").text("days");
-						$(".dividerBox").text("confirmed cases");						
+						$(".organizationBox .days > .txt span").text("days");
+						$(".dividerBox span").text("Confirmed cases");						
 					}	
+					// console.log(daysBoxChange);
 					// console.log("inn",daysBoxChange,triggerD);
 				},
 				onEnterBack:function(progress, direction, isActive){
@@ -159,7 +246,7 @@ function setAnFun(){
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageEndChange.length-1;i>=0;i--){
 						if(stageEndChange[i]<=triggerD){
-							$(".yearBox p").text(stageTxt[i]);
+							$(".yearBox p").text(stageTxt[html_lang][i]);
 							// console.log(i);
 							break;
 						}
@@ -173,13 +260,13 @@ function setAnFun(){
 					if(triggerD>=1579449600000){
 						daysBoxChange=true;
 						$(".fixedBox").addClass('change');
-						$(".organizationBox .days > .txt").text("confirmed cases");
-						$(".dividerBox").text("days");
+						$(".organizationBox .days > .txt span").text("cases");
+						$(".dividerBox span").text("days");
 					}else{
 						daysBoxChange=false;
 						$(".fixedBox").removeClass('change');
-						$(".organizationBox .days > .txt").text("days");
-						$(".dividerBox").text("confirmed cases");						
+						$(".organizationBox .days > .txt span").text("days");
+						$(".dividerBox span").text("Confirmed cases");						
 					}		
 					// console.log("back",daysBoxChange);
 				}
@@ -189,6 +276,8 @@ function setAnFun(){
 			.from($(".date .line",el),1.2,{width:0,opacity:0},"eventgo")
 			.fromTo($(".events",el),1.2,{xPercent:l,opacity:0},{xPercent:0,opacity:1},"eventgo")
 			.fromTo($(".content",el),0.3,{y:50,opacity:0},{y:0,opacity:1});
+
+
 		if($(el).attr("d-china-days")!=undefined){
 			var tl2=gsap.timeline({
 				scrollTrigger:{
@@ -196,41 +285,82 @@ function setAnFun(){
 					trigger: $(el),
 				    start: "top bottom-=100px",
 				    end: "top+=200px center-=20%",
-					toggleActions:"restart play reverse pause",
-					// scrub:true,
-					// markers: true,
+					toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
+					scrub:true,
+					markers: true,
+					onLeave:function(progress, direction, isActive){
+						if(!daysBoxChange){
+							$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
+							$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
+							$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
+							$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));		
+						}else{
+							$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
+							$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
+							$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
+							$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));					
+						}
+					},
+					onLeaveBack:function(){
+						console.log("onLeaveBack")
+					}
 				},
 				onUpdate:function(){
 					if(!daysBoxChange){
 						$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
-						$(".organizationBox.china .cases").text(numberWithCommasFun(Math.floor(allvalue[1])));
+						$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
 						$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
-						$(".organizationBox.who .cases").text(numberWithCommasFun(Math.floor(allvalue[3])));		
+						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));		
 					}else{
 						$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
-						$(".organizationBox.china .cases").text(numberWithCommasFun(Math.floor(allvalue[0])));
+						$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
 						$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
-						$(".organizationBox.who .cases").text(numberWithCommasFun(Math.floor(allvalue[2])));					
+						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));					
 					}
 				}
 			});
-			tl2.to(allvalue,0.5,{"0": $(el).attr("d-china-days")},"go")
-				.to(allvalue,0.5,{"1": $(el).attr("d-china-cases")},"go")
-				.to(allvalue,0.5,{"2": $(el).attr("d-who-days")},"go")
-				.to(allvalue,0.5,{"3": $(el).attr("d-who-cases")},"go");
+			tl2.to(allvalue,{"0": Number($(el).attr("d-china-days"))+1},"go")
+				.to(allvalue,{"1": Number($(el).attr("d-china-cases"))},"go")
+				.to(allvalue,{"2": Number($(el).attr("d-who-days"))+1},"go")
+				.to(allvalue,{"3": Number($(el).attr("d-who-cases"))},"go");
 		}
 	})
 	
+	var tl3=gsap.timeline({
+		scrollTrigger:{
+			animation:tl3,
+			trigger: $(".nowBox"),
+		    start: "top bottom-=100px",
+		    end: "top+=100px center-=20%",
+			toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
+			scrub:false,
+			markers: true,
+			onEnter:function(){
+				console.log(allvalue);
+			}
+		},
+		onUpdate:function(){
+			// if(daysBoxChange){
+			// 	$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
+			// 	$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
+			// 	$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
+			// 	$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));			
+			// }
+		},
+	})
+	console.log($(".nowBox").attr("d-china-days"),$(".nowBox").attr("d-china-cases"),$(".nowBox").attr("d-who-days"),$(".nowBox").attr("d-who-cases"));
+	tl3.to(allvalue,{"0": Number($(".nowBox").attr("d-china-days"))+1},"go")
+		.to(allvalue,{"1": $(".nowBox").attr("d-china-cases")},"go")
+		.to(allvalue,{"2": Number($(".nowBox").attr("d-who-days"))+1},"go")
+		.to(allvalue,{"3": $(".nowBox").attr("d-who-cases")},"go");
 }
-
-
 function setTimeFun(){
 	var nowD=new Date(),
 		hour=nowD.getHours(),
 		minute = nowD.getMinutes(),
 		second = nowD.getSeconds();
 	if(hour<10){
-		minute="0"+String(hour);
+		hour="0"+String(hour);
 	}
 	if(minute<10){
 		minute="0"+String(minute);
