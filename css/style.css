@@ -115,15 +115,19 @@ html, body, #wapper {
       width: 31%;
       max-width: 601px; }
   .kvBox .kvImg {
-    font-size: 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden; }
-    .kvBox .kvImg img {
-      left: 50%;
-      margin-left: -960px;
-      top: 0;
+    top: 9%;
+    right: 14%;
+    position: absolute; }
+    .kvBox .kvImg .city {
+      position: relative; }
+    .kvBox .kvImg > div:not(.city) {
       position: absolute; }
+    .kvBox .kvImg .people {
+      bottom: -13%;
+      right: -9%; }
+    .kvBox .kvImg .avirus1 {
+      right: 0;
+      top: 2%; }
   .kvBox .btns {
     width: 100%;
     position: absolute;
