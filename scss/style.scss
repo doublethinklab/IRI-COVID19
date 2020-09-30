@@ -788,6 +788,7 @@ html,body,#wapper{
 		ul.decimal{
 			list-style-type: decimal;
 			margin-left: 30px;
+			margin-bottom: 40px;
 			li{
 				padding-left: 10px;
 			}
@@ -798,14 +799,20 @@ html,body,#wapper{
 			font-size: 18px;
 		}
 		.researchBox{
-			width: 80%;
-			margin:0 auto 30px;
+			width: 100%;
+			margin:60px auto 30px;
 			img{
 				margin:0 auto 30px;
 			}
 			.book{
-				width: 50%;
+				width: calc(50% - 50px);
 				float: left;
+				&:last-child{
+					margin-left: 50px;
+				}
+				h3{
+					text-align: center;
+				}
 			}
 		}
 		.participantsBox{
