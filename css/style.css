@@ -673,7 +673,8 @@ html, body, #wapper {
       border-top: 1px #5cc1d8 solid; }
     .page > .content ul.decimal {
       list-style-type: decimal;
-      margin-left: 30px; }
+      margin-left: 30px;
+      margin-bottom: 40px; }
       .page > .content ul.decimal li {
         padding-left: 10px; }
     .page > .content p, .page > .content li {
@@ -681,10 +682,17 @@ html, body, #wapper {
       margin-bottom: 10px;
       font-size: 18px; }
     .page > .content .researchBox {
-      width: 80%;
-      margin: 0 auto 30px; }
+      width: 100%;
+      margin: 60px auto 30px; }
       .page > .content .researchBox img {
         margin: 0 auto 30px; }
+      .page > .content .researchBox .book {
+        width: calc(50% - 50px);
+        float: left; }
+        .page > .content .researchBox .book:last-child {
+          margin-left: 50px; }
+        .page > .content .researchBox .book h3 {
+          text-align: center; }
     .page > .content .participantsBox {
       width: 80%;
       margin: 0 auto;

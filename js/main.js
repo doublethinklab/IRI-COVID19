@@ -15,8 +15,8 @@ $(document).ready(function(e){
 		html_lang="zh";
 	}
 	if(p_type=="research"){
-		bookTL=gsap.timeline();
-		bookTL.from($(".booksBox"),0.5,{right:-500}).pause();
+		// bookTL=gsap.timeline();
+		// bookTL.from($(".booksBox"),0.5,{right:-500}).pause();
 	}
 	if(p_type=="index"){
 		getDataFun();
