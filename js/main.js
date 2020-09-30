@@ -287,7 +287,7 @@ function setAnFun(){
 				    end: "top+=200px center-=20%",
 					toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
 					scrub:true,
-					markers: true,
+					// markers: true,
 					onLeave:function(progress, direction, isActive){
 						if(!daysBoxChange){
 							$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
@@ -334,7 +334,7 @@ function setAnFun(){
 		    end: "top+=100px center-=20%",
 			toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
 			scrub:false,
-			markers: true,
+			// markers: true,
 			onEnter:function(){
 				console.log(allvalue);
 			}
