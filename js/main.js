@@ -63,11 +63,11 @@ function scrollFun(e){
 			$(".timeLineBox").addClass('nonefixed');
 		}		
 	}else if(p_type=="research"){
-		if(st>=$(".titleBox").offset().top){
-			bookTL.play();
-		}else{
-			bookTL.reverse();
-		}		
+		// if(st>=$(".titleBox").offset().top){
+		// 	bookTL.play();
+		// }else{
+		// 	bookTL.reverse();
+		// }		
 	}
 	if(!clickback){
 		if(st>=$(".titleBox").offset().top){
