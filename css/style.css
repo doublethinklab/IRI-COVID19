@@ -150,7 +150,8 @@ html, body, #wapper {
     font-weight: bold;
     text-align: center;
     margin: 65px 0;
-    color: #000; }
+    color: #000;
+    line-height: 160%; }
 
 .index .kvBox {
   height: inherit;
@@ -735,7 +736,7 @@ html, body, #wapper {
       transition: 0.25s;
       cursor: pointer;
       box-shadow: 0.3em 0.3em 0 0 #5cc1d8, inset 0.3em 0.3em 0 0 #5cc1d8;
-      left: 43%;
+      left: 46%;
       position: relative; }
       .page > .content .moreBtn:hover, .page > .content .moreBtn:focus {
         color: #fff;
@@ -786,9 +787,8 @@ html, body, #wapper {
       margin: 30px 0; }
       .page > .content .quotesBox .quoteBox {
         position: relative;
-        width: calc(44% - 20px);
-        float: left;
-        margin-bottom: 80px; }
+        width: 50%;
+        margin: 0 auto 150px; }
         .page > .content .quotesBox .quoteBox .quote {
           background-color: transparent;
           border-radius: 3px;
@@ -858,8 +858,6 @@ html, body, #wapper {
           .page > .content .quotesBox .quoteBox .quote:after {
             border-bottom: 20px solid #5cc1d8;
             border-right: 20px solid #5cc1d8; }
-        .page > .content .quotesBox .quoteBox:nth-child(2n) {
-          margin-left: 130px; }
 
 .fancyBoxDiv {
   display: none; }

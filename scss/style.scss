@@ -83,6 +83,7 @@ html,body,#wapper{
 		text-align: center;
 		margin: 65px 0;
 		color: #000;
+		line-height: 160%;
 		// padding-bottom: 20px;
 		// border-bottom: 1px #5cc1d8 solid;
 	}
@@ -869,7 +870,7 @@ html,body,#wapper{
 			box-shadow: 
 				0.3em 0.3em 0 0 $dtl-color,
 				inset 0.3em 0.3em 0 0 $dtl-color;
-		    left: 43%;
+		    left: 46%;
 			position: relative;
 			&:hover,&:focus{
 				color: #fff;
@@ -936,9 +937,10 @@ html,body,#wapper{
 			margin:30px 0;
 			.quoteBox{
 				position: relative;
-				width: calc(44% - 20px);
-				float: left;
-				margin-bottom: 80px;
+				// width: calc(44% - 20px);
+				width: 50%;
+				// float: left;
+				margin:0 auto 150px;
 				.quote{
 				    background-color: transparent;
 				    border-radius: 3px;
@@ -1026,9 +1028,9 @@ html,body,#wapper{
 				    // 	}
 				    // }
 				}
-				&:nth-child(2n){
-					margin-left: 130px;
-				}			
+				// &:nth-child(2n){
+				// 	margin-left: 130px;
+				// }			
 			}			
 		}
 	}
