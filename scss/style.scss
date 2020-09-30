@@ -18,8 +18,9 @@ html,body,#wapper{
 .kvBox{
 	width: 100%;
 	margin:0 auto;
-	min-height: 100vh;
+	min-height: 700px;
 	// overflow: hidden;
+	z-index: 2;
 	background: $dtl-color;
 	position: relative;
 	.logo{
@@ -43,18 +44,22 @@ html,body,#wapper{
 		}
 	}
 	.kvImg{
-		top: 9%;
+		top: 50%;
 		right: 14%;
 		position: absolute;
+		transform-origin: top right;
+
 		.city{
 			position: relative;
 		}
 		> div:not(.city){
 			position: absolute;
+			transform-origin: center;
 		}
 		.people{
 			bottom: -13%;
 			right: -9%;
+			transform-origin: center bottom;
 		}
 		.avirus1{
 			right: 0;
@@ -107,16 +112,70 @@ html,body,#wapper{
 }
 .index{
 	.titleBox{
+		width: 100%;
+		min-height: 700px;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		position: relative;
+
 		h2{
-			padding: 135px 0;
+			padding:0;
+			color:#fff;
+			z-index: 2;
+		    text-align: left;
+		    line-height: 140%;
+		    font-size: 120px;
+		}
+		.backgroundMask{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.6);
+		}
+		.background{
+			z-index: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/bg2.png);
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			background-position: center right;			
+		}
+		.downBox{
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			margin-left: -22px;
+			span{
+				width: 100%;
+				text-align: center;
+				font-size: 14px;
+				color: #fff;
+				display: block;
+				margin-top: 5px;
+				line-height: 120%;
+			}
 		}
 	}
+}
+.backgroundMask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-repeat:space;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 .timeLineBox{
 	position: relative;
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	padding-top: 210px;
 	.background{
 		position: fixed;
 		width: 100vw;
@@ -136,13 +195,8 @@ html,body,#wapper{
 	}
 	.backgroundMask{
 		width: 100vw;
-		height: 100vh;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-repeat:space;
-		background-color: rgba(255,255,255,0.4);
-		background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+		height: 100vh;	
+		background-color: rgba(255,255,255,0.4);	
 	}
 	.lineBox{
 		position: absolute;
@@ -338,7 +392,7 @@ html,body,#wapper{
 	.fixedBox{
 		position: fixed;
 	    left: 20px;
-	    top: 20px;
+	    top: 50px;
 	    // transform: scale(0.7);
 	    // transform-origin:0 0;
 	    width: 197px;
@@ -594,7 +648,7 @@ html,body,#wapper{
 	.banners{
 		position: fixed;
 		right: 20px;
-		top: 20px;
+		top: 60px;
 		// width: 14%;
 		z-index: 9;
 		.banner{

@@ -21,6 +21,7 @@ $(document).ready(function(e){
 	if(p_type=="index"){
 		getDataFun();
 		setTimeFun();
+		resizeFun();
 	}else{
 		resizeFun();
 		scrollFun();
@@ -29,9 +30,22 @@ $(document).ready(function(e){
 	$(window).on("scroll",scrollFun);
 	$(".backtop").on("click",backtopFun);
 	indeTL=gsap.timeline();
-	indeTL.from($(".avirus1"),1,{scale:1.1,right:"-13%",ease:"power4.in",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
-	indeTL.from($(".avirus1"),1,{top:"3%",yoyo:true,repeat:-1},"avirus")
-	// indeTL.from($(".avirus2"),1,{scale:1.4,right:"-13%",ease:"",yoyoEase:"elastic.out(1, 0.3)",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus1"),1,{scale:1.1,right:"-13%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	// indeTL.from($(".avirus1"),0.1,{top:"2.5%",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus2"),0.1,{top:"31%",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
+	// indeTL.from($(".people"),0.2,{bottom:"-10%",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus3"),0.4,{scale:1.1,left:"-8%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+
+	indeTL.from($(".avirus1"),1,{right:"-13%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	indeTL.from($(".avirus1"),0.1,{top:"2.5%",yoyo:true,repeat:-1},"avirus")
+	indeTL.from($(".avirus2"),0.1,{top:"31%",yoyo:true,repeat:-1},"avirus")
+	indeTL.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
+	indeTL.fromTo($(".people"),0.5,{rotate:-5},{rotate:5,yoyo:true,repeat:-1},"avirus")
+	indeTL.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
+	indeTL.from($(".avirus3"),0.4,{left:"-8%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+
 })
 function backtopFun(e){
 	clickback=true;
@@ -62,16 +76,21 @@ function scrollFun(e){
 	}
 }
 function resizeFun(e){
-	var sw=$(window).width(),sh=$(window).height(),maxW=1250,picW=500,picH=347;
+	var sw=$(window).width(),sh=$(window).height(),maxW=1250,picW=500,picH=347,kvW=703;
 	if(sw<1250 && sw>750){
 		sw=maxW;
 	}
-	$(".kvBox").css({height:sh});
+	if(sh<700){
+		sh=700;
+	}
+	
 	if(p_type=="index"){
 		var fixedW=$(".fixedBox").width()+$(".fixedBox").offset().left-5;
 		$(".line.year").css({width:(sw/2)-fixedW,left:fixedW});
 		$(".event .content > iframe").css({width:$(".event").width()*0.9,height:($(".event").width()*0.9/picW)*picH});
 		$(".event li iframe").css({width:$(".event li").width()*0.9,height:($(".event li").width()*0.9/picW)*picH});
+		var dw=roundDecimal(sw/1903,2);
+		$(".kvImg").css({"transform":"scale("+dw+")",right:sw*0.14*dw,"margin-top":-$(".kvImg").height()/2*dw-30});
 		if(sw<750){
 			gap=50;
 			// $(".date .line").css({width:sw*0.06});
@@ -81,6 +100,9 @@ function resizeFun(e){
 			$(".allDatasBox").css({"padding-bottom":sh*0.72 -46});
 			$(".nowBox").attr("style","");
 		}
+		$(".kvBox").css({height:sh});
+		$(".titleBox").css({height:sh});
+		$(".dataBox").last().css({"margin-bottom":sh/2});
 	}
 
 	// $(".background .pic").css({height:sh});
@@ -383,4 +405,8 @@ function setTimeFun(){
 
 function numberWithCommasFun(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function roundDecimal(val, precision) {
+  return Math.round(Math.round(val * Math.pow(10, (precision || 0) + 1)) / 10) / Math.pow(10, (precision || 0));
 }

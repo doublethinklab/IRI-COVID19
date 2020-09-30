@@ -96,7 +96,8 @@ html, body, #wapper {
 .kvBox {
   width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 700px;
+  z-index: 2;
   background: #5cc1d8;
   position: relative; }
   .kvBox .logo {
@@ -116,16 +117,19 @@ html, body, #wapper {
       width: 31%;
       max-width: 601px; }
   .kvBox .kvImg {
-    top: 9%;
+    top: 50%;
     right: 14%;
-    position: absolute; }
+    position: absolute;
+    transform-origin: top right; }
     .kvBox .kvImg .city {
       position: relative; }
     .kvBox .kvImg > div:not(.city) {
-      position: absolute; }
+      position: absolute;
+      transform-origin: center; }
     .kvBox .kvImg .people {
       bottom: -13%;
-      right: -9%; }
+      right: -9%;
+      transform-origin: center bottom; }
     .kvBox .kvImg .avirus1 {
       right: 0;
       top: 2%; }
@@ -164,14 +168,64 @@ html, body, #wapper {
   padding: 30px 0;
   color: #000; }
 
-.index .titleBox h2 {
-  padding: 135px 0; }
+.index .titleBox {
+  width: 100%;
+  min-height: 700px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative; }
+  .index .titleBox h2 {
+    padding: 0;
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+    line-height: 140%;
+    font-size: 120px; }
+  .index .titleBox .backgroundMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); }
+  .index .titleBox .background {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg2.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center right; }
+  .index .titleBox .downBox {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -22px; }
+    .index .titleBox .downBox span {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      display: block;
+      margin-top: 5px;
+      line-height: 120%; }
+
+.backgroundMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-repeat: space;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); }
 
 .timeLineBox {
   position: relative;
   width: 100%;
   min-height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 210px; }
   .timeLineBox .background {
     position: fixed;
     width: 100vw;
@@ -190,12 +244,7 @@ html, body, #wapper {
   .timeLineBox .backgroundMask {
     width: 100vw;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-repeat: space;
-    background-color: rgba(255, 255, 255, 0.4);
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); }
+    background-color: rgba(255, 255, 255, 0.4); }
   .timeLineBox .lineBox {
     position: absolute;
     left: 50%;
@@ -337,7 +386,7 @@ html, body, #wapper {
   .timeLineBox .fixedBox {
     position: fixed;
     left: 20px;
-    top: 20px;
+    top: 50px;
     width: 197px;
     z-index: 3; }
     .timeLineBox .fixedBox .yearBox {
@@ -518,7 +567,7 @@ html, body, #wapper {
   .timeLineBox .banners {
     position: fixed;
     right: 20px;
-    top: 20px;
+    top: 60px;
     z-index: 9; }
     .timeLineBox .banners .banner {
       width: 100%;
