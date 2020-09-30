@@ -125,7 +125,8 @@ html, body, #wapper {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 10px; }
+    bottom: 10px;
+    z-index: 3; }
     .kvBox .btns .btn {
       padding: 10px 20px;
       background: #fff;
@@ -148,10 +149,8 @@ html, body, #wapper {
     font-size: 35px;
     font-weight: bold;
     text-align: center;
-    margin: 65px 0 35px;
-    color: #000;
-    padding-bottom: 30px;
-    border-bottom: 1px #5cc1d8 solid; }
+    margin: 65px 0;
+    color: #000; }
 
 .index .kvBox {
   height: inherit;
@@ -614,7 +613,7 @@ html, body, #wapper {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 16px; }
+    margin-bottom: 55px; }
     .page .btns .btn {
       color: #5cc1d8;
       background-color: #fff;
@@ -622,13 +621,26 @@ html, body, #wapper {
       padding: 10px 20px;
       margin-right: 10px;
       cursor: pointer;
-      font-size: 18px; }
+      font-size: 18px;
+      position: relative; }
       .page .btns .btn:last-child {
         margin-right: 0; }
       .page .btns .btn.active, .page .btns .btn:hover {
         color: #fff;
         background-color: #5cc1d8;
         border: 1px transparent solid; }
+      .page .btns .btn.comingsoon:hover {
+        color: #5cc1d8; }
+        .page .btns .btn.comingsoon:hover:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          color: #fff;
+          line-height: 40px;
+          content: "Coming Soon";
+          text-align: center; }
   .page .booksBox {
     position: fixed;
     right: 20px;
@@ -721,22 +733,37 @@ html, body, #wapper {
         color: #fff;
         border-color: #5cc1d8;
         box-shadow: 0 0 0 0 #5cc1d8, inset 6em 3.5em 0 0 #5cc1d8; }
-    .page > .content .transcriptListBox .block {
-      text-align: center;
-      align-items: center;
-      display: flex;
-      width: 100%;
-      position: relative; }
-      .page > .content .transcriptListBox .block .pic {
-        width: 100px;
-        height: 100px;
-        position: relative; }
-      .page > .content .transcriptListBox .block p.txt {
-        margin-left: 30px;
-        margin-bottom: 0; }
-      .page > .content .transcriptListBox .block .moreBtn {
-        position: absolute;
-        right: 0; }
+    .page > .content .transcriptListBox {
+      padding: 0 10px; }
+      .page > .content .transcriptListBox .block {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+        border-bottom: #5cc1d8 1px solid;
+        margin-bottom: 40px; }
+        .page > .content .transcriptListBox .block .pic {
+          width: 100px;
+          height: 100px;
+          position: relative;
+          margin-left: 10px; }
+        .page > .content .transcriptListBox .block p.txt {
+          margin-left: 30px;
+          margin-bottom: 0;
+          text-align: left;
+          line-height: 140%; }
+        .page > .content .transcriptListBox .block .moreBtn {
+          position: absolute;
+          margin: 0;
+          left: inherit;
+          right: 0; }
+          .page > .content .transcriptListBox .block .moreBtn.comingsoon {
+            padding: 10px 12px;
+            font-size: 16px; }
+        .page > .content .transcriptListBox .block:last-child {
+          border-bottom: none; }
     .page > .content .transcriptBox {
       width: 80%;
       margin: 0 auto;

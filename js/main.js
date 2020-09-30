@@ -45,7 +45,9 @@ $(document).ready(function(e){
 	indeTL.fromTo($(".people"),0.5,{rotate:-5},{rotate:5,yoyo:true,repeat:-1},"avirus")
 	indeTL.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
 	indeTL.from($(".avirus3"),0.4,{left:"-8%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
-
+	// $(".kv_txt").on("click",function(e){
+	// 	document.location.href="index.html";
+	// })
 })
 function backtopFun(e){
 	clickback=true;
