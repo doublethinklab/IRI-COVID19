@@ -18,15 +18,16 @@ html,body,#wapper{
 .kvBox{
 	width: 100%;
 	margin:0 auto;
-	min-height: 700px;
+	height: 430px;
 	// overflow: hidden;
 	z-index: 2;
 	background: $dtl-color;
 	position: relative;
+	padding-bottom:30px;
 	.logo{
 		position: absolute;
 		top:30px;
-		right: 40px;
+		right: 60px;
 	}
 	.kv_txt{
 		position: absolute;
@@ -39,48 +40,20 @@ html,body,#wapper{
 		display: flex;		
 		img{
 			margin-left: 8%;
-			width: 31%;
-			max-width: 601px;
-		}
+		}		
 	}
 	.kvImg{
-		top: 50%;
-		right: 14%;
+		bottom:0;
+		right: 5%;
 		position: absolute;
-		transform-origin: top right;
-
-		.city{
-			position: relative;
-		}
-		> div:not(.city){
-			position: absolute;
-			transform-origin: center;
-		}
-		.people{
-			bottom: -13%;
-			right: -9%;
-			transform-origin: center bottom;
-		}
-		.avirus1{
-			right: 0;
-			top:2%;
-		}
-		.avirus2{
-			right: -14%;
-			top: 30%;
-		}
-		.avirus3{
-		    bottom: -1%;
-		    left: -5%;
-		}
 	}
 	.btns{
 		width: 100%;
-		position: absolute;
-		bottom:50px;
 		align-items: center;
 		display: flex;
 		justify-content: center;
+		position: absolute;
+		bottom:10px;
 		.btn{
 			padding: 10px 20px;
 			background: #fff;
@@ -101,16 +74,69 @@ html,body,#wapper{
 	}
 }
 .titleBox{
+	width: 1250px;
+	margin:0 auto;
 	h2{
 		font-size: 35px;
 		font-weight: bold;
 		text-align: center;
-		padding: 30px 0;
+		margin: 65px 0 35px;
 		color:#000;
+		padding-bottom: 30px;
+		border-bottom: 1px #5cc1d8 solid;
 		// line-height: 220px;
 	}
 }
 .index{
+	.kvBox{
+		height: inherit;
+		min-height: 700px;
+		padding-bottom:0;
+		.logo{
+			right: 40px;
+		}
+		.kv_txt{	
+			img{
+				margin-left: 8%;
+				width: 31%;
+				max-width: 601px;
+			}
+		}
+		.kvImg{
+			top: 50%;
+			right: 14%;
+			transform-origin: top right;
+			bottom:inherit;
+			.city{
+				position: relative;
+			}
+			> div:not(.city){
+				position: absolute;
+				transform-origin: center;
+			}
+			.people{
+				bottom: -13%;
+				right: -9%;
+				transform-origin: center bottom;
+			}
+			.avirus1{
+				right: 0;
+				top:2%;
+			}
+			.avirus2{
+				right: -14%;
+				top: 30%;
+			}
+			.avirus3{
+			    bottom: -1%;
+			    left: -5%;
+			}
+		}	
+		.btns{
+			
+			bottom:50px;
+		}	
+	}
 	.titleBox{
 		width: 100%;
 		min-height: 700px;
@@ -119,7 +145,6 @@ html,body,#wapper{
 		justify-content: center;
 		overflow: hidden;
 		position: relative;
-
 		h2{
 			padding:0;
 			color:#fff;
@@ -127,6 +152,7 @@ html,body,#wapper{
 		    text-align: left;
 		    line-height: 140%;
 		    font-size: 120px;
+		    border-bottom:none;
 		}
 		.backgroundMask{
 			position: absolute;
@@ -331,7 +357,6 @@ html,body,#wapper{
 					background-color: $who-color;
 				}
 			}
-
 			&.hideEvent{
 				.date{
 					.line{
@@ -805,7 +830,51 @@ html,body,#wapper{
 			ul{
 				margin-left: 80px;
 			}	
-		}	
+		}
+		.moreBtn{
+			padding: 10px 40px;
+			font-size: 18px;
+			font-weight: bold;
+			color: $dtl-color;
+			border: $dtl-color 1px solid;
+			margin:0 auto;
+			transition: 0.25s;
+			cursor: pointer;
+			box-shadow: 
+				0.3em 0.3em 0 0 $dtl-color,
+				inset 0.3em 0.3em 0 0 $dtl-color;
+		    left: 43%;
+			position: relative;
+			&:hover,&:focus{
+				color: #fff;
+				border-color: $dtl-color;
+			    box-shadow: 
+			      0 0 0 0 $dtl-color,
+			      inset 6em 3.5em 0 0 $dtl-color;
+			}
+		}
+		.transcriptListBox{
+			.block{
+				text-align: center;
+				align-items: center;
+				display: flex;	
+				width: 100%;
+				position: relative;
+				.pic{
+					width: 100px;
+					height: 100px;
+					position: relative;					
+				}
+				p.txt{
+					margin-left: 30px;
+					margin-bottom: 0;
+				}
+				.moreBtn{
+					position: absolute;
+					right: 0;
+				}
+			}
+		}
 		.transcriptBox{
 			width: 80%;
 			margin:0 auto;
@@ -914,29 +983,6 @@ html,body,#wapper{
 				    // 		transform: rotateY(20deg) skewY(-3deg);
 				    // 	}
 				    // }
-				}
-				.moreBtn{
-					padding: 10px 40px;
-					font-size: 18px;
-					font-weight: bold;
-					color: $dtl-color;
-					border: $dtl-color 1px solid;
-					margin:0 auto;
-					transition: 0.25s;
-					cursor: pointer;
-					// display: inline-block;
-					box-shadow: 
-						0.3em 0.3em 0 0 $dtl-color,
-						inset 0.3em 0.3em 0 0 $dtl-color;
-				    left: 43%;
-					position: relative;
-					&:hover,&:focus{
-						color: #fff;
-						border-color: $dtl-color;
-					    box-shadow: 
-					      0 0 0 0 $dtl-color,
-					      inset 6em 3.5em 0 0 $dtl-color;
-					}
 				}
 				&:nth-child(2n){
 					margin-left: 130px;

@@ -96,14 +96,15 @@ html, body, #wapper {
 .kvBox {
   width: 100%;
   margin: 0 auto;
-  min-height: 700px;
+  height: 430px;
   z-index: 2;
   background: #5cc1d8;
-  position: relative; }
+  position: relative;
+  padding-bottom: 30px; }
   .kvBox .logo {
     position: absolute;
     top: 30px;
-    right: 40px; }
+    right: 60px; }
   .kvBox .kv_txt {
     position: absolute;
     top: 0;
@@ -113,39 +114,18 @@ html, body, #wapper {
     align-items: center;
     display: flex; }
     .kvBox .kv_txt img {
-      margin-left: 8%;
-      width: 31%;
-      max-width: 601px; }
+      margin-left: 8%; }
   .kvBox .kvImg {
-    top: 50%;
-    right: 14%;
-    position: absolute;
-    transform-origin: top right; }
-    .kvBox .kvImg .city {
-      position: relative; }
-    .kvBox .kvImg > div:not(.city) {
-      position: absolute;
-      transform-origin: center; }
-    .kvBox .kvImg .people {
-      bottom: -13%;
-      right: -9%;
-      transform-origin: center bottom; }
-    .kvBox .kvImg .avirus1 {
-      right: 0;
-      top: 2%; }
-    .kvBox .kvImg .avirus2 {
-      right: -14%;
-      top: 30%; }
-    .kvBox .kvImg .avirus3 {
-      bottom: -1%;
-      left: -5%; }
+    bottom: 0;
+    right: 5%;
+    position: absolute; }
   .kvBox .btns {
     width: 100%;
-    position: absolute;
-    bottom: 50px;
     align-items: center;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    position: absolute;
+    bottom: 10px; }
     .kvBox .btns .btn {
       padding: 10px 20px;
       background: #fff;
@@ -161,13 +141,53 @@ html, body, #wapper {
         background-color: #000;
         color: #fff; }
 
-.titleBox h2 {
-  font-size: 35px;
-  font-weight: bold;
-  text-align: center;
-  padding: 30px 0;
-  color: #000; }
+.titleBox {
+  width: 1250px;
+  margin: 0 auto; }
+  .titleBox h2 {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin: 65px 0 35px;
+    color: #000;
+    padding-bottom: 30px;
+    border-bottom: 1px #5cc1d8 solid; }
 
+.index .kvBox {
+  height: inherit;
+  min-height: 700px;
+  padding-bottom: 0; }
+  .index .kvBox .logo {
+    right: 40px; }
+  .index .kvBox .kv_txt img {
+    margin-left: 8%;
+    width: 31%;
+    max-width: 601px; }
+  .index .kvBox .kvImg {
+    top: 50%;
+    right: 14%;
+    transform-origin: top right;
+    bottom: inherit; }
+    .index .kvBox .kvImg .city {
+      position: relative; }
+    .index .kvBox .kvImg > div:not(.city) {
+      position: absolute;
+      transform-origin: center; }
+    .index .kvBox .kvImg .people {
+      bottom: -13%;
+      right: -9%;
+      transform-origin: center bottom; }
+    .index .kvBox .kvImg .avirus1 {
+      right: 0;
+      top: 2%; }
+    .index .kvBox .kvImg .avirus2 {
+      right: -14%;
+      top: 30%; }
+    .index .kvBox .kvImg .avirus3 {
+      bottom: -1%;
+      left: -5%; }
+  .index .kvBox .btns {
+    bottom: 50px; }
 .index .titleBox {
   width: 100%;
   min-height: 700px;
@@ -182,7 +202,8 @@ html, body, #wapper {
     z-index: 2;
     text-align: left;
     line-height: 140%;
-    font-size: 120px; }
+    font-size: 120px;
+    border-bottom: none; }
   .index .titleBox .backgroundMask {
     position: absolute;
     width: 100%;
@@ -684,6 +705,38 @@ html, body, #wapper {
           padding-top: 10px; }
       .page > .content .block ul {
         margin-left: 80px; }
+    .page > .content .moreBtn {
+      padding: 10px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #5cc1d8;
+      border: #5cc1d8 1px solid;
+      margin: 0 auto;
+      transition: 0.25s;
+      cursor: pointer;
+      box-shadow: 0.3em 0.3em 0 0 #5cc1d8, inset 0.3em 0.3em 0 0 #5cc1d8;
+      left: 43%;
+      position: relative; }
+      .page > .content .moreBtn:hover, .page > .content .moreBtn:focus {
+        color: #fff;
+        border-color: #5cc1d8;
+        box-shadow: 0 0 0 0 #5cc1d8, inset 6em 3.5em 0 0 #5cc1d8; }
+    .page > .content .transcriptListBox .block {
+      text-align: center;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      position: relative; }
+      .page > .content .transcriptListBox .block .pic {
+        width: 100px;
+        height: 100px;
+        position: relative; }
+      .page > .content .transcriptListBox .block p.txt {
+        margin-left: 30px;
+        margin-bottom: 0; }
+      .page > .content .transcriptListBox .block .moreBtn {
+        position: absolute;
+        right: 0; }
     .page > .content .transcriptBox {
       width: 80%;
       margin: 0 auto;
@@ -770,22 +823,6 @@ html, body, #wapper {
           .page > .content .quotesBox .quoteBox .quote:after {
             border-bottom: 20px solid #5cc1d8;
             border-right: 20px solid #5cc1d8; }
-        .page > .content .quotesBox .quoteBox .moreBtn {
-          padding: 10px 40px;
-          font-size: 18px;
-          font-weight: bold;
-          color: #5cc1d8;
-          border: #5cc1d8 1px solid;
-          margin: 0 auto;
-          transition: 0.25s;
-          cursor: pointer;
-          box-shadow: 0.3em 0.3em 0 0 #5cc1d8, inset 0.3em 0.3em 0 0 #5cc1d8;
-          left: 43%;
-          position: relative; }
-          .page > .content .quotesBox .quoteBox .moreBtn:hover, .page > .content .quotesBox .quoteBox .moreBtn:focus {
-            color: #fff;
-            border-color: #5cc1d8;
-            box-shadow: 0 0 0 0 #5cc1d8, inset 6em 3.5em 0 0 #5cc1d8; }
         .page > .content .quotesBox .quoteBox:nth-child(2n) {
           margin-left: 130px; }
 
