@@ -18,7 +18,7 @@ html,body,#wapper{
 .kvBox{
 	width: 100%;
 	margin:0 auto;
-	// height: 100vh;
+	min-height: 100vh;
 	// overflow: hidden;
 	background: $dtl-color;
 	position: relative;
@@ -60,6 +60,14 @@ html,body,#wapper{
 			right: 0;
 			top:2%;
 		}
+		.avirus2{
+			right: -14%;
+			top: 30%;
+		}
+		.avirus3{
+		    bottom: -1%;
+		    left: -5%;
+		}
 	}
 	.btns{
 		width: 100%;
@@ -94,6 +102,14 @@ html,body,#wapper{
 		text-align: center;
 		padding: 30px 0;
 		color:#000;
+		// line-height: 220px;
+	}
+}
+.index{
+	.titleBox{
+		h2{
+			padding: 135px 0;
+		}
 	}
 }
 .timeLineBox{

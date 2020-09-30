@@ -1,7 +1,7 @@
 var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 var stageInChange=[1573920000000,1577808000000,1579708800000,1580659200000],
 	stageEndChange=[1577721600000,1579449600000,1580400000000,1596038400000],
-	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,
+	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,
 	html_lang=document.documentElement.lang,
 	stageTxt={
 		"en":["Very Early Phase","Investigation Phase","Early Intensification","Altered Narratives"],
@@ -28,6 +28,10 @@ $(document).ready(function(e){
 	$(window).on("resize",resizeFun);
 	$(window).on("scroll",scrollFun);
 	$(".backtop").on("click",backtopFun);
+	indeTL=gsap.timeline();
+	indeTL.from($(".avirus1"),1,{scale:1.1,right:"-13%",ease:"power4.in",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	indeTL.from($(".avirus1"),1,{top:"3%",yoyo:true,repeat:-1},"avirus")
+	// indeTL.from($(".avirus2"),1,{scale:1.4,right:"-13%",ease:"",yoyoEase:"elastic.out(1, 0.3)",yoyo:true,repeat:-1},"avirus")
 })
 function backtopFun(e){
 	clickback=true;
@@ -71,10 +75,10 @@ function resizeFun(e){
 		if(sw<750){
 			gap=50;
 			// $(".date .line").css({width:sw*0.06});
-			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 69});
+			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 46});
 			$(".nowBox").css({bottom:sh/2});
 		}else{
-			$(".allDatasBox").css({"padding-bottom":sh*0.72 -69});
+			$(".allDatasBox").css({"padding-bottom":sh*0.72 -46});
 			$(".nowBox").attr("style","");
 		}
 	}
@@ -112,7 +116,7 @@ function findChinaCaseFun(array){
 			return false;
 		}
 	})
-	console.log(casesNum);
+	// console.log(casesNum);
 	return casesNum;
 }
 
@@ -301,9 +305,9 @@ function setAnFun(){
 							$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));					
 						}
 					},
-					onLeaveBack:function(){
-						console.log("onLeaveBack")
-					}
+					// onLeaveBack:function(){
+					// 	console.log("onLeaveBack")
+					// }
 				},
 				onUpdate:function(){
 					if(!daysBoxChange){
@@ -335,20 +339,20 @@ function setAnFun(){
 			toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
 			scrub:false,
 			// markers: true,
-			onEnter:function(){
-				console.log(allvalue);
-			}
-		},
-		onUpdate:function(){
-			// if(daysBoxChange){
-			// 	$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
-			// 	$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
-			// 	$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
-			// 	$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));			
+			// onEnter:function(){
+			// 	console.log(allvalue);
 			// }
 		},
+		onUpdate:function(){
+			if(daysBoxChange){
+				$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
+				$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
+				$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
+				$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));			
+			}
+		},
 	})
-	console.log($(".nowBox").attr("d-china-days"),$(".nowBox").attr("d-china-cases"),$(".nowBox").attr("d-who-days"),$(".nowBox").attr("d-who-cases"));
+	// console.log($(".nowBox").attr("d-china-days"),$(".nowBox").attr("d-china-cases"),$(".nowBox").attr("d-who-days"),$(".nowBox").attr("d-who-cases"));
 	tl3.to(allvalue,{"0": Number($(".nowBox").attr("d-china-days"))+1},"go")
 		.to(allvalue,{"1": $(".nowBox").attr("d-china-cases")},"go")
 		.to(allvalue,{"2": Number($(".nowBox").attr("d-who-days"))+1},"go")
