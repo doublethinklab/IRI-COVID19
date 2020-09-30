@@ -784,7 +784,7 @@ html, body, #wapper {
       .page > .content .transcriptBox .block:last-child {
         margin-bottom: 0; }
     .page > .content .quotesBox {
-      margin: 30px 0; }
+      margin: 30px 0 80px; }
       .page > .content .quotesBox .quoteBox {
         position: relative;
         width: 50%;
@@ -858,6 +858,18 @@ html, body, #wapper {
           .page > .content .quotesBox .quoteBox .quote:after {
             border-bottom: 20px solid #5cc1d8;
             border-right: 20px solid #5cc1d8; }
+        .page > .content .quotesBox .quoteBox .moreBtn.go {
+          -webkit-animation: rainbow 18s ease infinite;
+          -z-animation: rainbow 18s ease infinite;
+          -o-animation: rainbow 18s ease infinite;
+          animation: rainbow 18s ease infinite;
+          background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+          background-size: 1800% 1800%;
+          box-shadow: none;
+          border: none;
+          color: #fff; }
+        .page > .content .quotesBox .quoteBox:last-child {
+          margin: 0 auto; }
 
 .fancyBoxDiv {
   display: none; }
@@ -884,6 +896,18 @@ html, body, #wapper {
       font-size: 25px;
       margin-bottom: 20px;
       line-height: 160%; }
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #5cc1d8;
+  margin-bottom: 30px; }
+  .copyright a {
+    color: #5cc1d8;
+    text-decoration: underline; }
+    .copyright a:hover {
+      color: #000; }
 
 .backtop {
   width: 54px;
@@ -1100,5 +1124,33 @@ html, body, #wapper {
     margin-bottom: 62% !important; }
   .fixedBox.change .organizationBox.china .data .days {
     margin-bottom: 56% !important; } }
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%; }
+  50% {
+    background-position: 100% 19%; }
+  100% {
+    background-position: 0% 82%; } }
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%; }
+  50% {
+    background-position: 100% 19%; }
+  100% {
+    background-position: 0% 82%; } }
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%; }
+  50% {
+    background-position: 100% 19%; }
+  100% {
+    background-position: 0% 82%; } }
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%; }
+  50% {
+    background-position: 100% 19%; }
+  100% {
+    background-position: 0% 82%; } }
 
 /*# sourceMappingURL=style.css.map */

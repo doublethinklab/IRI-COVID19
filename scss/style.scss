@@ -934,7 +934,7 @@ html,body,#wapper{
 			}
 		}
 		.quotesBox{
-			margin:30px 0;
+			margin:30px 0 80px;
 			.quoteBox{
 				position: relative;
 				// width: calc(44% - 20px);
@@ -1030,7 +1030,21 @@ html,body,#wapper{
 				}
 				// &:nth-child(2n){
 				// 	margin-left: 130px;
-				// }			
+				// }	
+				.moreBtn.go{
+					-webkit-animation: rainbow 18s ease infinite;
+					-z-animation: rainbow 18s ease infinite;
+					-o-animation: rainbow 18s ease infinite;
+					animation: rainbow 18s ease infinite;	
+					background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+					background-size: 1800% 1800%;	
+					box-shadow:none;
+					border:none;
+					color:#fff;
+				}
+				&:last-child{
+					margin:0 auto;
+				}		
 			}			
 		}
 	}
@@ -1065,6 +1079,20 @@ html,body,#wapper{
 			margin-bottom: 20px;
 			line-height: 160%;
 		}		
+	}
+}
+.copyright{
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color:$dtl-color;
+	margin-bottom: 30px;
+	a{
+		color:$dtl-color;
+		text-decoration: underline;
+		&:hover{
+			color:#000;
+		}
 	}
 }
 .backtop{
@@ -1403,4 +1431,24 @@ html,body,#wapper{
 			}
 		}
 	}
+}
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }
