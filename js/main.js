@@ -70,7 +70,7 @@ function scrollFun(e){
 		// }		
 	}
 	if(!clickback){
-		if(st>=$(".titleBox").offset().top){
+		if(st>=800){
 			$(".backtop").show();
 		}else{
 			$(".backtop").hide();
