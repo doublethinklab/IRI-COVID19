@@ -4,7 +4,7 @@ var stageInChange=[1573920000000,1577808000000,1579708800000,1580659200000],
 	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,
 	html_lang=document.documentElement.lang,
 	stageTxt={
-		"en":["Very Early Phase","Investigation Phase","Early Intensification","Altered Narratives"],
+		"en":["Unknown","Investigation","Early Outbreak","Altered Narratives"],
 		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
 	},
 	allvalue=[0,0,0,0];//china_days china_case who_days who_case
