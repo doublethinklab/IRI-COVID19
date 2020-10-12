@@ -151,7 +151,7 @@ html,body,#wapper{
 			z-index: 2;
 		    text-align: left;
 		    line-height: 140%;
-		    font-size: 120px;
+		    font-size: 100px;
 		    border-bottom:none;
 		}
 		.backgroundMask{
@@ -210,12 +210,12 @@ html,body,#wapper{
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	padding-top: 210px;
+	padding-top: 153px;
 	.background{
 		position: fixed;
-		width: 100vw;
+		width: 100%;
 		min-width: 1250px;
-		height: 100vh;
+		height: 100%;
 		top: 0;
 		left: 0;
 		.pic{
@@ -316,14 +316,14 @@ html,body,#wapper{
 						position: relative;						
 					}
 					img{
-						max-width: 90%;
+						width: 100%;
 						border:1px #ccc solid;
 						margin: 29px auto;
 					}
 					p{
 						font-size: 18px;
 						line-height: 150%;
-						padding: 0 10px;
+						// padding: 0 10px;
 					}
 					ul{
 						font-size: 18px;
@@ -437,13 +437,12 @@ html,body,#wapper{
 			// border-right: 4px #fff solid;
 			margin-bottom: 15px;
 			color:#fff;
-			padding-right: 10px;
+			// padding-right: 10px;
 			h2{
-				font-size: 72px;
+				font-size: 70px;
 			}
 			p{
-				// font-size: 30px;
-				font-size: 24px;
+				font-size: 25px;
 				line-height: 120%;
 			}
 		}
@@ -454,12 +453,14 @@ html,body,#wapper{
 			text-align: center;
 			color: #fff;
 			.organizationBox{
+
 				.name{
 					font-size: 22px;
 					text-align: center;
 					padding: 6px 0;
 					background-color: rgba(0,0,0,1);
 					font-weight: bold;
+					
 				}
 				.data{
 					>.txt{
@@ -470,99 +471,100 @@ html,body,#wapper{
 					}
 					.days{
 						font-size: 59px;
-						background-repeat: no-repeat;
-						background-size: 100% auto;
-						background-position: center;
-						margin:0 auto 10px;
+						position: relative;
+						width: 146px;
+						height: 82px;
+						margin: 10px auto 20px;
+						border-top: 3px #fff solid;
+						border-left: 3px #fff solid;
+						border-right: 3px #fff solid;
+						>span{
+							line-height: 70px;
+						}
+						.txt{
+						    font-size: 17px;
+						    position: absolute;
+						    bottom: -7px;
+						    color: #fff;
+						    font-weight: bold;
+						    width: 103%;
+						    text-align: center;
+						    left: -1px;
+							span{
+							    margin: 0 5px;
+							}
+							&:before,&:after{
+							    content: "";
+							    display: inline-block;
+							    height: 3px;
+							    background-color: #fff;
+							    position: relative;
+							    top: -4px;
+							    width: calc(35% - 5px);
+							}
+						}
 					}
 					.cases{
 						font-size: 27px;
 						display: block;
 					}
 				}
-				.days{
-					position: relative;
-					width: 146px;
-					height: 82px;
-					>span{
-						line-height: 70px;
-					}
-					.txt{
-					    font-size: 17px;
-					    position: absolute;
-					    bottom: -7px;
-					    color: #fff;
-					    font-weight: bold;
-					    width: 103%;
-					    text-align: center;
-					    left: -1px;
-						span{
-						    margin: 0 5px;
-						}
-						&:before,&:after{
-						    content: "";
-						    display: inline-block;
-						    height: 3px;
-						    background-color: #fff;
-						    position: relative;
-						    top: -4px;
-						    width: calc(35% - 5px);
-						}
-					}
-				}
 				&.china{
-					margin-bottom: 13px;
-					>.txt{
-						margin-bottom: 6px;
-					}
+					// margin-bottom: 13px;
+					// >.txt{
+					// 	margin-bottom: 6px;
+					// }
 					.name{
 						margin-bottom: 17px;
 					}
 					.days,.cases,.name{
 						color:$prc-color;
 					}
-					.days{
-						margin-top: 10px;
-						border-top: 3px #fff solid;
-						border-left: 3px #fff solid;
-						border-right: 3px #fff solid;
-					}
+					// .days{
+					// 	margin-top: 10px;
+					// 	border-top: 3px #fff solid;
+					// 	border-left: 3px #fff solid;
+					// 	border-right: 3px #fff solid;
+					// }
 				}
 				&.who{
 					margin-top: 10px;
-					.name{
-						margin-top: 18px;
-					}
+					// .name{
+					// 	margin-top: 18px;
+					// }
 					.days,.cases,.name{
 						color:$who-color;
 					}
-					.cases{
-						margin:0 auto 12px;
-					}
 					.days{
-						border-bottom: 3px #fff solid;
-						border-left: 3px #fff solid;
-						border-right: 3px #fff solid;
-						>span{
-							line-height: 90px;
-						}
-						.txt{
-						    font-size: 17px;
-						    position: absolute;
-						    top: -7px;
-						    color: #fff;
-						    font-weight: bold;
-						    width: 103%;
-						    text-align: center;
-						    left: -1px;
-						}
+						margin: 10px auto 27px;
 					}
+					// .cases{
+					// 	margin:0 auto 12px;
+					// }
+					// .days{
+					// 	border-bottom: 3px #fff solid;
+					// 	border-left: 3px #fff solid;
+					// 	border-right: 3px #fff solid;
+					// 	>span{
+					// 		line-height: 90px;
+					// 	}
+					// 	.txt{
+					// 	    font-size: 17px;
+					// 	    position: absolute;
+					// 	    top: -7px;
+					// 	    color: #fff;
+					// 	    font-weight: bold;
+					// 	    width: 103%;
+					// 	    text-align: center;
+					// 	    left: -1px;
+					// 	}
+					// }
 				}
 			}
 			.caseBox{
 				// margin:15px 0;
 				.cases{
-				    font-size: 38px;
+				    font-size: 30px;
     				display: block;
     				&.china{
     					color:$prc-color;
@@ -575,7 +577,6 @@ html,body,#wapper{
 					color:#fff;
 					margin:8px auto;
 					font-weight: bold;
-					
 					span{
 						font-size: 11px;
 						margin:0 4px;
@@ -946,9 +947,9 @@ html,body,#wapper{
 			margin:30px 0 80px;
 			.quoteBox{
 				position: relative;
-				// width: calc(44% - 20px);
-				width: 50%;
-				// float: left;
+				width: calc(44% - 20px);
+				// width: 50%;
+				float: left;
 				margin:0 auto 150px;
 				.quote{
 				    background-color: transparent;
@@ -1037,9 +1038,9 @@ html,body,#wapper{
 				    // 	}
 				    // }
 				}
-				// &:nth-child(2n){
-				// 	margin-left: 130px;
-				// }	
+				&:nth-child(2n){
+					margin-left: 130px;
+				}	
 				.moreBtn.go{
 					-webkit-animation: rainbow 18s ease infinite;
 					-z-animation: rainbow 18s ease infinite;
@@ -1051,9 +1052,9 @@ html,body,#wapper{
 					border:none;
 					color:#fff;
 				}
-				&:last-child{
-					margin:0 auto;
-				}		
+				// &:last-child{
+				// 	margin:0 auto;
+				// }		
 			}			
 		}
 	}
@@ -1091,7 +1092,7 @@ html,body,#wapper{
 	}
 }
 .copyright{
-	width: 100%;
+	// width: 100%;
 	text-align: center;
 	font-size: 14px;
 	color:$dtl-color;
@@ -1262,6 +1263,9 @@ html,body,#wapper{
 					.data{
 						> .txt{
     						font-size: 13px;
+    						line-height: 100%;
+						    position: absolute;
+    						top: 63%;	
 						}
 						.days{
 							width: 100%;
@@ -1284,10 +1288,6 @@ html,body,#wapper{
 					&.china{
 						margin-bottom: 0;
 						.data{
-							> .txt{
-							    position: absolute;
-	    						bottom: 2%;								
-							}
 							.days{
 								margin-top: 0;
 								margin-bottom: 53%;
@@ -1309,17 +1309,26 @@ html,body,#wapper{
 							color:#fff;
 							background-color: $who-color;
 						}
-						.days{
+						.data{
 							margin-top: 27px;
-						    border-top: 3px #fff solid;
-						    border-left: 3px #fff solid;
-						    border-right: 3px #fff solid;
-						    border-bottom: none;
-						    margin-bottom: 7%;
-						    .txt{
-						    	top:inherit;
-						    }
+							>.txt{
+								top: 102%;
+								left: 50%;
+								margin-left: -48px;
+							}
+							.days{
+								margin-top: 0;
+							    // border-top: 3px #fff solid;
+							    // border-left: 3px #fff solid;
+							    // border-right: 3px #fff solid;
+							    // border-bottom: none;
+							    margin-bottom: 7%;
+							    .txt{
+							    	top:inherit;
+							    }
+							}							
 						}
+
 					}
 				}
 				.caseBox{

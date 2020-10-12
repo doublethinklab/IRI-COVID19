@@ -202,7 +202,7 @@ html, body, #wapper {
     z-index: 2;
     text-align: left;
     line-height: 140%;
-    font-size: 120px;
+    font-size: 100px;
     border-bottom: none; }
   .index .titleBox .backgroundMask {
     position: absolute;
@@ -253,12 +253,12 @@ html, body, #wapper {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding-top: 210px; }
+  padding-top: 153px; }
   .timeLineBox .background {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     min-width: 1250px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0; }
     .timeLineBox .background .pic {
@@ -345,13 +345,12 @@ html, body, #wapper {
           .timeLineBox .allDatasBox .dataBox .events .event .content {
             position: relative; }
           .timeLineBox .allDatasBox .dataBox .events .event img {
-            max-width: 90%;
+            width: 100%;
             border: 1px #ccc solid;
             margin: 29px auto; }
           .timeLineBox .allDatasBox .dataBox .events .event p {
             font-size: 18px;
-            line-height: 150%;
-            padding: 0 10px; }
+            line-height: 150%; }
           .timeLineBox .allDatasBox .dataBox .events .event ul {
             font-size: 18px;
             line-height: 150%;
@@ -421,12 +420,11 @@ html, body, #wapper {
       text-align: right;
       font-weight: bold;
       margin-bottom: 15px;
-      color: #fff;
-      padding-right: 10px; }
+      color: #fff; }
       .timeLineBox .fixedBox .yearBox h2 {
-        font-size: 72px; }
+        font-size: 70px; }
       .timeLineBox .fixedBox .yearBox p {
-        font-size: 24px;
+        font-size: 25px;
         line-height: 120%; }
     .timeLineBox .fixedBox .digitalBox {
       border: 6px #000 solid;
@@ -447,20 +445,16 @@ html, body, #wapper {
         font-weight: normal; }
       .timeLineBox .fixedBox .digitalBox .organizationBox .data .days {
         font-size: 59px;
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center;
-        margin: 0 auto 10px; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox .data .cases {
-        font-size: 27px;
-        display: block; }
-      .timeLineBox .fixedBox .digitalBox .organizationBox .days {
         position: relative;
         width: 146px;
-        height: 82px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox .days > span {
+        height: 82px;
+        margin: 10px auto 20px;
+        border-top: 3px #fff solid;
+        border-left: 3px #fff solid;
+        border-right: 3px #fff solid; }
+        .timeLineBox .fixedBox .digitalBox .organizationBox .data .days > span {
           line-height: 70px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt {
+        .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt {
           font-size: 17px;
           position: absolute;
           bottom: -7px;
@@ -469,9 +463,9 @@ html, body, #wapper {
           width: 103%;
           text-align: center;
           left: -1px; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt span {
+          .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt span {
             margin: 0 5px; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:before, .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:after {
+          .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt:before, .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt:after {
             content: "";
             display: inline-block;
             height: 3px;
@@ -479,44 +473,21 @@ html, body, #wapper {
             position: relative;
             top: -4px;
             width: calc(35% - 5px); }
-      .timeLineBox .fixedBox .digitalBox .organizationBox.china {
-        margin-bottom: 13px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.china > .txt {
-          margin-bottom: 6px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
-          margin-bottom: 17px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.china .days, .timeLineBox .fixedBox .digitalBox .organizationBox.china .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
-          color: #b50808; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.china .days {
-          margin-top: 10px;
-          border-top: 3px #fff solid;
-          border-left: 3px #fff solid;
-          border-right: 3px #fff solid; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox .data .cases {
+        font-size: 27px;
+        display: block; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+        margin-bottom: 17px; }
+      .timeLineBox .fixedBox .digitalBox .organizationBox.china .days, .timeLineBox .fixedBox .digitalBox .organizationBox.china .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.china .name {
+        color: #b50808; }
       .timeLineBox .fixedBox .digitalBox .organizationBox.who {
         margin-top: 10px; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
-          margin-top: 18px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox.who .days, .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases, .timeLineBox .fixedBox .digitalBox .organizationBox.who .name {
           color: #008ac3; }
-        .timeLineBox .fixedBox .digitalBox .organizationBox.who .cases {
-          margin: 0 auto 12px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
-          border-bottom: 3px #fff solid;
-          border-left: 3px #fff solid;
-          border-right: 3px #fff solid; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days > span {
-            line-height: 90px; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
-            font-size: 17px;
-            position: absolute;
-            top: -7px;
-            color: #fff;
-            font-weight: bold;
-            width: 103%;
-            text-align: center;
-            left: -1px; }
+          margin: 10px auto 27px; }
       .timeLineBox .fixedBox .digitalBox .caseBox .cases {
-        font-size: 38px;
+        font-size: 30px;
         display: block; }
         .timeLineBox .fixedBox .digitalBox .caseBox .cases.china {
           color: #b50808; }
@@ -794,7 +765,8 @@ html, body, #wapper {
       margin: 30px 0 80px; }
       .page > .content .quotesBox .quoteBox {
         position: relative;
-        width: 50%;
+        width: calc(44% - 20px);
+        float: left;
         margin: 0 auto 150px; }
         .page > .content .quotesBox .quoteBox .quote {
           background-color: transparent;
@@ -865,6 +837,8 @@ html, body, #wapper {
           .page > .content .quotesBox .quoteBox .quote:after {
             border-bottom: 20px solid #5cc1d8;
             border-right: 20px solid #5cc1d8; }
+        .page > .content .quotesBox .quoteBox:nth-child(2n) {
+          margin-left: 130px; }
         .page > .content .quotesBox .quoteBox .moreBtn.go {
           -webkit-animation: rainbow 18s ease infinite;
           -z-animation: rainbow 18s ease infinite;
@@ -875,8 +849,6 @@ html, body, #wapper {
           box-shadow: none;
           border: none;
           color: #fff; }
-        .page > .content .quotesBox .quoteBox:last-child {
-          margin: 0 auto; }
 
 .fancyBoxDiv {
   display: none; }
@@ -905,7 +877,6 @@ html, body, #wapper {
       line-height: 160%; }
 
 .copyright {
-  width: 100%;
   text-align: center;
   font-size: 14px;
   color: #5cc1d8;
@@ -1027,7 +998,10 @@ html, body, #wapper {
         width: 33%;
         position: relative; }
         .timeLineBox .fixedBox .digitalBox .organizationBox .data > .txt {
-          font-size: 13px; }
+          font-size: 13px;
+          line-height: 100%;
+          position: absolute;
+          top: 63%; }
         .timeLineBox .fixedBox .digitalBox .organizationBox .data .days {
           width: 100%;
           height: 52px;
@@ -1040,9 +1014,6 @@ html, body, #wapper {
           font-size: 15px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox.china {
           margin-bottom: 0; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox.china .data > .txt {
-            position: absolute;
-            bottom: 2%; }
           .timeLineBox .fixedBox .digitalBox .organizationBox.china .data .days {
             margin-top: 0;
             margin-bottom: 53%; }
@@ -1059,15 +1030,17 @@ html, body, #wapper {
             margin-top: 0;
             color: #fff;
             background-color: #008ac3; }
-          .timeLineBox .fixedBox .digitalBox .organizationBox.who .days {
-            margin-top: 27px;
-            border-top: 3px #fff solid;
-            border-left: 3px #fff solid;
-            border-right: 3px #fff solid;
-            border-bottom: none;
-            margin-bottom: 7%; }
-            .timeLineBox .fixedBox .digitalBox .organizationBox.who .days .txt {
-              top: inherit; }
+          .timeLineBox .fixedBox .digitalBox .organizationBox.who .data {
+            margin-top: 27px; }
+            .timeLineBox .fixedBox .digitalBox .organizationBox.who .data > .txt {
+              top: 102%;
+              left: 50%;
+              margin-left: -48px; }
+            .timeLineBox .fixedBox .digitalBox .organizationBox.who .data .days {
+              margin-top: 0;
+              margin-bottom: 7%; }
+              .timeLineBox .fixedBox .digitalBox .organizationBox.who .data .days .txt {
+                top: inherit; }
       .timeLineBox .fixedBox .digitalBox .caseBox {
         margin-top: 5%;
         width: 34%; }
