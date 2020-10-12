@@ -23,7 +23,7 @@ $(document).ready(function(e){
 		setTimeFun();
 		resizeFun();
 		$('.kvImg').imagesLoaded(function(){
-	  		// setIndexAnFun();
+	  		setIndexAnFun();
 		});
 	}else{
 		resizeFun();
