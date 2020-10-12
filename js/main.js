@@ -22,6 +22,7 @@ $(document).ready(function(e){
 		getDataFun();
 		setTimeFun();
 		resizeFun();
+
 	}else{
 		resizeFun();
 		scrollFun();
@@ -29,26 +30,25 @@ $(document).ready(function(e){
 	$(window).on("resize",resizeFun);
 	$(window).on("scroll",scrollFun);
 	$(".backtop").on("click",backtopFun);
-	indeTL=gsap.timeline();
-	// indeTL.from($(".avirus1"),1,{scale:1.1,right:"-13%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
-	// indeTL.from($(".avirus1"),0.1,{top:"2.5%",yoyo:true,repeat:-1},"avirus")
-	// indeTL.from($(".avirus2"),0.1,{top:"31%",yoyo:true,repeat:-1},"avirus")
-	// indeTL.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
-	// indeTL.from($(".people"),0.2,{bottom:"-10%",yoyo:true,repeat:-1},"avirus")
-	// indeTL.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
-	// indeTL.from($(".avirus3"),0.4,{scale:1.1,left:"-8%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
-
-	indeTL.from($(".avirus1"),1,{right:"-13%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
-	indeTL.from($(".avirus1"),0.1,{top:"2.5%",yoyo:true,repeat:-1},"avirus")
-	indeTL.from($(".avirus2"),0.1,{top:"31%",yoyo:true,repeat:-1},"avirus")
-	indeTL.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
-	indeTL.fromTo($(".people"),0.5,{rotate:-5},{rotate:5,yoyo:true,repeat:-1},"avirus")
-	indeTL.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
-	indeTL.from($(".avirus3"),0.4,{left:"-8%",yoyoEase:"bounce.in",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	$('.kvImg').imagesLoaded(function(){
+  		setIndexAnFun();
+	});
 	// $(".kv_txt").on("click",function(e){
 	// 	document.location.href="index.html";
 	// })
 })
+
+function setIndexAnFun(){
+	indeTL=gsap.timeline();
+	indeTL.from($(".avirus1"),0.1,{top:"2.5%",yoyo:true,repeat:-1},"avirus")
+	.from($(".avirus2"),0.1,{top:"31%",yoyo:true,repeat:-1},"avirus")
+	.from($(".avirus3"),0.1,{bottom:"-1.5%",yoyo:true,repeat:-1},"avirus")
+	.from($(".avirus1"),1,{right:"-13%",ease:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
+	.from($(".avirus3"),0.4,{left:"-8%",ease:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
+	.fromTo($(".people"),0.5,{rotate:-5},{rotate:5,yoyo:true,repeat:-1},"avirus");
+}
+
 function backtopFun(e){
 	clickback=true;
 	$body.animate({scrollTop: 0}, 600,function(){clickback=false;});

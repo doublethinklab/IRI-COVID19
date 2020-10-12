@@ -233,6 +233,13 @@ html, body, #wapper {
       display: block;
       margin-top: 5px;
       line-height: 120%; }
+.index .copyright {
+  margin-bottom: 0;
+  color: #000;
+  position: absolute;
+  bottom: 0; }
+  .index .copyright a {
+    color: #000; }
 
 .backgroundMask {
   position: fixed;
