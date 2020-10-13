@@ -157,7 +157,7 @@ html, body, #wapper {
       margin-right: 10px;
       cursor: pointer; }
       .kvBox .btns .btn:last-child {
-        margin-right: 0; }
+        margin-right: 0 !important; }
       .kvBox .btns .btn.active, .kvBox .btns .btn:hover {
         background-color: #000;
         color: #fff; }
@@ -700,6 +700,18 @@ html, body, #wapper {
         display: flex; }
         .page > .content .participantsBox .block:nth-child(3n) {
           margin-bottom: 0; }
+        .page > .content .participantsBox .block .pic {
+          width: 100px;
+          height: 100px;
+          position: relative;
+          left: 0;
+          margin: 0; }
+        .page > .content .participantsBox .block p.txt {
+          margin-left: 20px;
+          font-size: 20px;
+          line-height: 140%; }
+          .page > .content .participantsBox .block p.txt b:first-child {
+            font-size: 22px; }
     .page > .content .block {
       margin-bottom: 20px;
       position: relative;
@@ -760,6 +772,8 @@ html, body, #wapper {
           margin-bottom: 0;
           text-align: left;
           line-height: 140%; }
+          .page > .content .transcriptListBox .block p.txt b:first-child {
+            font-size: 30px; }
         .page > .content .transcriptListBox .block .moreBtn {
           position: absolute;
           margin: 0;
@@ -924,14 +938,90 @@ html, body, #wapper {
   html, body, #wapper {
     min-width: inherit; }
 
+  .loading svg {
+    width: 40%; }
+
+  .index .kvBox {
+    overflow: hidden;
+    min-height: 568px; }
+    .index .kvBox .logo {
+      right: 17px; }
+    .index .kvBox .kvImg {
+      margin: 0 auto;
+      right: auto !important;
+      margin-top: auto !important;
+      top: 45%;
+      transform-origin: left top;
+      position: absolute;
+      left: 8%; }
+    .index .kvBox .kv_txt img {
+      width: 100%;
+      max-width: inherit;
+      margin: 0; }
+    .index .kvBox .btns {
+      bottom: 10px; }
+  .index .titleBox h2 {
+    font-size: 48px;
+    margin: 0 auto;
+    text-align: center; }
+  .index .titleBox .background {
+    background-size: auto 100%;
+    background-position: 80% 0; }
+
+  .outherpage .kvBox {
+    height: 250px;
+    padding-bottom: 0;
+    overflow: hidden; }
+    .outherpage .kvBox .kv_txt {
+      width: 43%;
+      margin: 0;
+      left: 2%;
+      top: 23%; }
+    .outherpage .kvBox .kvImg {
+      width: 60%;
+      margin: 0;
+      right: -6%;
+      position: absolute;
+      top: 24%; }
+      .outherpage .kvBox .kvImg img {
+        width: 100%; }
+    .outherpage .kvBox .btns {
+      padding: 0 5px; }
+      .outherpage .kvBox .btns .btn {
+        padding: 4px;
+        margin-right: 5px; }
+
+  .kvBox .logo {
+    top: 12px;
+    right: 17px; }
+    .kvBox .logo img {
+      width: 100px; }
+  .kvBox .kv_txt {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    width: 65%;
+    top: 6%; }
+    .kvBox .kv_txt img {
+      margin: 0;
+      width: 100%; }
+  .kvBox .kvImg {
+    position: relative;
+    right: auto;
+    bottom: auto; }
   .kvBox .btns {
     padding: 0 10px; }
     .kvBox .btns .btn {
       padding: 4px 10px;
-      font-size: 16px; }
+      font-size: 14px; }
 
-  .titleBox h2 {
-    font-size: 25px; }
+  .titleBox {
+    width: 100%; }
+    .titleBox h2 {
+      font-size: 28px;
+      margin: 35px 0;
+      padding: 0 10px; }
 
   .timeLineBox .line.year {
     display: none; }
@@ -965,9 +1055,9 @@ html, body, #wapper {
         padding-top: 34px;
         width: 100%; }
         .timeLineBox .allDatasBox .dataBox .events .event {
-          width: 67%;
+          width: 73%;
           left: 0;
-          padding: 15px;
+          padding: 10px;
           margin-left: 24%; }
           .timeLineBox .allDatasBox .dataBox .events .event p, .timeLineBox .allDatasBox .dataBox .events .event ul {
             font-size: 16px; }
@@ -993,7 +1083,7 @@ html, body, #wapper {
     padding: 0 13px;
     left: 0;
     top: inherit;
-    bottom: 13px;
+    bottom: 30px;
     margin: 0 10px; }
     .timeLineBox .fixedBox .yearBox {
       text-align: left;
@@ -1023,9 +1113,9 @@ html, body, #wapper {
         .timeLineBox .fixedBox .digitalBox .organizationBox .data .days {
           width: 100%;
           height: 52px;
-          font-size: 42px; }
+          font-size: 38px; }
           .timeLineBox .fixedBox .digitalBox .organizationBox .data .days > span {
-            line-height: 45px; }
+            line-height: 42px; }
           .timeLineBox .fixedBox .digitalBox .organizationBox .data .days .txt span {
             font-size: 12px; }
         .timeLineBox .fixedBox .digitalBox .organizationBox .name {
@@ -1108,6 +1198,43 @@ html, body, #wapper {
       margin-bottom: 46%; }
     .timeLineBox .fixedBox.change .digitalBox .organizationBox.who .data .days {
       margin-bottom: 2px; }
+
+  .page .btns {
+    display: block;
+    margin-bottom: 25px;
+    padding: 0 10px;
+    text-align: center; }
+    .page .btns .btn {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      padding: 10px 15px; }
+  .page > .content {
+    width: 100%; }
+    .page > .content .transcriptListBox .block {
+      display: block; }
+      .page > .content .transcriptListBox .block .pic {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        left: 0; }
+      .page > .content .transcriptListBox .block p.txt {
+        margin-left: 10px;
+        font-size: 16px;
+        padding: 0 0 20px 0;
+        margin: 0 auto;
+        text-align: center; }
+        .page > .content .transcriptListBox .block p.txt b:first-child {
+          font-size: 22px; }
+      .page > .content .transcriptListBox .block .moreBtn {
+        padding: 10px 20px;
+        position: relative;
+        display: inline-block; }
+    .page > .content .participantsBox {
+      width: 100%; }
+    .page > .content .transcriptBox {
+      width: 100%;
+      padding: 0 10px; }
 
   .backtop.index {
     bottom: 35%; } }

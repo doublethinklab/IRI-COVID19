@@ -85,7 +85,7 @@ function resizeFun(e){
 	if(sw<1250 && sw>750){
 		sw=maxW;
 	}
-	if(sh<700){
+	if(sh<700 && sw>750){
 		sh=700;
 	}
 	
@@ -94,17 +94,21 @@ function resizeFun(e){
 		$(".line.year").css({width:(sw/2)-fixedW,left:fixedW});
 		$(".event .content > iframe").css({width:$(".event").width(),height:($(".event").width()/picW)*picH});
 		$(".event li iframe").css({width:$(".event li").width(),height:($(".event li").width()/picW)*picH});
-		var dw=roundDecimal(sw/1903,2);
-		$(".kvImg").css({"transform":"scale("+dw+")",right:sw*0.14*dw,"margin-top":-$(".kvImg").height()/2*dw-30});
 		if(sw<750){
 			gap=50;
+			var dw=roundDecimal(sw/1903,2)+0.23;
+			$(".kvImg").css({"transform":"scale("+dw+")"});
+			// $(".kvImg").css({"transform":"scale("+dw+")"})
 			// $(".date .line").css({width:sw*0.06});
 			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 66});
 			$(".nowBox").css({bottom:sh/2});
 		}else{
+			var dw=roundDecimal(sw/1903,2);
+			$(".kvImg").css({"transform":"scale("+dw+")",right:sw*0.14*dw,"margin-top":-$(".kvImg").height()/2*dw-30});
 			$(".allDatasBox").css({"padding-bottom":sh*0.72 -66});
 			$(".nowBox").attr("style","");
 		}
+		
 		$(".kvBox").css({height:sh});
 		$(".titleBox").css({height:sh});
 		$(".dataBox").last().css({"margin-bottom":sh/2});

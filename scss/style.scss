@@ -86,7 +86,7 @@ html,body,#wapper{
 			margin-right: 10px;
 			cursor: pointer;
 			&:last-child{
-				margin-right: 0;
+				margin-right: 0 !important;
 			}
 			&.active,&:hover{
 				background-color: #000;
@@ -857,6 +857,21 @@ html,body,#wapper{
 				&:nth-child(3n){
 					margin-bottom: 0;
 				}
+				.pic{
+				    width: 100px;
+				    height: 100px;
+				    position: relative;
+				    left: 0;
+				    margin: 0;
+				}
+				p.txt{
+				    margin-left: 20px;
+				    font-size: 20px;
+				    line-height: 140%;
+					b:first-child{
+						font-size: 22px;
+					}
+				}
 			}
 		}
 		.block{
@@ -932,6 +947,9 @@ html,body,#wapper{
 					margin-bottom: 0;
 					text-align: left;
 					line-height: 140%;
+					b:first-child{
+						font-size: 30px;
+					}
 				}
 				.moreBtn{
 					position: absolute;
@@ -1149,19 +1167,122 @@ html,body,#wapper{
 		min-width: inherit;
 		// position: relative;
 	}
+	.loading{
+		svg{
+			width: 40%;
+		}
+	}
+	.index{
+		.kvBox{
+			overflow: hidden;
+			min-height: 568px;
+			.logo{
+				right: 17px;
+			}
+			.kvImg{
+				margin:0 auto;
+				right:auto !important;
+				margin-top:auto !important;
+				top:45%;
+				transform-origin:left top;
+				position: absolute;
+				left: 8%;
+				// width: 80%;
+				// transform: scale(0.5);
+			}
+			.kv_txt{
+				img{
+					width: 100%;
+					max-width:inherit;
+					margin: 0;
+				}			
+			}
+			.btns{
+				bottom: 10px;
+			}
+		}
+		.titleBox{
+			h2{
+				font-size: 48px;
+				margin:0 auto;
+			    text-align: center;
+			}
+			.background{
+			    background-size: auto 100%;
+    			background-position: 80% 0;
+			}
+		}	
+	} 
+	.outherpage{
+		.kvBox{
+		    height: 250px;
+		    padding-bottom:0;
+		    overflow: hidden;
+			.kv_txt{
+			    width: 43%;
+			    margin: 0;
+			    left: 2%;
+			    top: 23%;
+			}
+			.kvImg{
+				width: 60%;
+				margin: 0;
+				right: -6%;
+				position: absolute;
+				top: 24%;
+	    		img{
+	    			width: 100%;
+	    		}	
+			}
+			.btns{
+				padding: 0 5px;
+				.btn{
+				    // width: 50%;
+				    padding: 4px;
+				    margin-right: 5px;
+				}
+			}
+		}
+	}
 	.kvBox{
+		.logo{
+			top: 12px;
+			right: 17px;
+			img{
+				width: 100px;
+			}
+		}
+		.kv_txt{
+			position: relative;
+			margin:0 auto;
+			display:block;
+    		height: auto;
+    		width: 65%;
+    		top: 6%;
+    		img{
+    			margin:0;
+    			width: 100%;
+    		}
+		}
+		.kvImg{
+			position: relative;
+    		right: auto;
+    		bottom: auto;
+		}
 		.btns{
 			padding:0 10px;
 			.btn{
 				padding: 4px 10px;
-				font-size: 16px;
+				font-size: 14px;
 			}
-		}
-		
+		}	
 	}
 	.titleBox{
+		width: 100%;
 		h2{
-			font-size: 25px;
+			font-size: 28px;
+			margin: 35px 0;
+			padding: 0 10px;
 		}
 	}
 	.timeLineBox{
@@ -1209,9 +1330,9 @@ html,body,#wapper{
 			    	padding-top:34px;
 			    	width: 100%;
 					.event{
-						width: 67%;
+						width: 73%;
 						left: 0;
-						padding:15px;
+						padding:10px;
 						margin-left: 24%;
 						p,ul{
 							font-size: 16px;
@@ -1254,7 +1375,7 @@ html,body,#wapper{
 		    padding: 0 13px;
 		    left: 0;
 		    top: inherit;
-		    bottom: 13px;
+		    bottom: 30px;
 		    margin: 0 10px;
 			.yearBox{
 			    text-align: left;
@@ -1290,9 +1411,9 @@ html,body,#wapper{
 						.days{
 							width: 100%;
 							height: 52px;
-							font-size: 42px;
+							font-size: 38px;
 							> span{
-								line-height: 45px;
+								line-height: 42px;
 							}
 							.txt{
 								span{
@@ -1433,15 +1554,68 @@ html,body,#wapper{
 			}
 		}
 	}
+	.page{
+		.btns{
+			display:block;
+			margin-bottom: 25px;
+			padding:0 10px;
+			text-align: center;
+			.btn{
+				display: inline-block;
+				margin-bottom: 10px;
+				font-size: 16px;
+				padding:10px 15px;
+			}
+		}
+		>.content{
+			width: 100%;
+			.transcriptListBox{
+				.block{
+					display:block;
+					.pic{
+						width: 120px;
+						height: 120px;
+						margin: 0 auto 20px;
+						left:0;
+
+					}
+					p.txt{
+						margin-left: 10px;
+						font-size: 16px;
+						padding: 0 0 20px 0;
+						margin: 0 auto;
+						text-align: center;
+						b:first-child{
+							font-size: 22px;
+						}
+					}
+					.moreBtn{
+						padding: 10px 20px;
+						position: relative;
+						display: inline-block;
+					}
+				}
+			}
+			.participantsBox{
+				width: 100%;
+			}
+			.transcriptBox{
+				width: 100%;
+				padding:0 10px;
+			}
+		}
+	}
 	.backtop.index{
 		bottom:35%;
 	}
 }
 
 @media screen and (max-width:320px){
-	.kvBox .btns .btn{
-		margin-right: 2%;
-	    padding: 4px 2%;
+	.kvBox{
+		.btns .btn{
+			margin-right: 2%;
+		    padding: 4px 2%;			
+		}
 	}
 	.fixedBox{
 		.organizationBox{
