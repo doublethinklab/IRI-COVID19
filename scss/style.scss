@@ -15,6 +15,27 @@ html,body,#wapper{
 	min-width: 1250px;
 	width: 100%;
 }
+#wapper{
+	position: relative;
+}
+.loading{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	background-color: #fff;
+	display: flex;
+	text-align: center;
+	align-items: center;	
+	svg{
+		width: 10%;
+		position: relative;
+		margin:0 auto;
+		display: block;
+	}
+}
 .kvBox{
 	width: 100%;
 	margin:0 auto;
@@ -189,10 +210,9 @@ html,body,#wapper{
 		}
 	}
 	.copyright{
-		margin-bottom: 0;
+		margin: 10px auto;
 		color:#000;
-		position: absolute;
-		bottom: 0;
+		position: relative;
 		a{
 			color:#000;
 		}
@@ -442,7 +462,7 @@ html,body,#wapper{
 				font-size: 70px;
 			}
 			p{
-				font-size: 25px;
+				font-size: 28px;
 				line-height: 120%;
 			}
 		}
@@ -685,7 +705,7 @@ html,body,#wapper{
 		right: 20px;
 		top: 60px;
 		// width: 14%;
-		z-index: 9;
+		z-index: 8;
 		.banner{
 			width: 100%;
 			color:#000;
@@ -1117,7 +1137,7 @@ html,body,#wapper{
     bottom: 75px;
     display: none;
     cursor: pointer;
-    z-index: 999;
+    z-index: 8;
 }
 
 @media screen and (max-width:768px){
@@ -1127,7 +1147,7 @@ html,body,#wapper{
 	}
 	html,body,#wapper{
 		min-width: inherit;
-		position: relative;
+		// position: relative;
 	}
 	.kvBox{
 		.btns{
@@ -1470,3 +1490,7 @@ html,body,#wapper{
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
+
+
+
+#ebx4towl0g593 {animation: ebx4towl0g593_c_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g593_c_o { 0% {opacity: 0} 50% {opacity: 0} 65% {opacity: 1} 100% {opacity: 1} }#ebx4towl0g5915 {animation: ebx4towl0g5915_c_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5915_c_o { 0% {opacity: 0} 50% {opacity: 0} 65% {opacity: 1} 100% {opacity: 1} }#ebx4towl0g5920_to {animation: ebx4towl0g5920_to__to 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5920_to__to { 0% {transform: translate(267.386494px,491.800002px)} 50% {transform: translate(267.386494px,491.800002px)} 65% {transform: translate(301.135361px,508.953766px)} 80% {transform: translate(301.135361px,488.953766px)} 100% {transform: translate(301.135361px,508.953766px)} }#ebx4towl0g5920 {animation: ebx4towl0g5920_c_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5920_c_o { 0% {opacity: 0} 50% {opacity: 0} 65% {opacity: 1} 100% {opacity: 1} }#ebx4towl0g5921_to {animation: ebx4towl0g5921_to__to 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5921_to__to { 0% {transform: translate(267.386468px,491.800002px)} 50% {transform: translate(267.386468px,491.800002px)} 65% {transform: translate(257.064651px,486.953766px)} 80% {transform: translate(257.064651px,506.953766px)} 100% {transform: translate(257.064651px,486.953766px)} }#ebx4towl0g5921 {animation: ebx4towl0g5921_c_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5921_c_o { 0% {opacity: 0} 50% {opacity: 0} 65% {opacity: 1} 100% {opacity: 1} }#ebx4towl0g5922_to {animation: ebx4towl0g5922_to__to 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5922_to__to { 0% {transform: translate(353.339073px,194.508317px)} 50% {transform: translate(247.634666px,172.599998px)} 100% {transform: translate(247.634666px,172.599998px)} }#ebx4towl0g5923 {animation: ebx4towl0g5923_f_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5923_f_o { 0% {fill-opacity: 0} 50% {fill-opacity: 1} 100% {fill-opacity: 1} }#ebx4towl0g5924_to {animation: ebx4towl0g5924_to__to 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5924_to__to { 0% {transform: translate(320.398785px,194.508319px)} 50% {transform: translate(383.998779px,212.849998px)} 100% {transform: translate(383.998779px,212.849998px)} }#ebx4towl0g5925 {animation: ebx4towl0g5925_f_o 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5925_f_o { 0% {fill-opacity: 0} 50% {fill-opacity: 1} 100% {fill-opacity: 1} }#ebx4towl0g5926 {animation: ebx4towl0g5926_s_do 2000ms linear infinite alternate forwards}@keyframes ebx4towl0g5926_s_do { 0% {stroke-dashoffset: 770.710000} 50% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}

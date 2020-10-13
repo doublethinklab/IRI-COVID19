@@ -1,10 +1,9 @@
 var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-var stageInChange=[1573920000000,1577808000000,1579708800000,1580659200000],
-	stageEndChange=[1577721600000,1579449600000,1580400000000,1596038400000],
+var	stageStartChange=[1573920000000,1577808000000,1579449600000,1580659200000],
 	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,
 	html_lang=document.documentElement.lang,
 	stageTxt={
-		"en":["Unknown","Investigation","Early Outbreak","Altered Narratives"],
+		"en":["Unknown","Investigation","Propaganda Start","Altered Narratives"],
 		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
 	},
 	allvalue=[0,0,0,0];//china_days china_case who_days who_case
@@ -47,7 +46,11 @@ function setIndexAnFun(){
 	.from($(".avirus2"),1,{right:"2%",yoyoEase:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1,delay:1},"avirus")
 	.from($(".avirus3"),0.4,{left:"-8%",ease:"bounce.out",yoyo:true,repeat:-1,repeatDelay:0.1},"avirus")
 	.fromTo($(".people"),0.5,{rotate:-5},{rotate:5,yoyo:true,repeat:-1},"avirus");
+	gsap.to(".loading",{duration:0.5,autoAlpha:0,delay:3});
 }
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0); 
+});
 
 function backtopFun(e){
 	clickback=true;
@@ -96,10 +99,10 @@ function resizeFun(e){
 		if(sw<750){
 			gap=50;
 			// $(".date .line").css({width:sw*0.06});
-			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 46});
+			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 66});
 			$(".nowBox").css({bottom:sh/2});
 		}else{
-			$(".allDatasBox").css({"padding-bottom":sh*0.72 -46});
+			$(".allDatasBox").css({"padding-bottom":sh*0.72 -66});
 			$(".nowBox").attr("style","");
 		}
 		$(".kvBox").css({height:sh});
@@ -200,12 +203,6 @@ function setChinaDdayFun(thisDate){
 function setWhoDdayFun(thisDate){
 	return Math.round((thisDate - new Date(Date.parse("2020/3/11"))) / (24 * 60 * 60 * 1000));
 }
-
-
-
-
-
-
 function setDateGapFun(){
 	$(".allDatasBox .dataBox").each(function(i){
 		if(i!=0 && i!=$(".allDatasBox .dataBox").length-1){
@@ -246,8 +243,8 @@ function setAnFun(){
 				onEnter:function(progress, direction, isActive){
 					// console.log("inn")
 					var triggerD=Number($(progress.trigger).attr("d-date"));
-					for(var i=stageEndChange.length-1;i>=0;i--){
-						if(stageEndChange[i]<=triggerD){
+					for(var i=stageStartChange.length-1;i>=0;i--){
+						if(stageStartChange[i]<=triggerD){
 							$(".yearBox p").text(stageTxt[html_lang][i]);
 							// console.log(i);
 							break;
@@ -273,10 +270,11 @@ function setAnFun(){
 					// console.log("inn",daysBoxChange,triggerD);
 				},
 				onEnterBack:function(progress, direction, isActive){
-					// console.log("back")
+					console.log("back");
+					// console.log($(progress.trigger).prev());
 					var triggerD=Number($(progress.trigger).attr("d-date"));
-					for(var i=stageEndChange.length-1;i>=0;i--){
-						if(stageEndChange[i]<=triggerD){
+					for(var i=stageStartChange.length-1;i>=0;i--){
+						if(stageStartChange[i]<=triggerD){
 							$(".yearBox p").text(stageTxt[html_lang][i]);
 							// console.log(i);
 							break;
