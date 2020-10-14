@@ -14,8 +14,12 @@ $(document).ready(function(e){
 		html_lang="zh";
 	}
 	if(p_type=="research"){
-		// bookTL=gsap.timeline();
-		// bookTL.from($(".booksBox"),0.5,{right:-500}).pause();
+		bookTL=gsap.timeline();
+		bookTL.from($(".booksBox"),0.5,{bottom:-500}).pause();
+		$(".booksBox .btn").on("click",function(e){
+			var thisIndex=$(this).index();
+			$body.animate({scrollTop: $(".researchBox .book").eq(thisIndex).offset().top}, 600)
+		})
 	}
 	if(p_type=="index"){
 		getDataFun();
@@ -58,7 +62,7 @@ function backtopFun(e){
 	$(this).hide();
 }
 function scrollFun(e){
-	var st=$(window).scrollTop();
+	var st=$(window).scrollTop(),sh=$(window).height();
 	if(p_type=="index"){
 		if(st>=$(".timeLineBox").offset().top){
 			$(".timeLineBox").removeClass('nonefixed');
@@ -66,11 +70,20 @@ function scrollFun(e){
 			$(".timeLineBox").addClass('nonefixed');
 		}		
 	}else if(p_type=="research"){
-		// if(st>=$(".titleBox").offset().top){
-		// 	bookTL.play();
-		// }else{
-		// 	bookTL.reverse();
-		// }		
+		var book1ImgBottom=$(".book:eq(0) img").offset().top+$(".book:eq(0) img").height(),
+			book2ImgBottom=$(".book:eq(1) img").offset().top+$(".book:eq(1) img").height();
+
+		if(st>=book1ImgBottom && (st+sh+200)<=$("#wapper").height()){
+			bookTL.play();
+		}else{
+			bookTL.reverse();
+		}
+
+		if(st>=$(".book:eq(1) img").offset().top){
+			$(".booksBox .btn:eq(1)").addClass('active').siblings().removeClass('active');
+		}else if(st>=$(".book:eq(0) img").offset().top){
+			$(".booksBox .btn:eq(0)").addClass('active').siblings().removeClass('active');
+		}
 	}
 	if(!clickback){
 		if(st>=800){
@@ -80,6 +93,7 @@ function scrollFun(e){
 		}		
 	}
 }
+
 function resizeFun(e){
 	var sw=$(window).width(),sh=$(window).height(),maxW=1250,picW=500,picH=347,kvW=703;
 	if(sw<1250 && sw>750){
@@ -274,7 +288,7 @@ function setAnFun(){
 					// console.log("inn",daysBoxChange,triggerD);
 				},
 				onEnterBack:function(progress, direction, isActive){
-					console.log("back");
+					// console.log("back");
 					// console.log($(progress.trigger).prev());
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageStartChange.length-1;i>=0;i--){
