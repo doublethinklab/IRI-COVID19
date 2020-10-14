@@ -1,6 +1,6 @@
 var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 var	stageStartChange=[1573920000000,1577808000000,1579449600000,1580659200000],
-	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,
+	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,clickMail=false,
 	html_lang=document.documentElement.lang,
 	stageTxt={
 		"en":["Unknown","Investigation","Propaganda Start","Altered Narratives"],
@@ -35,7 +35,12 @@ $(document).ready(function(e){
 	$(window).on("resize",resizeFun);
 	$(window).on("scroll",scrollFun);
 	$(".backtop").on("click",backtopFun);
-
+	$(".copyright a").on("click",function(e){
+		clickMail=true;
+		setTimeout(function(){ 
+			clickMail=false; 
+		},1000);
+	})
 	// $(".kv_txt").on("click",function(e){
 	// 	document.location.href="index.html";
 	// })
@@ -53,7 +58,9 @@ function setIndexAnFun(){
 	gsap.to(".loading",{duration:0.5,autoAlpha:0,delay:3});
 }
 $(window).on('beforeunload', function() {
-    $(window).scrollTop(0); 
+	if(p_type=="index" && !clickMail){
+		$(window).scrollTop(0);
+	}
 });
 
 function backtopFun(e){
