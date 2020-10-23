@@ -1,7 +1,7 @@
 var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 var	stageStartChange=[1573920000000,1577808000000,1579449600000,1580659200000],
 	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,clickMail=false,
-	html_lang=document.documentElement.lang,
+	html_lang=document.documentElement.lang,mobileW=414,
 	stageTxt={
 		"en":["Unknown","Investigation","Outbreak","Propaganda"],
 		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
@@ -66,13 +66,20 @@ function backtopFun(e){
 	$(this).hide();
 }
 function scrollFun(e){
-	var st=$(window).scrollTop(),sh=$(window).height();
+	var st=$(window).scrollTop(),sh=$(window).height(),sw=$(window).width();
 	if(p_type=="index"){
 		if(st>=$(".timeLineBox").offset().top){
 			$(".timeLineBox").removeClass('nonefixed');
 		}else{
 			$(".timeLineBox").addClass('nonefixed');
 		}		
+		if(sw<=mobileW){
+			if(st>=($("#wapper").height()-sh)){
+				$(".fixedBox").addClass('done');
+			}else{
+				$(".fixedBox").removeClass('done');
+			}
+		}
 	}else if(p_type=="research"){
 		var book1ImgBottom=$(".book:eq(0) img").offset().top+$(".book:eq(0) img").height(),
 			book2ImgBottom=$(".book:eq(1) img").offset().top+$(".book:eq(1) img").height();
@@ -100,10 +107,10 @@ function scrollFun(e){
 
 function resizeFun(e){
 	var sw=$(window).width(),sh=$(window).height(),maxW=1250,picW=500,picH=347,kvW=703;
-	if(sw<1250 && sw>750){
+	if(sw<1250 && sw>mobileW){
 		sw=maxW;
 	}
-	if(sh<700 && sw>750){
+	if(sh<700 && sw>mobileW){
 		sh=700;
 	}
 	
@@ -112,18 +119,18 @@ function resizeFun(e){
 		$(".line.year").css({width:(sw/2)-fixedW,left:fixedW});
 		$(".event .content > iframe").css({width:$(".event").width(),height:($(".event").width()/picW)*picH});
 		$(".event li iframe").css({width:$(".event li").width(),height:($(".event li").width()/picW)*picH});
-		if(sw<750){
+		if(sw<=mobileW){
 			gap=50;
 			var dw=roundDecimal(sw/1903,2)+0.15;
 			$(".kvImg").css({"transform":"scale("+dw+")"});
 			// $(".kvImg").css({"transform":"scale("+dw+")"})
 			// $(".date .line").css({width:sw*0.06});
-			$(".allDatasBox").css({"padding-bottom":sh*0.9 - 66});
+			$(".allDatasBox").css({"padding-bottom":sh*0.9-66,width:"100%"});
 			$(".nowBox").css({bottom:sh/2});
 		}else{
 			var dw=roundDecimal(sw/1903,2);
 			$(".kvImg").css({"transform":"scale("+dw+")",right:sw*0.14*dw,"margin-top":-$(".kvImg").height()/2*dw-30});
-			$(".allDatasBox").css({"padding-bottom":sh*0.72 -66});
+			$(".allDatasBox").css({"padding-bottom":sh*0.72 -66,width:sw-$(".fixedBox").width()-$(".banners").width()-100});
 			$(".nowBox").attr("style","");
 		}
 		
@@ -200,7 +207,8 @@ function setDateDataFun(data){
 				}
 			}
 		})
-		if(thisEvents.length==1 && thisEvents[0].content==""){
+
+		if(thisEvents.length==0){
 			$(_mc).addClass("hideEvent");
 		}
 		$(_mc).attr("d-date",thisDate);
@@ -211,6 +219,9 @@ function setDateDataFun(data){
 				"d-who-cases":val.countdown.who.case,
 				"d-who-days":setWhoDdayFun(thisDate)
 			});
+			// if(val.countdown.who.case!=0){
+			// 	$(".timeLineBox .background .txts").append('<div class="txt" d-date="'+thisDate+'">'+val.countdown.who.case+'</div>');
+			// }
 		}
 		if(i==0){
 			allvalue=[setChinaDdayFun(thisDate),val.countdown.china.case,setWhoDdayFun(thisDate),val.countdown.who.case];		
@@ -263,7 +274,7 @@ function setAnFun(){
 				animation:tl,
 				trigger: $(el),
 			    start: "top bottom-=100px",
-			    end: "top+=200px center-=20%",
+			    end: "top+=200px center",
 			    toggleActions:_toggleActions,
 				scrub:true,
 				// markers: true,
@@ -333,7 +344,6 @@ function setAnFun(){
 			.fromTo($(".events",el),1.2,{xPercent:l,opacity:0},{xPercent:0,opacity:1},"eventgo")
 			.fromTo($(".content",el),0.3,{y:50,opacity:0},{y:0,opacity:1});
 
-
 		if($(el).attr("d-china-days")!=undefined){
 			var tl2=gsap.timeline({
 				scrollTrigger:{
@@ -380,6 +390,11 @@ function setAnFun(){
 				.to(allvalue,{"2": Number($(el).attr("d-who-days"))+1},"go")
 				.to(allvalue,{"3": Number($(el).attr("d-who-cases"))},"go");
 		}
+		// if($(el).attr("d-who-cases")!=undefined){
+		// 	var tl4=gsap.timeline({
+				
+		// 	})
+		// }
 	})
 	
 	var tl3=gsap.timeline({

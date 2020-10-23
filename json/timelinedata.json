@@ -721,16 +721,8 @@
 		{
 			"date":"05/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
@@ -745,16 +737,8 @@
 		{
 			"date":"06/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
@@ -769,16 +753,8 @@
 		{
 			"date":"07/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
@@ -793,16 +769,8 @@
 		{
 			"date":"08/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
@@ -817,16 +785,8 @@
 		{
 			"date":"09/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
@@ -841,16 +801,8 @@
 		{
 			"date":"10/01",
 			"year":"2020",
-			"zh_events":[
-				{
-					"content":""				
-				}
-			],
-			"en_events":[
-				{
-					"content":""
-				}
-			],
+			"zh_events":[],
+			"en_events":[],
 			"countdown":{
 				"china":{
 					"days":72,
