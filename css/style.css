@@ -593,7 +593,7 @@ html, body, #wapper {
       color: #000;
       background-color: #fff;
       font-weight: bold;
-      padding: 10px 20px;
+      padding: 10px;
       align-items: center;
       display: flex;
       justify-content: center;
@@ -956,10 +956,10 @@ html, body, #wapper {
       margin: 0 auto;
       right: auto !important;
       margin-top: auto !important;
-      top: 45%;
+      top: 53%;
       transform-origin: left top;
       position: absolute;
-      left: 8%; }
+      left: 14%; }
     .index .kvBox .kv_txt img {
       width: 100%;
       max-width: inherit;
@@ -1339,13 +1339,36 @@ html, body, #wapper {
   .kvBox .btns .btn {
     margin-right: 2%;
     padding: 4px 2%; }
+  .kvBox .kv_txt {
+    top: 11%; }
 
-  .fixedBox .organizationBox .days .txt:before, .fixedBox .organizationBox .days .txt:after {
-    width: calc(32% - 5px) !important; }
-  .fixedBox .organizationBox.china .days {
-    margin-bottom: 62% !important; }
-  .fixedBox.change .organizationBox.china .data .days {
-    margin-bottom: 56% !important; } }
+  .index .titleBox h2 {
+    margin: -44px auto 0; }
+  .index .titleBox .downBox {
+    bottom: 10px; }
+
+  .timeLineBox .fixedBox {
+    padding: 0 13px 10px; }
+    .timeLineBox .fixedBox .yearBox h2 {
+      font-size: 22px; }
+    .timeLineBox .fixedBox .yearBox p {
+      font-size: 14px; }
+    .timeLineBox .fixedBox .digitalBox .caseBox {
+      margin-top: 3%; }
+    .timeLineBox .fixedBox .digitalBox .organizationBox .name {
+      font-size: 13px;
+      padding: 3px 0; }
+    .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:before, .timeLineBox .fixedBox .digitalBox .organizationBox .days .txt:after {
+      width: calc(32% - 5px) !important; }
+    .timeLineBox .fixedBox .digitalBox .organizationBox.china .days {
+      margin-bottom: 62% !important; }
+    .timeLineBox .fixedBox .digitalBox .organizationBox.who .data {
+      margin-top: 19px; }
+    .timeLineBox .fixedBox.change .organizationBox.china .data .days {
+      margin-bottom: 56% !important; }
+
+  .backtop.index {
+    bottom: 45%; } }
 @-webkit-keyframes rainbow {
   0% {
     background-position: 0% 82%; }

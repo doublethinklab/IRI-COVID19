@@ -25,9 +25,6 @@ $(document).ready(function(e){
 		getDataFun();
 		setTimeFun();
 		resizeFun();
-		$('.kvImg').imagesLoaded(function(){
-	  		setIndexAnFun();
-		});
 	}else{
 		resizeFun();
 		scrollFun();
@@ -117,7 +114,7 @@ function resizeFun(e){
 		$(".event li iframe").css({width:$(".event li").width(),height:($(".event li").width()/picW)*picH});
 		if(sw<750){
 			gap=50;
-			var dw=roundDecimal(sw/1903,2)+0.23;
+			var dw=roundDecimal(sw/1903,2)+0.15;
 			$(".kvImg").css({"transform":"scale("+dw+")"});
 			// $(".kvImg").css({"transform":"scale("+dw+")"})
 			// $(".date .line").css({width:sw*0.06});
@@ -242,8 +239,13 @@ function setDateGapFun(){
 			$(this).css({"margin-bottom":ddays*gap});
 		}
 	})
-	resizeFun();
-	setAnFun();
+	
+
+	$('.event').imagesLoaded(function(){
+		resizeFun();
+		setAnFun();
+  		setIndexAnFun();
+	});
 }
 function setAnFun(){
 	var dataBoxs=gsap.utils.toArray(".dataBox");
