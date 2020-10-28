@@ -6,7 +6,8 @@ var	stageStartChange=[1573920000000,1577808000000,1579449600000,1580659200000],
 		"en":["Unknown","Investigation","Outbreak","Propaganda"],
 		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
 	},
-	allvalue=[0,0,0,0];//china_days china_case who_days who_case
+	allvalue=[0,0,0,0],//china_days china_case who_days who_case
+	bagvalue=[0];
 gsap.registerPlugin(ScrollTrigger);
 
 $(document).ready(function(e){
@@ -16,9 +17,13 @@ $(document).ready(function(e){
 	if(p_type=="research"){
 		bookTL=gsap.timeline();
 		bookTL.from($(".booksBox"),0.5,{bottom:-500}).pause();
-		$(".booksBox .btn").on("click",function(e){
-			var thisIndex=$(this).index();
+		$(".booksBox .btn,.mobile_booksBox .btn").on("click",function(e){
+			var thisIndex=$(this).index(),_this=$(this).index();
 			$body.animate({scrollTop: $(".researchBox .book").eq(thisIndex).offset().top}, 600)
+		})
+	}else if(p_type=="quote"){
+		$("[data-fancybox]").fancybox({
+			touch: false
 		})
 	}
 	if(p_type=="index"){
@@ -90,10 +95,12 @@ function scrollFun(e){
 			bookTL.reverse();
 		}
 
-		if(st>=$(".book:eq(1) img").offset().top){
-			$(".booksBox .btn:eq(1)").addClass('active').siblings().removeClass('active');
+		if(st>=$(".book:eq(1) img").offset().top-10){
+			$(".booksBox .btn").removeClass('active');
+			$(".booksBox .btn:eq(1)").addClass('active');
 		}else if(st>=$(".book:eq(0) img").offset().top){
-			$(".booksBox .btn:eq(0)").addClass('active').siblings().removeClass('active');
+			$(".booksBox .btn").removeClass('active');
+			$(".booksBox .btn:eq(0)").addClass('active');
 		}
 	}
 	if(!clickback){
@@ -219,8 +226,8 @@ function setDateDataFun(data){
 				"d-who-cases":val.countdown.who.case,
 				"d-who-days":setWhoDdayFun(thisDate)
 			});
-			// if(val.countdown.who.case!=0){
-			// 	$(".timeLineBox .background .txts").append('<div class="txt" d-date="'+thisDate+'">'+val.countdown.who.case+'</div>');
+			// if(val.countdown.who.case>0){
+			// 	$(".timeLineBox .background .txts").append('<div class="txt" d-date="'+thisDate+'" d-start="'+data[(i-1)].countdown.who.case+'">'+val.countdown.who.case+'</div>');
 			// }
 		}
 		if(i==0){
@@ -293,23 +300,9 @@ function setAnFun(){
 					}else{
 						$(".yearBox h2").text(2019);
 					}
-					// if(triggerD>=1579449600000){
-					// 	daysBoxChange=true;
-					// 	$(".fixedBox").addClass('change');
-					// 	$(".organizationBox .days > .txt span").text("cases");
-					// 	$(".dividerBox span").text("days");
-					// }else{
-					// 	daysBoxChange=false;
-					// 	$(".fixedBox").removeClass('change');
-					// 	$(".organizationBox .days > .txt span").text("days");
-					// 	$(".dividerBox span").text("Confirmed cases");						
-					// }	
-					// console.log(daysBoxChange);
-					// console.log("inn",daysBoxChange,triggerD);
 				},
 				onEnterBack:function(progress, direction, isActive){
-					// console.log("back");
-					// console.log($(progress.trigger).prev());
+
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageStartChange.length-1;i>=0;i--){
 						if(stageStartChange[i]<=triggerD){
@@ -323,19 +316,6 @@ function setAnFun(){
 					}else{
 						$(".yearBox h2").text(2019);
 					}
-
-					// if(triggerD>=1579449600000){
-					// 	daysBoxChange=true;
-					// 	$(".fixedBox").addClass('change');
-					// 	$(".organizationBox .days > .txt span").text("cases");
-					// 	$(".dividerBox span").text("days");
-					// }else{
-					// 	daysBoxChange=false;
-					// 	$(".fixedBox").removeClass('change');
-					// 	$(".organizationBox .days > .txt span").text("days");
-					// 	$(".dividerBox span").text("Confirmed cases");						
-					// }		
-					// console.log("back",daysBoxChange);
 				}
 			}
 		});
@@ -355,34 +335,28 @@ function setAnFun(){
 					scrub:true,
 					// markers: true,
 					onLeave:function(progress, direction, isActive){
-						// if(!daysBoxChange){
-							$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
-							$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
-							$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
-							$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));		
-						// }else{
-						// 	$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
-						// 	$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
-						// 	$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
-						// 	$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));					
-						// }
-					},
-					// onLeaveBack:function(){
-					// 	console.log("onLeaveBack")
-					// }
-				},
-				onUpdate:function(){
-					// if(!daysBoxChange){
 						$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
 						$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
 						$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
-						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));		
+						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));
+
+	
+						$(".background .txt.who").text(Math.floor(allvalue[3]));
+						$(".background .txt.china").text(Math.floor(allvalue[1]));
+					}				
+				},
+				onUpdate:function(){
+					$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
+					$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
+					$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
+					$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));
+					// if(Math.floor(allvalue[3])>0){
+					// 	$(".background .txt").text(Math.floor(allvalue[3])).show();
 					// }else{
-						// $(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
-						// $(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
-						// $(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
-						// $(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));					
+					// 	$(".background .txt").hide();
 					// }
+					$(".background .txt.who").text(Math.floor(allvalue[3]));
+					$(".background .txt.china").text(Math.floor(allvalue[1]));
 				}
 			});
 			tl2.to(allvalue,{"0": Number($(el).attr("d-china-days"))+1},"go")
@@ -390,11 +364,35 @@ function setAnFun(){
 				.to(allvalue,{"2": Number($(el).attr("d-who-days"))+1},"go")
 				.to(allvalue,{"3": Number($(el).attr("d-who-cases"))},"go");
 		}
-		// if($(el).attr("d-who-cases")!=undefined){
-		// 	var tl4=gsap.timeline({
-				
-		// 	})
-		// }
+	// 	if($(el).attr("d-who-cases")>0){
+	// 		var tl4=gsap.timeline({
+	// 			scrollTrigger:{
+	// 				animation:tl4,
+	// 				trigger: $(el),
+	// 			    start: "top bottom-=100px",
+	// 			    end: "top+=200px center-=20%",
+	// 				toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
+	// 				scrub:true,
+	// 				markers: true,
+	// 				// onLeaveBack:function(){
+	// 				// 	console.log("onLeaveBack")
+	// 				// }
+	// 				onEnter:function(e){
+	// 					$(".background .txt").hide();
+	// 					$(".background .txt[d-date="+$(el).attr("d-date")+"]").show();
+	// 				},
+	// 				onEnterBack:function(e){
+	// 					$(".background .txt").hide();
+	// 					$(".background .txt[d-date="+$(el).attr("d-date")+"]").show();						
+	// 				}
+	// 			},
+	// 			onUpdate:function(e){
+	// 				$(".background .txt[d-date="+$(el).attr("d-date")+"]").text(Math.floor(bagvalue[0]));//numberWithCommasFun
+	// 			}				
+	// 		})
+	// 		tl4.fromTo($(".background .txt[d-date="+$(el).attr("d-date")+"]"),0.5,{y:0,opacity:0,scale:0},{y:0,opacity:1,scale:2.5},"go") //rotate
+	// 			.fromTo($(".background .txt[d-date="+$(el).attr("d-date")+"]"),0.5,{y:0},{y:-1000});
+	// 	}
 	})
 	
 	var tl3=gsap.timeline({
@@ -402,7 +400,7 @@ function setAnFun(){
 			animation:tl3,
 			trigger: $(".nowBox"),
 		    start: "top bottom-=100px",
-		    end: "top+=100px center-=20%",
+		    end: "top+=100px center-=22%",
 			toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
 			scrub:false,
 			// markers: true,

@@ -282,23 +282,30 @@ html, body, #wapper {
     z-index: 1;
     background-color: #5cc1d8;
     text-align: center; }
-    .timeLineBox .background:before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      width: 0;
-      vertical-align: middle; }
     .timeLineBox .background .txts {
-      display: inline-block;
-      vertical-align: middle;
-      z-index: 1; }
+      display: block;
+      z-index: 1;
+      position: relative;
+      font-weight: bolder;
+      width: 100%;
+      height: 100%; }
       .timeLineBox .background .txts .txt {
-        font-size: 300px;
-        font-weight: bold;
-        color: #008ac3;
-        transform: rotateZ(15deg);
-        transform-origin: center;
-        display: none; }
+        font-size: 600px;
+        font-weight: bolder;
+        position: absolute;
+        opacity: 0.5; }
+        .timeLineBox .background .txts .txt.who {
+          transform: rotateZ(10deg);
+          transform-origin: center;
+          color: #008ac3;
+          bottom: -50px;
+          right: -200px; }
+        .timeLineBox .background .txts .txt.china {
+          transform: rotateZ(10deg);
+          transform-origin: center;
+          color: #008ac3;
+          top: -300px;
+          left: -200px; }
   .timeLineBox .backgroundMask {
     z-index: 2;
     width: 100%;
@@ -448,7 +455,7 @@ html, body, #wapper {
     left: 20px;
     top: 50px;
     width: 197px;
-    z-index: 3; }
+    z-index: 6; }
     .timeLineBox .fixedBox .yearBox {
       text-align: right;
       font-weight: bold;
@@ -676,6 +683,8 @@ html, body, #wapper {
       .page .booksBox .btn.active img {
         opacity: 1;
         position: relative; }
+  .page .mobile_booksBox {
+    display: none; }
   .page > .content {
     width: 1250px;
     margin: 0 auto; }
@@ -1253,6 +1262,21 @@ html, body, #wapper {
         margin: 0; }
       .page .booksBox .btn.active {
         margin-bottom: 8px; }
+  .page .mobile_booksBox {
+    display: block;
+    width: 100%;
+    bottom: 10px;
+    right: inherit;
+    text-align: center;
+    margin: 20px 0; }
+    .page .mobile_booksBox .btn {
+      background-color: transparent;
+      margin: 0 10px 0 0;
+      display: inline-block; }
+      .page .mobile_booksBox .btn img {
+        width: 50px; }
+      .page .mobile_booksBox .btn:last-child {
+        margin: 0; }
   .page > .content {
     width: 100%; }
     .page > .content h3 {
@@ -1304,7 +1328,8 @@ html, body, #wapper {
       width: 100%;
       padding: 0 20px; }
     .page > .content .researchBox {
-      padding: 0 20px; }
+      padding: 0 20px;
+      margin: 0 auto 30px; }
       .page > .content .researchBox .book {
         width: 100%; }
         .page > .content .researchBox .book:nth-child(2n) {
@@ -1351,7 +1376,15 @@ html, body, #wapper {
           left: 39%; }
 
   .backtop.index {
-    bottom: 45%; } }
+    bottom: 45%; }
+
+  .fancybox-slide--html {
+    padding: 0 !important; }
+
+  .fancyBoxDiv.fancybox-content {
+    min-width: auto;
+    width: 100%;
+    padding: 55px 15px; } }
 @media screen and (max-width: 320px) {
   .kvBox .btns .btn {
     margin-right: 2%;
