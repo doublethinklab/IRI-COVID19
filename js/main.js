@@ -1,16 +1,24 @@
-var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,daysBoxChange=false,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+var dataBox='<div class="dataBox"><div class="date"><p>01.10</p><div class="line"></div></div><div class="events"></div></div>',gap=100,settime=false,bookTL=null,clickback=false,$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 var	stageStartChange=[1573920000000,1577808000000,1579449600000,1580659200000],
-	url=location.protocol+'//'+location.host+location.pathname,lastTL=null,indeTL=null,clickMail=false,
+	indeTL=null,clickMail=false,
 	html_lang=document.documentElement.lang,mobileW=414,
 	stageTxt={
 		"en":["Unknown","Investigation","Outbreak","Propaganda"],
 		"zh":["未知階段","調查階段","開始擴散","輿論戰啟動"]
 	},
-	allvalue=[0,0,0,0],//china_days china_case who_days who_case
-	bagvalue=[0];
-gsap.registerPlugin(ScrollTrigger);
+	allvalue=[0,0,0,0];//china_days china_case who_days who_case
 
 $(document).ready(function(e){
+	var cookies=Cookies.get('dtl_playbook');
+	if(cookies==undefined || String(cookies).toLowerCase() == "false"){
+		$(".cookies").show();
+	}else{
+		$(".cookies").hide();
+	}
+	$(".cookies > a").on("click",function(e){
+		Cookies.set('dtl_playbook',true,{expires:7,path:''})
+		$(".cookies").hide();
+	})
 	if(html_lang=="zh-TW"){
 		html_lang="zh";
 	}
@@ -27,6 +35,7 @@ $(document).ready(function(e){
 		})
 	}
 	if(p_type=="index"){
+		gsap.registerPlugin(ScrollTrigger);
 		getDataFun();
 		setTimeFun();
 		resizeFun();
@@ -43,9 +52,6 @@ $(document).ready(function(e){
 			clickMail=false; 
 		},1000);
 	})
-	// $(".kv_txt").on("click",function(e){
-	// 	document.location.href="index.html";
-	// })
 })
 
 function setIndexAnFun(){
@@ -130,8 +136,6 @@ function resizeFun(e){
 			gap=50;
 			var dw=roundDecimal(sw/1903,2)+0.15;
 			$(".kvImg").css({"transform":"scale("+dw+")"});
-			// $(".kvImg").css({"transform":"scale("+dw+")"})
-			// $(".date .line").css({width:sw*0.06});
 			$(".allDatasBox").css({"padding-bottom":sh*0.9-66,width:"100%"});
 			$(".nowBox").css({bottom:sh/2});
 		}else{
@@ -145,9 +149,6 @@ function resizeFun(e){
 		$(".titleBox").css({height:sh});
 		$(".dataBox").last().css({"margin-bottom":sh/2});
 	}
-
-	// $(".background .pic").css({height:sh});
-	// $(".background,.backgroundMask").css({width:sw,height:sh})
 }
 function getNowCaseFun(){
 	$.ajax({
@@ -168,9 +169,6 @@ function getNowCaseFun(){
 		console.log(msg);
 	})		
 }
-
-
-
 function findChinaCaseFun(array){
 	var casesNum=0;
 	$.each(array,function(i,val){
@@ -182,10 +180,6 @@ function findChinaCaseFun(array){
 	// console.log(casesNum);
 	return casesNum;
 }
-
-
-
-
 function getDataFun(){
 	$.ajax({
 		url:"json/timelinedata.json",
@@ -214,7 +208,6 @@ function setDateDataFun(data){
 				}
 			}
 		})
-
 		if(thisEvents.length==0){
 			$(_mc).addClass("hideEvent");
 		}
@@ -226,9 +219,6 @@ function setDateDataFun(data){
 				"d-who-cases":val.countdown.who.case,
 				"d-who-days":setWhoDdayFun(thisDate)
 			});
-			// if(val.countdown.who.case>0){
-			// 	$(".timeLineBox .background .txts").append('<div class="txt" d-date="'+thisDate+'" d-start="'+data[(i-1)].countdown.who.case+'">'+val.countdown.who.case+'</div>');
-			// }
 		}
 		if(i==0){
 			allvalue=[setChinaDdayFun(thisDate),val.countdown.china.case,setWhoDdayFun(thisDate),val.countdown.who.case];		
@@ -250,15 +240,12 @@ function setDateGapFun(){
 				lastD=$(".allDatasBox .dataBox:eq("+String(i+1)+")").attr("d-date"),
 				oneDay = 24*60*60*1000,
 				ddays=Math.round((lastD-thisD)/oneDay);
-			// console.log(Math.round((lastD-thisD)/oneDay));
 			if(ddays>4){
 				ddays=4;
 			}
 			$(this).css({"margin-bottom":ddays*gap});
 		}
 	})
-	
-
 	$('.event').imagesLoaded(function(){
 		resizeFun();
 		setAnFun();
@@ -269,13 +256,10 @@ function setAnFun(){
 	var dataBoxs=gsap.utils.toArray(".dataBox");
 	$.each(dataBoxs,function(i,el){
 		var p_num=i,num=p_num%2,l="10",ol=0,_toggleActions="restart none none reset";
-		if(num!=0 && !isMobile){
+		if(num!=0 && $(window).width()>mobileW){
 			l="-10";
 			// ol=123;
 		}
-		// if(i<2){
-		// 	_toggleActions="restart none none none";
-		// }
 		var tl=gsap.timeline({
 			scrollTrigger:{
 				animation:tl,
@@ -284,14 +268,11 @@ function setAnFun(){
 			    end: "top+=200px center",
 			    toggleActions:_toggleActions,
 				scrub:true,
-				// markers: true,
 				onEnter:function(progress, direction, isActive){
-					// console.log("inn")
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageStartChange.length-1;i>=0;i--){
 						if(stageStartChange[i]<=triggerD){
 							$(".yearBox p").text(stageTxt[html_lang][i]);
-							// console.log(i);
 							break;
 						}
 					}	
@@ -302,12 +283,10 @@ function setAnFun(){
 					}
 				},
 				onEnterBack:function(progress, direction, isActive){
-
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageStartChange.length-1;i>=0;i--){
 						if(stageStartChange[i]<=triggerD){
 							$(".yearBox p").text(stageTxt[html_lang][i]);
-							// console.log(i);
 							break;
 						}
 					}	
@@ -338,9 +317,7 @@ function setAnFun(){
 						$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
 						$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
 						$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
-						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));
-
-	
+						$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));	
 						$(".background .txt.who").text(Math.floor(allvalue[3]));
 						$(".background .txt.china").text(Math.floor(allvalue[1]));
 					}				
@@ -350,11 +327,6 @@ function setAnFun(){
 					$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
 					$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
 					$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));
-					// if(Math.floor(allvalue[3])>0){
-					// 	$(".background .txt").text(Math.floor(allvalue[3])).show();
-					// }else{
-					// 	$(".background .txt").hide();
-					// }
 					$(".background .txt.who").text(Math.floor(allvalue[3]));
 					$(".background .txt.china").text(Math.floor(allvalue[1]));
 				}
@@ -364,35 +336,6 @@ function setAnFun(){
 				.to(allvalue,{"2": Number($(el).attr("d-who-days"))+1},"go")
 				.to(allvalue,{"3": Number($(el).attr("d-who-cases"))},"go");
 		}
-	// 	if($(el).attr("d-who-cases")>0){
-	// 		var tl4=gsap.timeline({
-	// 			scrollTrigger:{
-	// 				animation:tl4,
-	// 				trigger: $(el),
-	// 			    start: "top bottom-=100px",
-	// 			    end: "top+=200px center-=20%",
-	// 				toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
-	// 				scrub:true,
-	// 				markers: true,
-	// 				// onLeaveBack:function(){
-	// 				// 	console.log("onLeaveBack")
-	// 				// }
-	// 				onEnter:function(e){
-	// 					$(".background .txt").hide();
-	// 					$(".background .txt[d-date="+$(el).attr("d-date")+"]").show();
-	// 				},
-	// 				onEnterBack:function(e){
-	// 					$(".background .txt").hide();
-	// 					$(".background .txt[d-date="+$(el).attr("d-date")+"]").show();						
-	// 				}
-	// 			},
-	// 			onUpdate:function(e){
-	// 				$(".background .txt[d-date="+$(el).attr("d-date")+"]").text(Math.floor(bagvalue[0]));//numberWithCommasFun
-	// 			}				
-	// 		})
-	// 		tl4.fromTo($(".background .txt[d-date="+$(el).attr("d-date")+"]"),0.5,{y:0,opacity:0,scale:0},{y:0,opacity:1,scale:2.5},"go") //rotate
-	// 			.fromTo($(".background .txt[d-date="+$(el).attr("d-date")+"]"),0.5,{y:0},{y:-1000});
-	// 	}
 	})
 	
 	var tl3=gsap.timeline({
@@ -403,25 +346,14 @@ function setAnFun(){
 		    end: "top+=100px center-=22%",
 			toggleActions:"restart complete reverse complete",//onEnter onLeave onEnterBack onLeaveBack
 			scrub:false,
-			// markers: true,
-			// onEnter:function(){
-			// 	console.log(allvalue);
-			// }
 		},
 		onUpdate:function(){
-			// if(daysBoxChange){
-				// $(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[1])));
-				// $(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[0])));
-				// $(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[3])));
-				// $(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[2])));			
-			// }
 			$(".organizationBox.china .days > span").text(numberWithCommasFun(Math.floor(allvalue[0])));
 			$(".caseBox .cases.china").text(numberWithCommasFun(Math.floor(allvalue[1])));
 			$(".organizationBox.who .days > span").text(numberWithCommasFun(Math.floor(allvalue[2])));
 			$(".caseBox .cases.who").text(numberWithCommasFun(Math.floor(allvalue[3])));	
 		},
 	})
-	// console.log($(".nowBox").attr("d-china-days"),$(".nowBox").attr("d-china-cases"),$(".nowBox").attr("d-who-days"),$(".nowBox").attr("d-who-cases"));
 	tl3.to(allvalue,{"0": Number($(".nowBox").attr("d-china-days"))+1},"go")
 		.to(allvalue,{"1": $(".nowBox").attr("d-china-cases")},"go")
 		.to(allvalue,{"2": Number($(".nowBox").attr("d-who-days"))+1},"go")

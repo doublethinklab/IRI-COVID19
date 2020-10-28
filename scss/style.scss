@@ -1207,8 +1207,41 @@ html,body,#wapper{
     cursor: pointer;
     z-index: 8;
 }
+.cookies{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #000;
+	z-index: 8;
+	text-align: center;
+	font-size: 14px;
+	padding: 15px;
+	p{
+		color: #fff;
+		display: inline-block;
+		line-height: 140%;
+		a{
+			color: $dtl-color;	
+		}
+	}
+	> a{
+	    padding: 5px 15px; 
+		background-color: $dtl-color;
+		color:#000;
+		display: inline-block;
+		margin-left: 20px;
+		cursor: pointer;
+	}
+}
 
 @media screen and (max-width:414px){
+	.cookies{
+		> a{
+			display: block;
+			width: 50%;
+			margin:10px auto 0;
+		}
+	}
 	html{
 		// position: fixed;
 		// overflow: hidden;
