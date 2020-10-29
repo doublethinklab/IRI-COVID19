@@ -182,7 +182,7 @@ function findChinaCaseFun(array){
 }
 function getDataFun(){
 	$.ajax({
-		url:"json/timelinedata.json",
+		url:"https://php.doublethinklab.org/infodemic/api.php",
 		type: 'GET',
 		dataType:"json"
 	}).done(function(msg){
