@@ -214,6 +214,9 @@ html,body,#wapper{
 		color:#000;
 		position: relative;
 		z-index: 20;
+		p:first-child{
+			margin-bottom: 10px;
+		}
 		a{
 			color:#000;
 		}
@@ -1462,7 +1465,7 @@ html,body,#wapper{
 		    top: inherit;
 		    bottom:10px;
 		    &.done{
-		    	bottom: 30px;
+		    	bottom: 55px;
 		    }
 		    margin: 0 10px;
 			.yearBox{
