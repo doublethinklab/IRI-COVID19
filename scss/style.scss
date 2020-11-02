@@ -1409,7 +1409,7 @@ html,body,#wapper{
 					}
 					.line{
 						left: 48%;
-						width: 10vw;
+						width: 12vw;
 						bottom: -2px;
 					}
 				}
@@ -1856,6 +1856,7 @@ html,body,#wapper{
 }
 
 @media screen and (max-width:320px){
+
 	.kvBox{
 		.btns .btn{
 			margin-right: 2%;
@@ -1863,6 +1864,32 @@ html,body,#wapper{
 		}
 		.kv_txt{
 			top: 11%;
+		}
+	}
+	.outherpage{
+		.kvBox{
+			height: 280px;
+			.btns{
+				bottom: 5px;
+				display: block;
+				&:before,&:after{
+					content: "";
+  					display: table;
+				}
+				.btn{
+					margin-right: 2%;
+					float: left;
+					width: calc(48%);
+					margin-bottom:5px; 
+					&:nth-child(2n){
+						margin-right: 0;
+					}
+					&:last-child{
+						// min-height: 50px;
+						line-height: 42px;
+					}
+				}
+			}
 		}
 	}
 	.index{

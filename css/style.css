@@ -1109,7 +1109,7 @@ html, body, #wapper {
           font-size: 20px; }
         .timeLineBox .allDatasBox .dataBox .date .line {
           left: 48%;
-          width: 10vw;
+          width: 12vw;
           bottom: -2px; }
       .timeLineBox .allDatasBox .dataBox .events {
         padding-top: 67px;
@@ -1421,6 +1421,24 @@ html, body, #wapper {
     padding: 4px 2%; }
   .kvBox .kv_txt {
     top: 11%; }
+
+  .outherpage .kvBox {
+    height: 280px; }
+    .outherpage .kvBox .btns {
+      bottom: 5px;
+      display: block; }
+      .outherpage .kvBox .btns:before, .outherpage .kvBox .btns:after {
+        content: "";
+        display: table; }
+      .outherpage .kvBox .btns .btn {
+        margin-right: 2%;
+        float: left;
+        width: calc(48%);
+        margin-bottom: 5px; }
+        .outherpage .kvBox .btns .btn:nth-child(2n) {
+          margin-right: 0; }
+        .outherpage .kvBox .btns .btn:last-child {
+          line-height: 42px; }
 
   .index .titleBox h2 {
     margin: -44px auto 0; }

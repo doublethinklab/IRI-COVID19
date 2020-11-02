@@ -255,19 +255,22 @@ function setDateGapFun(){
 function setAnFun(){
 	var dataBoxs=gsap.utils.toArray(".dataBox");
 	$.each(dataBoxs,function(i,el){
-		var p_num=i,num=p_num%2,l="10",ol=0,_toggleActions="restart none none reset";
+		var p_num=i,num=p_num%2,l="10",ol=0,_toggleActions="restart none none reset",_end="top+=200px center";
 		if(num!=0 && $(window).width()>mobileW){
 			l="-10";
 			// ol=123;
+		}else{
+			_end="top+=100px center+=100px";
 		}
 		var tl=gsap.timeline({
 			scrollTrigger:{
 				animation:tl,
 				trigger: $(el),
 			    start: "top bottom-=100px",
-			    end: "top+=200px center",
+			    end: _end,
 			    toggleActions:_toggleActions,
 				scrub:true,
+				// markers:true,
 				onEnter:function(progress, direction, isActive){
 					var triggerD=Number($(progress.trigger).attr("d-date"));
 					for(var i=stageStartChange.length-1;i>=0;i--){
