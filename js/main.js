@@ -167,6 +167,7 @@ function getNowCaseFun(){
 		setDateGapFun();
 	}).fail(function(msg){
 		console.log(msg);
+		setDateGapFun();
 	})		
 }
 function findChinaCaseFun(array){
